@@ -1,0 +1,413 @@
+
+\documentclass[conference]{IEEEtran}
+
+
+\usepackage{cite}
+\usepackage[pdftex]{graphicx}
+\usepackage[cmex10]{amsmath}
+\usepackage{amsfonts}
+\usepackage{algorithmic}
+\usepackage{array}
+\usepackage{mdwmath}
+\usepackage{mdwtab}
+%\usepackage{eqparbox}
+\usepackage[caption=false,font=footnotesize]{subfig}
+\usepackage{fixltx2e}
+\usepackage{url}
+\usepackage{color}
+
+
+% correct bad hyphenation here
+\hyphenation{}
+
+
+\begin{document}
+
+\title{Variable Rate Models for Tracking}
+
+
+% author names and affiliations
+% use a multiple column layout for up to three different
+% affiliations
+\author{
+\IEEEauthorblockN{Pete Bunch\\ and Simon Godsill}
+\IEEEauthorblockA{Signal Processing and Communications Laboratory\\
+Cambridge University Engineering Dept., UK\\
+Email: \{pb404, sjg30\}@eng.cam.ac.uk}
+}
+
+% make the title area
+\maketitle
+
+\begin{abstract}
+%\boldmath
+The abstract goes here.
+\end{abstract}
+
+
+
+\section{Introduction}
+
+Tracking is the task of inferring kinematic state of a target (position, velocity, etc.) over time from a set noisy or partial observations. The state of the target is a continuous process and is likely to be highly structured. However, many tracking systems model target dynamics as a discrete-time Markov process \cite{Li2003}. This assumption has the advantage of simplicity -- by discretising the state at observation times, we arrive at a hidden Markov model, with which standard Kalman \cite{Anderson1979} or particle \cite{Cappe2007,Doucet2009} filtering and smoothing methods may be used. The disadvantage of such an assumption is that it may be a poor reflection of the system dynamics, disregarding long-term temporal structure in the state trajectory.
+
+Recently, variable rate models have been developed for tracking, \cite{Godsill2007a,Godsill2007,Whiteley2011}. These models treat the kinematic state as a continuous process which is deterministic conditional upon an underlying sequence of changepoint times and motion parameters. This underlying changepoint sequence may be considered to be a realisation from marked point process (MPP), with the resulting state trajectory as a piecewise-deterministic process (PDP). (The relationship between MPPs and PDPs is developed in \cite{Jacobsen}, along with a rigorous description of associated probability measures.) The sequence of changepoints may be estimated numerically, using a variable rate particle filter, leading to a particle approximation of the current posterior state distribution.
+
+In a tracking scenario, changepoints represent the beginning and end of target manoeuvres, each of which is governed by an associated parameter vector (e.g. accelerations). In \cite{Whiteley2011}, a 2D dynamic model is considered in which the accelerations along the Cartesian axes are fixed for the duration of each manoeuvre. In \cite{Godsill2007}, a variation in used in which the target experiences tangential and normal accelerations whose magnitudes are fixed throughout each manoeuvre, but whose directions are specified relative to the target velocity. This intrinsic coordinate model is more complex but also more realistic -- the two components can be thought of as throttle and steering controls.
+
+The aforementioned variable rate tracking models suffer from a lack of degrees of freedom. Both the Cartesian and intrinsic versions have four state variables (two position, two velocity), but only two governing accelerations. The result is that from a given manoeuvre start point, it is not possible to reach every combination of state variables. If the state is fully observed (for example, using radar with Doppler measurements of velocity), this leads to poor tracking performance.
+
+In this paper, we present extensions to the intrinsic coordinate tracking model. First, an augmented version of the 2D model is outlined which addresses the problem of under-parametrisation. Secondly, 3D extensions of the 2D model are discussed for manoeuvring aircraft.
+
+
+
+\section{Variable Rate Particle Filter}
+
+The main focus of this paper is the development of dynamics models for variable rate systems, so only a brief overview of the variable rate particle filter is included here, to motivate the following sections. For a more detailed exposition, see \cite{Godsill2007a,Godsill2007,Whiteley2011}.
+
+We consider a general model from time $0$ to $T$, between which observations, $\{y_1 \dots y_N\}$, are made at times $\{t_1 \dots t_N = T\}$. During this period, an unknown number of changepoints, $K$, occur at times $\{\tau_0 = 0, \tau_1 \dots \tau_K \}$, each with associated changepoint parameters, $\{ u_0, u_1 \dots u_K \}$. The pairs $\{\tau_k, u_k\}$ are the elements of an marked point process (MPP). The latent state is a continuous-time process denoted $x(t)$. Discrete sets containing multiple values over time will be written as, e.g. $y_{1:n} = \{y_1 \dots y_n\}$.
+
+The objective for inference will be to estimate the changepoint sequence up until the current time $\theta_n = \{\tau_{j}, u_{j} \forall j : 0 \leq \tau_j < t_n \}$. It will also be useful to define a variable for the changepoints which occur in the interval $[t_{n-1},t_n)$, $\theta_{n \setminus n-1} = \{\tau_{j}, u_{j} \forall j : t_{n-1} \leq \tau_j < t_n \}$.
+
+For notational simplicity, the following counting variables are introduced to keep track of the most recent changepoint to have occurred,
+%
+\begin{IEEEeqnarray}{rCl}
+ K(t)  & = & \max(k : \tau_k<t) \\
+ K_n   & = & K(t_n)     .
+\end{IEEEeqnarray}
+
+The changepoint sequence is assumed to be a Markov process,
+%
+\begin{IEEEeqnarray}{rCl}
+ \{\tau_k, u_k\} & \sim & p(u_k|\tau_k, \tau_{k-1}, u_{k-1}) p(\tau_k|\tau_{k-1}, u_{k-1}) \label{eq:cp_model}     .
+\end{IEEEeqnarray}
+
+From this, a prior density for the changepoint sequence, $p(\theta_n)$ and the sequence extension $p(\theta_{n \setminus n-1})$ may be written down.
+
+The state dynamics will be governed by a differential equation depending upon the most recent changepoint.
+%
+\begin{IEEEeqnarray}{rCl}
+ dx(t) & = & \mathrm{f}(x(t), \tau_{K(t)}, u_{K(t)}) \label{eq:state_differential_eq}     .
+\end{IEEEeqnarray}
+
+By introducing a new sequence, $\{ x_0, x_1 \dots x_K \}$, which denotes the value of the state at each changepoint (i.e. $x(\tau_k)$), and assuming that an analytic solution exists, a state transition function may be found,
+%
+\begin{IEEEeqnarray}{rCll}
+ x(t) & = & f(x_{K_n}, v_{K_n}, \tau_{K_n}, t) &, \tau_{K_n} \leq t \leq \tau_{K_{n}+1} \label{eq:disc_time_state_trans_func}     .
+\end{IEEEeqnarray}
+
+By choosing $t = \tau_{K_{n}+1}$, this equation specifies the state at the next changepoint time. Similarly, by choosing $t=t_n$, the state at the observation times may be calculated. These points will be denoted $\hat{x}_n$. To complete the model, a probabilistic measurement model must be chosen for the observation process, $p(y_n|\hat{x}_n)$.
+
+The variable rate particle filter (VRPF) sequentially estimates the following changepoint posterior distribution,
+%
+\begin{IEEEeqnarray}{rCl}
+\IEEEeqnarraymulticol{3}{l}{p(\theta_{n}|y_{1:n})} \nonumber \\
+ & \propto & p(y_n|\theta_{n}, y_{1:n-1}) p(\theta_{n \setminus n-1}|\theta_{n-1}) p(\theta_{n-1}|y_{1:n-1}) \label{eq:vrpf_target}     .
+\end{IEEEeqnarray}
+
+Each particle in the approximation is a sequence of changepoints between $0$ and $t_n$. A particle is generated by proposing from the importance distribution,
+%
+\begin{equation}
+ q(\theta_{n}) = \sum_j v_{n-1}^{(j)} \delta_{\theta_{n-1}^{(j)}}(\theta_{n-1}) q(\theta_{n \setminus n-1}|\theta_{n-1}, y_n).
+\end{equation}
+
+The resampling weights $v_{n-1}^{(j)}$ are chosen appropriately to achieve no resampling, normal resampling or auxiliary resampling.
+
+The particle is then weighted according to the ratio of target and proposal densities,
+%
+\begin{IEEEeqnarray}{rCl}
+w_n^{(i)} & = & \frac{ p(\theta_{n}^{(i)}|y_{1:n}) }{ q(\theta_{n}^{(i)}) } \nonumber \\
+    & =       & \frac{w_{n-1}^{(i)}}{v_{n-1}^{(i)}} \times \frac{ p(y_n|\hat{x}_n) p(\theta_{n \setminus n-1}|\theta_{n-1}) }{ q(\theta_{n \setminus n-1}|\theta_{n-1}^{(i)}, y_n) } \label{eq:vrpf_weights}
+\end{IEEEeqnarray}
+
+The normalisation may be enforced by scaling the weights so that they sum to $1$.
+
+For the bootstrap VRPF, the sequence extension transition density is used as the proposal, $q(\theta_{n \setminus n-1}|\theta_{n-1}, y_n) = p(\theta_{n \setminus n-1}|\theta_{n-1})$, resulting in the usual simplification of the importance weights.
+
+Filter performance may be improved by allowing previously proposed changepoints to be modified, either adding resample-move steps \cite{Gilks2001}, or by using the sequential Monte Carlo sampler method of \cite{Whitelet2011}.
+
+The rest of the paper is concerned with suitable choices for the state differential equation (\ref{eq:state_differential_eq}) and the resulting form of the transition function (\ref{eq:disc_time_state_trans_func}).
+
+
+
+\section{2D Intrinsic Coordinate Model}
+
+For the simplest 2D intrinsic coordinate model, the target is treated as a particle subject to two accelerations, one tangential, $a_{T,k}$, and one normal, $a_{N,k}$, to the current velocity. The accelerations are fixed for the duration of a manoeuvre. The continuous-time kinematic state of the target is described by the bearing, $\psi(t)$ (anticlockwise relative to the $x$ axis), and speed $\dot{s}(t)$, as well as the Cartesian coordinates, $x(t)$ and $y(t)$.
+
+Thus, the state and parameter vectors are,
+%
+\begin{IEEEeqnarray}{rCl}
+\mathbf{x}(t) & = & [ x(t), y(t), \psi(t), \dot{s}(t) ]^T \\
+\mathbf{u}_k  & = & [ a_{T,k}, a_{N,k} ]^T
+\end{IEEEeqnarray}
+
+The target dynamics described by the following standard differential equations for curvilinear motion,
+%
+\begin{IEEEeqnarray}{rCl}
+\ddot{s}_t & = & a_{T,K(t)} \label{eq:aT_ode} \\
+\dot{s}_t \dot{\psi}_t & = & a_{N,K(t)} \\
+\dot{x}_t & = & \dot{s}_t \cos(\psi_t) \\
+\dot{y}_t & = & \dot{s}_t \sin(\psi_t)     .
+\end{IEEEeqnarray}
+
+Solving this system of equations yields the following state transition function, where $\Delta t = t - \tau_{K(t)}$,
+%
+\begin{IEEEeqnarray}{rCl}
+\dot{s}(t) & = & \dot{s}_{K(t)} + a_{T,k} \Delta t \label{eq:2D_ICmodel_start} \\
+\psi(t) & = & \psi_{K(t)} + \frac{a_{N,k}}{a_{T,k}} \log \left( \frac{\dot{s}(t)}{\dot{s}_{K(t)}} \right) \\
+x(t) & = & x_{K(t)} \nonumber \\
+     \IEEEeqnarraymulticol{3}{l}{ \quad + \: \frac{ \dot{s}(t)^2 }{ 4 a_{T,k}^2 + a_{N,k}^2 } \left[  a_{N,k} \sin(\psi(t)) + 2 a_{T,k} \cos(\psi(t))  \right]} \nonumber \\
+     \IEEEeqnarraymulticol{3}{l}{ \quad - \: \frac{\dot{s}_{K(t)}^2}{4 a_{T,k}^2 + a_{N,k}^2} \left[  a_{N,k} \sin(\psi_{K(t)}) + 2 a_{T,k} \cos(\psi_{K(t)})  \right]} \\
+y(t) & = & y_{K(t)} \nonumber \\
+     \IEEEeqnarraymulticol{3}{l}{ \quad + \: \frac{ \dot{s}(t)^2 }{ 4 a_{T,k}^2 + a_{N,k}^2 } \left[ -a_{N,k} \cos(\psi(t)) + 2 a_{T,k} \sin(\psi(t))  \right]} \nonumber \\
+     \IEEEeqnarraymulticol{3}{l}{ \quad - \: \frac{\dot{s}_{K(t)}^2}{4 a_{T,k}^2 + a_{N,k}^2} \left[  -a_{N,k} \cos(\psi_{K(t)}) + 2 a_{T,k} \sin(\psi_{K(t)})  \right]} \IEEEeqnarraynumspace \label{eq:2D_ICmodel_stop}      .
+\end{IEEEeqnarray}
+
+Particular care must be taken when $\lim a_{T,k} \rightarrow 0$ or $\lim a_{N,k} \rightarrow 0$ (or both). These cases can be handled using L'H\^{o}pital's rule or by returning to the equations of motion and re-integrating.
+
+A similar dynamic model was presented in \cite{Best1997}. In \cite{Godsill2007}, an additional drag term is included in (\ref{eq:aT_ode}) proportional to the current velocity. This renders the equations unsolvable, and it is necessary to use numerical integration to calculate $x(t)$ and $y(t)$. Although this works acceptably well for a bootstrap implementation, it is computationally expensive. It also causes severe difficulties for resample-move and smoothing algorithms, because it is not possible to calculate the particular accelerations which result in a known state.
+
+The weakness of this model is its under-parametrisation. Two fixed acceleration govern the evolution of four state variables. In one manoeuvre, not all values of $\mathbf{x}(t)$ are achievable (the achievable points form a 2D subspace of the 4D state space). As a result, a VRPF based on this model is not at all resilient to model error. It becomes necessary to include changepoints very regularly in order to match the estimated trajectories to the observations. The problem is especially bad if the state is fully observed, for example by using Doppler measurements of velocity as well as radar for position.
+
+
+
+\section{The Augmented 2D Model}
+
+The solution to the degeneracy of the basic 2D intrinsic coordinate model is to add some more parameters. Here we propose altering the target dynamics by adding a fixed linear velocity,
+%
+\begin{IEEEeqnarray}{rCl}
+\mathbf{u}_k  & = & [ a_{T,k}, a_{N,k}, d_{X,k}, d_{Y,k} ]^T
+\end{IEEEeqnarray}
+%
+\begin{IEEEeqnarray}{rCl}
+\dot{x}_t & = & \dot{s}_t \cos(\psi_t) + d_{X,K(t)} \\
+\dot{y}_t & = & \dot{s}_t \sin(\psi_t) + d_{Y,K(t)}     .
+\end{IEEEeqnarray}
+
+These drift velocities could be considered merely as relaxation terms to account for model error, or they might be instead reflect a real effect in the physical system under consideration. For example, in the case of tracking a ship or an aeroplane, they could represent the current or the wind respectively.
+
+The new state transition function is given by,
+%
+\begin{IEEEeqnarray}{rCl}
+x(t) & = & x_{K(t)} + d_{X,K(t)} \Delta t \nonumber \\
+     \IEEEeqnarraymulticol{3}{l}{ \quad + \: \frac{ \dot{s}(t)^2 }{ 4 a_{T,k}^2 + a_{N,k}^2 } \left[  a_{N,k} \sin(\psi(t)) + 2 a_{T,k} \cos(\psi(t))  \right]} \nonumber \\
+     \IEEEeqnarraymulticol{3}{l}{ \quad - \: \frac{\dot{s}_{K(t)}^2}{4 a_{T,k}^2 + a_{N,k}^2} \left[  a_{N,k} \sin(\psi_{K(t)}) + 2 a_{T,k} \cos(\psi_{K(t)})  \right]} \\
+y(t) & = & y_{K(t)} + d_{Y,K(t)} \Delta t \nonumber \\
+     \IEEEeqnarraymulticol{3}{l}{ \quad + \: \frac{ \dot{s}(t)^2 }{ 4 a_{T,k}^2 + a_{N,k}^2 } \left[ -a_{N,k} \cos(\psi(t)) + 2 a_{T,k} \sin(\psi(t))  \right]} \nonumber \\
+     \IEEEeqnarraymulticol{3}{l}{ \quad - \: \frac{\dot{s}_{K(t)}^2}{4 a_{T,k}^2 + a_{N,k}^2} \left[  -a_{N,k} \cos(\psi_{K(t)}) + 2 a_{T,k} \sin(\psi_{K(t)})  \right]} \IEEEeqnarraynumspace      .
+\end{IEEEeqnarray}
+
+Any value of $\mathbf{x}(t)$ can now be achieved by an appropriate choice of $\mathbf{u}_{K(t)}$.
+
+
+
+\section{3D Intrinsic Coordinate Model}
+
+The intrinsic coordinate dynamic model is a good description of some targets, but so far it has only been described in 2D. In this section, we extend it to 3D.
+
+It is always possible to specify the direction of a tangential acceleration as parallel to the velocity vector. In 2D, the normal acceleration occurs perpendicular to this direction, which is also a unique specification. In 3D, there is a whole plane perpendicular to the tangential direction, so the description becomes more complex. Furthermore, it might seem natural to extend the speed-bearing description of velocity to 3D by adding an elevation angle. In fact, this becomes messy and the resulting equations are not solvable. A new approach is required.
+
+We devise a 3D intrinsic coordinate variable rate model by assuming that motion between changepoints occurs within a plane.
+
+The state vector is redefined using Cartesian coordinates,
+%
+\begin{IEEEeqnarray}{rCl}
+\mathbf{x}(t) & = & [ x(t), y(t), z(t), \dot{x}(t), \dot{y}(t), \dot{z}(t) ]^T \\
+              & = & [ \mathbf{r}(t)^T, \mathbf{v}(t)^T ]^T    .
+\end{IEEEeqnarray}
+
+An orthogonal unit vector basis is defined using tangential, $\mathbf{e}_T(t)$, normal, $\mathbf{e}_N(t)$, and binormal, $\mathbf{e}_B(t)$, directions. The values of these unit vectors at the changepoint times are denoted $\mathbf{e}_{T,k} = \mathbf{e}_T(\tau_k)$, and similarly for the normal and binormal cases.
+ 
+The tangential unit vector is parallel to the velocity,
+%
+\begin{IEEEeqnarray}{rCl}
+\mathbf{e}_T(t) & = & \frac{ \mathbf{v}(t) }{ |\mathbf{v}(t)| }     .
+\end{IEEEeqnarray}
+
+The binormal unit vector specifies the plane in which motion occurs, and is thus assumed to be fixed between changepoints,
+
+\begin{IEEEeqnarray}{rCl}
+\mathbf{e}_B(t) & = & \mathbf{e}_{B,K(t)}     .
+\end{IEEEeqnarray}
+
+We introduce a new parameter, $\phi_k$, which is the angle between $\mathbf{e}_{B,k}$ and the vertical plane containing $\mathbf{e}_{T,k}$. Thus, $\mathbf{e}_{B,k}$ is determined by the following three equations,
+
+\begin{tabular}{m{3cm}m{4cm}}
+\renewcommand{\arraystretch}{1.5}
+\\
+Perpendicular to the tangential vector: & $\mathbf{e}_{T,k} \cdot \mathbf{e}_{B,k} = 0$ \\
+Unit magnitude:                         & $\left| \mathbf{e}_{B,k} \right| = 1$         \\
+Angle $\phi_{k}$ to the vertical plane: & $\mathbf{e}_{B,k} \cdot \frac{\mathbf{e}_{B,k} \times \mathbf{k}}{\left|\mathbf{e}_{T,k} \times \mathbf{k}\right|} = \sin(\phi_{k})$ \\ \\
+\end{tabular}
+
+where $\mathbf{k}$ is the $z$ axis unit vector. Solving these, it may be shown that if $\mathbf{e}_{T,k} = [e_{T1,k}, e_{T2,k}, e_{T3,k}]^T$, then the binormal unit vector is given by,
+%
+\begin{IEEEeqnarray}{rCl}
+ \mathbf{e}_{B,k} = \begin{bmatrix}
+                    \frac{e_{T2,k} \sin(\phi_k) - e_{T1,k} e_{T3,k} \cos(\phi_k)}{\sqrt{e_{T1,k}^2+e_{T2,k}^2}} \\
+                    \frac{-e_{T1,k} \sin(\phi_k) - e_{T2,k} e_{T3,k} \cos(\phi_k)}{\sqrt{e_{T1,k}^2+e_{T2,k}^2}} \\
+                    \cos(\phi_k) \sqrt{e_{T1,k}^2+e_{T2,k}^2}
+                \end{bmatrix}     .
+\end{IEEEeqnarray}
+
+Finally, the normal unit vector is given by,
+%
+\begin{IEEEeqnarray}{rCl}
+ \mathbf{e}_{N,k} = \mathbf{e}_{B,k} \times \mathbf{e}_{T,k}
+\end{IEEEeqnarray}
+
+The entire motion occurs within the plane spanned by $\mathbf{e}_{T,k}$ and $\mathbf{e}_{N,k}$. It is possible to define a transformation which maps this plane onto the $x-y$ plane, reducing it to the 2D scenario for which the state equations have already been solved. The transformation which achieves this is,
+%
+\begin{IEEEeqnarray}{rCl}
+\mathbf{r}_k' & = & \mathbf{0} \nonumber \\
+\mathbf{v}_k' & = & \mathbf{R}^{-1} \mathbf{v}_k
+\end{IEEEeqnarray}
+
+Crucially, $\dot{z}'_k=0$. Equations (\ref{eq:2D_ICmodel_start}--\ref{eq:2D_ICmodel_stop}) are then used to find $\mathbf{x}'(t)$ for $\tau_k < t < \tau_{k+1}$. Finally, the inverse transformation is applied,
+%
+\begin{IEEEeqnarray}{rCl}
+\mathbf{r}(t) & = & \mathbf{R} \mathbf{r}'(t) + \mathbf{r}_{k} \nonumber \\
+\mathbf{v}(t) & = & \mathbf{R} \mathbf{v}'(t)
+\end{IEEEeqnarray}
+
+Thus we have an analytical dynamic model 
+
+
+
+The 3D model with planar motion segments.
+
+
+
+\section{3D Model for Highly Manoeuvrable Targets}
+
+If space and time, put the complicated model here.
+
+
+
+
+
+
+
+
+
+% An example of a floating figure using the graphicx package.
+% Note that \label must occur AFTER (or within) \caption.
+% For figures, \caption should occur after the \includegraphics.
+% Note that IEEEtran v1.7 and later has special internal code that
+% is designed to preserve the operation of \label within \caption
+% even when the captionsoff option is in effect. However, because
+% of issues like this, it may be the safest practice to put all your
+% \label just after \caption rather than within \caption{}.
+%
+% Reminder: the "draftcls" or "draftclsnofoot", not "draft", class
+% option should be used if it is desired that the figures are to be
+% displayed while in draft mode.
+%
+%\begin{figure}[!t]
+%\centering
+%\includegraphics[width=2.5in]{myfigure}
+% where an .eps filename suffix will be assumed under latex,
+% and a .pdf suffix will be assumed for pdflatex; or what has been declared
+% via \DeclareGraphicsExtensions.
+%\caption{Simulation Results}
+%\label{fig_sim}
+%\end{figure}
+
+% Note that IEEE typically puts floats only at the top, even when this
+% results in a large percentage of a column being occupied by floats.
+
+
+% An example of a double column floating figure using two subfigures.
+% (The subfig.sty package must be loaded for this to work.)
+% The subfigure \label commands are set within each subfloat command, the
+% \label for the overall figure must come after \caption.
+% \hfil must be used as a separator to get equal spacing.
+% The subfigure.sty package works much the same way, except \subfigure is
+% used instead of \subfloat.
+%
+%\begin{figure*}[!t]
+%\centerline{\subfloat[Case I]\includegraphics[width=2.5in]{subfigcase1}%
+%\label{fig_first_case}}
+%\hfil
+%\subfloat[Case II]{\includegraphics[width=2.5in]{subfigcase2}%
+%\label{fig_second_case}}}
+%\caption{Simulation results}
+%\label{fig_sim}
+%\end{figure*}
+%
+% Note that often IEEE papers with subfigures do not employ subfigure
+% captions (using the optional argument to \subfloat), but instead will
+% reference/describe all of them (a), (b), etc., within the main caption.
+
+
+% An example of a floating table. Note that, for IEEE style tables, the
+% \caption command should come BEFORE the table. Table text will default to
+% \footnotesize as IEEE normally uses this smaller font for tables.
+% The \label must come after \caption as always.
+%
+%\begin{table}[!t]
+%% increase table row spacing, adjust to taste
+%\renewcommand{\arraystretch}{1.3}
+% if using array.sty, it might be a good idea to tweak the value of
+% \extrarowheight as needed to properly center the text within the cells
+%\caption{An Example of a Table}
+%\label{table_example}
+%\centering
+%% Some packages, such as MDW tools, offer better commands for making tables
+%% than the plain LaTeX2e tabular which is used here.
+%\begin{tabular}{|c||c|}
+%\hline
+%One & Two\\
+%\hline
+%Three & Four\\
+%\hline
+%\end{tabular}
+%\end{table}
+
+
+% Note that IEEE does not put floats in the very first column - or typically
+% anywhere on the first page for that matter. Also, in-text middle ("here")
+% positioning is not used. Most IEEE journals/conferences use top floats
+% exclusively. Note that, LaTeX2e, unlike IEEE journals/conferences, places
+% footnotes above bottom floats. This can be corrected via the \fnbelowfloat
+% command of the stfloats package.
+
+
+
+\section{Conclusion}
+The conclusion goes here.
+
+
+
+
+% conference papers do not normally have an appendix
+
+
+% use section* for acknowledgement
+%\section*{Acknowledgment}
+%The authors would like to thank...
+
+
+
+
+
+% trigger a \newpage just before the given reference
+% number - used to balance the columns on the last page
+% adjust value as needed - may need to be readjusted if
+% the document is modified later
+%\IEEEtriggeratref{8}
+% The "triggered" command can be changed if desired:
+%\IEEEtriggercmd{\enlargethispage{-5in}}
+
+% references section
+
+\bibliographystyle{IEEEtran}
+\bibliography{D:/pb404/Dropbox/PhD/OTBib}
+
+
+
+
+
+% that's all folks
+\end{document}
+
+
