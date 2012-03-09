@@ -17,18 +17,21 @@
 \usepackage{color}
 
 
+\interdisplaylinepenalty=1000
+
+\newenvironment{meta}[0]{\color{red} \em}{}
+
 % correct bad hyphenation here
 \hyphenation{}
 
 
+
 \begin{document}
+
+
 
 \title{Variable Rate Models for Tracking}
 
-
-% author names and affiliations
-% use a multiple column layout for up to three different
-% affiliations
 \author{
 \IEEEauthorblockN{Pete Bunch\\ and Simon Godsill}
 \IEEEauthorblockA{Signal Processing and Communications Laboratory\\
@@ -36,12 +39,14 @@ Cambridge University Engineering Dept., UK\\
 Email: \{pb404, sjg30\}@eng.cam.ac.uk}
 }
 
-% make the title area
 \maketitle
 
+
+
 \begin{abstract}
-%\boldmath
-The abstract goes here.
+
+
+
 \end{abstract}
 
 
@@ -50,7 +55,7 @@ The abstract goes here.
 
 Tracking is the task of inferring kinematic state of a target (position, velocity, etc.) over time from a set noisy or partial observations. The state of the target is a continuous process and is likely to be highly structured. However, many tracking systems model target dynamics as a discrete-time Markov process \cite{Li2003}. This assumption has the advantage of simplicity -- by discretising the state at observation times, we arrive at a hidden Markov model, with which standard Kalman \cite{Anderson1979} or particle \cite{Cappe2007,Doucet2009} filtering and smoothing methods may be used. The disadvantage of such an assumption is that it may be a poor reflection of the system dynamics, disregarding long-term temporal structure in the state trajectory.
 
-Recently, variable rate models have been developed for tracking, \cite{Godsill2007a,Godsill2007,Whiteley2011}. These models treat the kinematic state as a continuous process which is deterministic conditional upon an underlying sequence of changepoint times and motion parameters. This underlying changepoint sequence may be considered to be a realisation from marked point process (MPP), with the resulting state trajectory as a piecewise-deterministic process (PDP). (The relationship between MPPs and PDPs is developed in \cite{Jacobsen}, along with a rigorous description of associated probability measures.) The sequence of changepoints may be estimated numerically, using a variable rate particle filter, leading to a particle approximation of the current posterior state distribution.
+Recently, variable rate models have been developed for tracking, \cite{Godsill2007a,Godsill2007,Whiteley2011}. These models treat the kinematic state as a continuous process which is deterministic conditional upon an underlying sequence of changepoint times and motion parameters. This underlying changepoint sequence may be considered to be a realisation from marked point process (MPP), with the resulting state trajectory as a piecewise-deterministic process (PDP). (The relationship between MPPs and PDPs is developed in \cite{Jacobsen2006}, along with a rigorous description of associated probability measures.) The sequence of changepoints may be estimated numerically, using a variable rate particle filter, leading to a particle approximation of the current posterior state distribution.
 
 In a tracking scenario, changepoints represent the beginning and end of target manoeuvres, each of which is governed by an associated parameter vector (e.g. accelerations). In \cite{Whiteley2011}, a 2D dynamic model is considered in which the accelerations along the Cartesian axes are fixed for the duration of each manoeuvre. In \cite{Godsill2007}, a variation in used in which the target experiences tangential and normal accelerations whose magnitudes are fixed throughout each manoeuvre, but whose directions are specified relative to the target velocity. This intrinsic coordinate model is more complex but also more realistic -- the two components can be thought of as throttle and steering controls.
 
@@ -183,7 +188,7 @@ The solution to the degeneracy of the basic 2D intrinsic coordinate model is to 
 \dot{y}_t & = & \dot{s}_t \sin(\psi_t) + d_{Y,K(t)}     .
 \end{IEEEeqnarray}
 
-These drift velocities could be considered merely as relaxation terms to account for model error, or they might be instead reflect a real effect in the physical system under consideration. For example, in the case of tracking a ship or an aeroplane, they could represent the current or the wind respectively.
+These drift velocities could be considered merely as relaxation terms to account for model error, or they might instead reflect a real effect in the physical system under consideration. For example, in the case of tracking a ship or an aeroplane, they could represent the current or the wind respectively.
 
 The new state transition function is given by,
 %
@@ -216,7 +221,7 @@ The state vector is redefined using Cartesian coordinates,
 \end{IEEEeqnarray}
 
 An orthogonal unit vector basis is defined using tangential, $\mathbf{e}_T(t)$, normal, $\mathbf{e}_N(t)$, and binormal, $\mathbf{e}_B(t)$, directions. The values of these unit vectors at the changepoint times are denoted $\mathbf{e}_{T,k} = \mathbf{e}_T(\tau_k)$, and similarly for the normal and binormal cases.
- 
+
 The tangential unit vector is parallel to the velocity,
 %
 \begin{IEEEeqnarray}{rCl}
@@ -285,132 +290,124 @@ If space and time, put the complicated model here.
 
 \section{Simulations}
 
-The new intrinsic coordinate models were demonstrated by simulating a number of trajectories and then testing a VRPF on the artificial data.
+The new intrinsic coordinate models were tested with a VRPF implemented in MATLAB on a benchmark fighter aeroplane trajectory taken from \cite{Blair1998}, discarding the altitude components for the 2D model. For these tests, the parameters (perpendicular accelerations and drift velocities) are assumed to be independent Gaussian variables. However, any distribution could be used. The standard deviations are $\sigma_T = 10 m/s^2$ and $\sigma_N = 50 m/s^2$ for the tangential and normal accelerations respectively. For the augmented model, the drift velocities use standard deviation $\sigma_X = \sigma_Y = 10 m/s$. The changepoint intervals are assumed to be gamma distributed with shape and scale parameters 7 and 5 respectively.
 
-The 
+A radar observation model is used, measuring bearing and range in the 2D case and also elevation in the 3D case, each subject to Gaussian noise. The standard deviation of the angle measurement errors is $\sigma_B = \sigma_E = 0.5^{\circ}$ and that for the range, $\sigma_R = 100m$. In addition, we consider cases in which the range rate (velocity component in the direction towards the sensor) is measured, also with Gaussian errors with standard deviation $\sigma_{RR} = 10m/s$. Measurements are taken every second. An example realisation of the problem is shown in Fig.~\ref{fig:2D_ground_truth}.
 
+\begin{figure}
+\centering
+\includegraphics[width=0.95\columnwidth]{images/benchmark_problem.pdf}
+\caption{Benchmark trajectory (dashed) and observations (crosses). Sensor is at (0,0).}
+\label{fig:2D_ground_truth}
+\end{figure}
 
-
-
-% An example of a floating figure using the graphicx package.
-% Note that \label must occur AFTER (or within) \caption.
-% For figures, \caption should occur after the \includegraphics.
-% Note that IEEEtran v1.7 and later has special internal code that
-% is designed to preserve the operation of \label within \caption
-% even when the captionsoff option is in effect. However, because
-% of issues like this, it may be the safest practice to put all your
-% \label just after \caption rather than within \caption{}.
-%
-% Reminder: the "draftcls" or "draftclsnofoot", not "draft", class
-% option should be used if it is desired that the figures are to be
-% displayed while in draft mode.
-%
-%\begin{figure}[!t]
-%\centering
-%\includegraphics[width=2.5in]{myfigure}
-% where an .eps filename suffix will be assumed under latex,
-% and a .pdf suffix will be assumed for pdflatex; or what has been declared
-% via \DeclareGraphicsExtensions.
-%\caption{Simulation Results}
-%\label{fig_sim}
-%\end{figure}
-
-% Note that IEEE typically puts floats only at the top, even when this
-% results in a large percentage of a column being occupied by floats.
+All tests were conducted using resample-move steps. 50 filter particles were used for 2D tests and 200 for 3D tests.
 
 
-% An example of a double column floating figure using two subfigures.
-% (The subfig.sty package must be loaded for this to work.)
-% The subfigure \label commands are set within each subfloat command, the
-% \label for the overall figure must come after \caption.
-% \hfil must be used as a separator to get equal spacing.
-% The subfigure.sty package works much the same way, except \subfigure is
-% used instead of \subfloat.
-%
-%\begin{figure*}[!t]
-%\centerline{\subfloat[Case I]\includegraphics[width=2.5in]{subfigcase1}%
-%\label{fig_first_case}}
-%\hfil
-%\subfloat[Case II]{\includegraphics[width=2.5in]{subfigcase2}%
-%\label{fig_second_case}}}
-%\caption{Simulation results}
-%\label{fig_sim}
-%\end{figure*}
-%
-% Note that often IEEE papers with subfigures do not employ subfigure
-% captions (using the optional argument to \subfloat), but instead will
-% reference/describe all of them (a), (b), etc., within the main caption.
+
+\subsection{2D Model with Observed Velocity}
+
+The combination of the basic 2D model and a VRPF has been demonstrated in \cite{Godsill2007} and has been proven effective. However, when the velocity is observed as well as the position (for example using Doppler radar), this can cause the VRPF to produce worse estimates or even to lose track, despite the fact that there is now more information available. This phenomenon is shown in Fig.~\ref{fig:2D_Model1}. By introducing additional drift velocity parameters, the problem is alleviated. The result of applying the augmented 2D model to the same problem is shown in Fig.~\ref{fig:2D_Model2}.
+
+\begin{figure}
+\centering
+\subfloat[Without velocity observations]{\includegraphics[width=0.95\columnwidth]{images/M1withoutVel.pdf}}
+\\
+\subfloat[With velocity observations]{\includegraphics[width=0.95\columnwidth]{images/M1withVel.pdf}}
+\caption{Variable rate particle filter results using basic 2D model, with and without range rate observations. Dotted line shows ground truth. Solid lines shown particle estimates. Stars show particle changepoints.}
+\label{fig:2D_Model1}
+\end{figure}
+
+\begin{figure}
+\centering
+\subfloat[Without velocity observations]{\includegraphics[width=0.95\columnwidth]{images/M2withoutVel.pdf}}
+\\
+\subfloat[With velocity observations]{\includegraphics[width=0.95\columnwidth]{images/M2withVel.pdf}}
+\caption{Variable rate particle filter results using augmented 2D model, with and without range rate observations. Dotted line shows ground truth. Solid lines shown particle estimates. Stars show particle changepoints.}
+\label{fig:2D_Model2}
+\end{figure}
+
+The basic and augmented models were tested on 100 realisations of the problem, with and without velocity observations (i.e. using different seeds for the pseudo-random number generator for producing the observations and running the algorithms). The mean error performance in position and velocity is shown in table~\ref{}. Two measures of error are compared: one of the filter state estimate and the other of a basic smoothing estimate - calculating the entire state trajectory from the final filter estimate, in the similar manner to the filter-smoother of \cite{Kitagawa1996}.
+
+\begin{table}
+\renewcommand{\arraystretch}{1.3}
+\caption{2D VRPF tracking performance of basic and augmented intrinsic coordinate models with and without velocity observations}
+\label{tab:2D_performance}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+      & Observed  & \multicolumn{2}{c|}{Filter RMSEs}  & \multicolumn{2}{c|}{Smoother RMSEs}  \\
+Model & Velocity? & Position & Velocity                & Position & Velocity                  \\
+      &           & ($m$)    & ($m/s$)                 & ($m$)    & ($m/s$)                   \\
+\hline
+Basic     & no  & 884  & 188 & 476  & 65 \\
+Basic     & yes & 1715 & 174 & 1156 & 105 \\
+\hline
+Augmented & no  & 773  & 191 & 314  & 52 \\
+Augmented & yes & 1392 & 170 & 734  & 76  \\
+\hline
+\end{tabular}
+\end{table}
+
+The augmented model results in a significant reduction in estimation errors, especially when the velocity is observed. Note that if the precision of the range rate measurements is increased then track loss becomes more common, and begins to affect the augmented model as well.
 
 
-% An example of a floating table. Note that, for IEEE style tables, the
-% \caption command should come BEFORE the table. Table text will default to
-% \footnotesize as IEEE normally uses this smaller font for tables.
-% The \label must come after \caption as always.
-%
-%\begin{table}[!t]
-%% increase table row spacing, adjust to taste
-%\renewcommand{\arraystretch}{1.3}
-% if using array.sty, it might be a good idea to tweak the value of
-% \extrarowheight as needed to properly center the text within the cells
-%\caption{An Example of a Table}
-%\label{table_example}
-%\centering
-%% Some packages, such as MDW tools, offer better commands for making tables
-%% than the plain LaTeX2e tabular which is used here.
-%\begin{tabular}{|c||c|}
-%\hline
-%One & Two\\
-%\hline
-%Three & Four\\
-%\hline
-%\end{tabular}
-%\end{table}
 
+\subsection{3D Intrinsic Coordinate Model}
 
-% Note that IEEE does not put floats in the very first column - or typically
-% anywhere on the first page for that matter. Also, in-text middle ("here")
-% positioning is not used. Most IEEE journals/conferences use top floats
-% exclusively. Note that, LaTeX2e, unlike IEEE journals/conferences, places
-% footnotes above bottom floats. This can be corrected via the \fnbelowfloat
-% command of the stfloats package.
+Here we demonstrate the 3D intrinsic coordinate model, and compare it to the Cartesian equivalent used in \cite{Whiteley2007a,Whiteley2011}. The same trajectory is used as before, but this time the altitude components are not discarded. An example realisation is shown in Fig.~\ref{fig:3D_ground_truth}.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.95\columnwidth]{images/3Dbenchmark_problem.pdf}
+\caption{Benchmark trajectory (dashed) and observations (crosses). Sensor is at (0,0).}
+\label{fig:3D_ground_truth}
+\end{figure}
+
+The results of applying the basic 3D intrinsic coordinate and Cartesian models to this data set are show in Fig.~\ref{fig:3D_CartesianIntrinsic}.
+
+\begin{figure}
+\centering
+\subfloat[Cartesian]{\includegraphics[width=0.95\columnwidth]{images/3DCartesian.pdf}}
+\\
+\subfloat[Intrinsic]{\includegraphics[width=0.95\columnwidth]{images/3DIntrinsic.pdf}}
+\caption{Variable rate particle filter results using Cartesian and intrinsic coordinate dynamic models. Dotted line shows ground truth. Solid lines shown particle estimates. Stars show particle changepoints. Note the different scale in the $z$ axis leading to greatly exaggerated errors in altitude.}
+\label{fig:3D_CartesianIntrinsic}
+\end{figure}
+
+Testing on 100 realisations, the average error performance is shown in table~\ref{}.
+
+\begin{table}
+\renewcommand{\arraystretch}{1.3}
+\caption{3D VRPF tracking performance of basic intrinsic coordinate and Cartesian models}
+\label{tab:3D_performance}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+      & Observed  & \multicolumn{2}{c|}{Filter RMSEs}  & \multicolumn{2}{c|}{Smoother RMSEs}  \\
+Model & Velocity? & Position & Velocity                & Position & Velocity                  \\
+      &           & ($m$)    & ($m/s$)                 & ($m$)    & ($m/s$)                   \\
+\hline
+Intrinsic & no  &  &  &  &  \\
+\hline
+Cartesian & no  &  &  &  &  \\
+\hline
+\end{tabular}
+\end{table}
+
+The intrinsic coordinate model consistently outperforms the Cartesian version.
+
+These is plenty of scope for improving these models. Clearly, there is more prior information about aircraft in flight which could be incorporated. For example, a predilection for level flight could be quantified through the choice of the distribution of $\phi_k$, the angle of the plane of motion, which is currently uniform.
 
 
 
 \section{Conclusion}
-The conclusion goes here.
+
+Dynamic tracking models for use with variable rate particle filters have been developed. Variable rate models treat the state as a deterministic continuous-time process conditional on a sequence of changepoints and motion parameters. Previously, a system has been developed which models targets as particles moving under the influence of tangential and normal accelerations. These have been developed in two ways. First, additional parameters have been introduced to improve the filter performance when the velocity is observed, for example through the use of Doppler measurements. Second, the model has been extended for use in 3D, where it achieves better state estimation performance than a Cartesian model.
 
 
-
-
-% conference papers do not normally have an appendix
-
-
-% use section* for acknowledgement
-%\section*{Acknowledgment}
-%The authors would like to thank...
-
-
-
-
-
-% trigger a \newpage just before the given reference
-% number - used to balance the columns on the last page
-% adjust value as needed - may need to be readjusted if
-% the document is modified later
-%\IEEEtriggeratref{8}
-% The "triggered" command can be changed if desired:
-%\IEEEtriggercmd{\enlargethispage{-5in}}
-
-% references section
 
 \bibliographystyle{IEEEtran}
 \bibliography{D:/pb404/Dropbox/PhD/OTBib}
 
-
-
-
-
-% that's all folks
 \end{document}
-
-

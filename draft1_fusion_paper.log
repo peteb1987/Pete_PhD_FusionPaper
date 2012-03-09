@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2012.1.9)  7 MAR 2012 18:58
+This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2012.1.9)  9 MAR 2012 17:22
 entering extended mode
 **draft1_fusion_paper.tex
 (D:\pb404\VariableRateAlgorithms\FUSION_paper\draft1_fusion_paper.tex
@@ -284,18 +284,18 @@ File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 Package color Info: Driver file: pdftex.def on input line 130.
 )
 (D:\pb404\VariableRateAlgorithms\FUSION_paper\draft1_fusion_paper.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -312,23 +312,20 @@ LaTeX Font Info:    ... okay on input line 24.
 )
 Package caption Info: Begin \AtBeginDocument code.
 Package caption3 Info: subfig package 1.2 or 1.3 is loaded.
-LaTeX Info: Redefining \subref on input line 24.
+LaTeX Info: Redefining \subref on input line 29.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 40.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 42.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\omsptm.fd"
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 40.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 42.
+LaTeX Font Info:    Try loading font information for U+msa on input line 70.
 
-
-LaTeX Warning: Citation `Jacobsen' on page 1 undefined on input line 53.
-
-LaTeX Font Info:    Try loading font information for U+msa on input line 67.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 67.
+LaTeX Font Info:    Try loading font information for U+msb on input line 70.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
@@ -336,16 +333,68 @@ File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 
 
 ]
-Overfull \hbox (18.19759pt too wide) in alignment at lines 154--163
+Overfull \hbox (18.19759pt too wide) in alignment at lines 157--166
  [] [] [] [][]
  []
 
 [2]
-Overfull \hbox (14.69753pt too wide) in alignment at lines 190--197
+Overfull \hbox (14.69753pt too wide) in alignment at lines 193--200
  [] [] [] [][]
  []
 
-(D:\pb404\VariableRateAlgorithms\FUSION_paper\draft1_fusion_paper.bbl [3])
+[3] <images/benchmark_problem.pdf, id=26, 289.08pt x 216.81pt>
+File: images/benchmark_problem.pdf Graphic file (type pdf)
+
+<use images/benchmark_problem.pdf>
+<images/M1withoutVel.pdf, id=27, 289.08pt x 216.81pt>
+File: images/M1withoutVel.pdf Graphic file (type pdf)
+
+<use images/M1withoutVel.pdf>
+<images/M1withVel.pdf, id=28, 289.08pt x 216.81pt>
+File: images/M1withVel.pdf Graphic file (type pdf)
+ <use images/M1withVel.pdf>
+<images/M2withoutVel.pdf, id=29, 289.08pt x 216.81pt>
+File: images/M2withoutVel.pdf Graphic file (type pdf)
+
+<use images/M2withoutVel.pdf>
+<images/M2withVel.pdf, id=30, 289.08pt x 216.81pt>
+File: images/M2withVel.pdf Graphic file (type pdf)
+ <use images/M2withVel.pdf>
+
+LaTeX Warning: Reference `' on page 4 undefined on input line 328.
+
+
+Underfull \vbox (badness 1087) has occurred while \output is active []
+
+ [4 <D:/pb404/VariableRateAlgorithms/FUSION_paper/images/benchmark_problem.pdf>
+ <D:/pb404/VariableRateAlgorithms/FUSION_paper/images/M1withoutVel.pdf> <D:/pb4
+04/VariableRateAlgorithms/FUSION_paper/images/M1withVel.pdf>]
+<images/3Dbenchmark_problem.pdf, id=47, 289.08pt x 216.81pt>
+File: images/3Dbenchmark_problem.pdf Graphic file (type pdf)
+
+<use images/3Dbenchmark_problem.pdf>
+<images/3DCartesian.pdf, id=48, 289.08pt x 216.81pt>
+File: images/3DCartesian.pdf Graphic file (type pdf)
+
+<use images/3DCartesian.pdf>
+<images/3DIntrinsic.pdf, id=49, 289.08pt x 216.81pt>
+File: images/3DIntrinsic.pdf Graphic file (type pdf)
+
+<use images/3DIntrinsic.pdf>
+
+LaTeX Warning: Reference `' on page 5 undefined on input line 376.
+
+[5 <D:/pb404/VariableRateAlgorithms/FUSION_paper/images/M2withoutVel.pdf> <D:/p
+b404/VariableRateAlgorithms/FUSION_paper/images/M2withVel.pdf> <D:/pb404/Variab
+leRateAlgorithms/FUSION_paper/images/3Dbenchmark_problem.pdf>]
+(D:\pb404\VariableRateAlgorithms\FUSION_paper\draft1_fusion_paper.bbl
+** WARNING: IEEEtran.bst: No hyphenation pattern has been
+** loaded for the language `English'. Using the pattern for
+** the default language instead.
+** WARNING: IEEEtran.bst: No hyphenation pattern has been
+** loaded for the language `English'. Using the pattern for
+** the default language instead.
+)
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -357,21 +406,21 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[4
-
-] (D:\pb404\VariableRateAlgorithms\FUSION_paper\draft1_fusion_paper.aux)
+[6 <D:/pb404/VariableRateAlgorithms/FUSION_paper/images/3DCartesian.pdf> <D:/pb
+404/VariableRateAlgorithms/FUSION_paper/images/3DIntrinsic.pdf>]
+(D:\pb404\VariableRateAlgorithms\FUSION_paper\draft1_fusion_paper.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 3730 strings out of 494019
- 55415 string characters out of 3143883
- 129127 words of memory out of 3000000
- 6976 multiletter control sequences out of 15000+200000
- 40461 words of font info for 88 fonts, out of 3000000 for 9000
+ 3792 strings out of 494019
+ 56757 string characters out of 3143883
+ 129212 words of memory out of 3000000
+ 7027 multiletter control sequences out of 15000+200000
+ 43321 words of font info for 91 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 36i,15n,38p,833b,340s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 36i,15n,45p,836b,321s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Progra
 m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program 
 Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Program Fil
@@ -379,18 +428,19 @@ es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files
  (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files (
 x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files (x86
 )/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files (x86)/M
-iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (x86)/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files (x86)/MiKTeX 2
-.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86)/MiKTeX 2.9/f
-onts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fon
-ts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
-type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/typ
-e1/urw/times/utmb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/time
-s/utmbi8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.p
-fb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on draft1_fusion_paper.pdf (4 pages, 194863 bytes).
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files (x86)/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (x86)/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files (x86)/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmsy5.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/
+urw/times/utmb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/u
+tmbi8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb>
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on draft1_fusion_paper.pdf (6 pages, 300415 bytes).
 PDF statistics:
- 80 PDF objects out of 1000 (max. 8388607)
+ 130 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 
