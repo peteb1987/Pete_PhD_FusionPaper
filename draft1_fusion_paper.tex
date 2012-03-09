@@ -207,11 +207,11 @@ Any value of $\mathbf{x}(t)$ can now be achieved by an appropriate choice of $\m
 
 \section{3D Intrinsic Coordinate Model}
 
-The intrinsic coordinate dynamic model is a good description of some targets, but so far it has only been described in 2D. In this section, we extend it to 3D.
+The intrinsic coordinate dynamic model is a good reflection of some targets, but so far it has only been described in 2D. In this section, we extend it to 3D.
 
-It is always possible to specify the direction of a tangential acceleration as parallel to the velocity vector. In 2D, the normal acceleration occurs perpendicular to this direction, which is also a unique specification. In 3D, there is a whole plane perpendicular to the tangential direction, so the description becomes more complex. Furthermore, it might seem natural to extend the speed-bearing description of velocity to 3D by adding an elevation angle. In fact, this becomes messy and the resulting equations are not solvable. A new approach is required.
+It is always possible to specify the direction of a tangential acceleration as parallel to the velocity vector. In 2D, the normal acceleration occurs in the direction perpendicular to this, which is also unique. In 3D, there is a whole plane perpendicular to the velocity, so an additional parameter is required to specify the direction of the normal acceleration. Furthermore, it might seem natural to extend the speed-bearing description of velocity to 3D by adding an elevation angle. In fact, this becomes messy and the resulting equations are not solvable. A new approach is required.
 
-We devise a 3D intrinsic coordinate variable rate model by assuming that motion between changepoints occurs within a plane. Thus, the path followed by the target is a piecewise-planar trajectory.
+We first devise a 3D intrinsic coordinate variable rate model by assuming that motion between changepoints occurs within a plane. Thus, the path followed by the target is a piecewise-planar trajectory.
 
 The state vector is redefined using Cartesian coordinates,
 %
@@ -220,28 +220,30 @@ The state vector is redefined using Cartesian coordinates,
               & = & [ \mathbf{r}(t)^T, \mathbf{v}(t)^T ]^T    .
 \end{IEEEeqnarray}
 
-An orthogonal unit vector basis is defined using tangential, $\mathbf{e}_T(t)$, normal, $\mathbf{e}_N(t)$, and binormal, $\mathbf{e}_B(t)$, directions. The values of these unit vectors at the changepoint times are denoted $\mathbf{e}_{T,k} = \mathbf{e}_T(\tau_k)$, and similarly for the normal and binormal cases.
+We proceed by defining a set of orthogonal unit vectors in the tangential (parallel to the velocity), normal (parallel to the component of the acceleration perpendicular to the velocity), and binormal (perpendicular to the the previous two) directions. These are written as $\mathbf{e}_T(t)$, $\mathbf{e}_N(t)$, and $\mathbf{e}_B(t)$ respectively. The values at the changepoint times are denoted $\mathbf{e}_{T,k} = \mathbf{e}_T(\tau_k)$, and similarly for the normal and binormal cases.
 
-The tangential unit vector is parallel to the velocity,
+The tangential unit vector is defined first as,
 %
 \begin{IEEEeqnarray}{rCl}
-\mathbf{e}_T(t) & = & \frac{ \mathbf{v}(t) }{ |\mathbf{v}(t)| }     .
+\mathbf{e}_T(t) & = & \frac{\mathbf{v}(t)}{|\mathbf{v}(t)|}     .
 \end{IEEEeqnarray}
 
-The binormal unit vector specifies the plane in which motion occurs, and is thus assumed to be fixed between changepoints,
-
+The binormal unit vector specifies the plane in which motion occurs. It is this which is assumed to be fixed between changepoints,
+%
 \begin{IEEEeqnarray}{rCl}
 \mathbf{e}_B(t) & = & \mathbf{e}_{B,K(t)}     .
 \end{IEEEeqnarray}
 
-We introduce a new parameter, $\phi_k$, which is the angle between $\mathbf{e}_{B,k}$ and the vertical plane containing $\mathbf{e}_{T,k}$. Thus, $\mathbf{e}_{B,k}$ is determined by the following three equations,
+As noted above, there is an ambiguity in the directions of the normal and binormal vectors. We introduce a new parameter, $\phi_k$, which is the angle between $\mathbf{e}_{B,k}$ and the vertical plane containing $\mathbf{e}_{T,k}$. Thus, $\mathbf{e}_{B,k}$ is determined by the following three equations,
 
-\begin{tabular}{m{3cm}m{4cm}}
+\begin{tabular}{lm{4cm}}
 \renewcommand{\arraystretch}{1.5}
 \\
-Perpendicular to the tangential vector: & $\mathbf{e}_{T,k} \cdot \mathbf{e}_{B,k} = 0$ \\
+Perpendicular to the                    & $\mathbf{e}_{T,k} \cdot \mathbf{e}_{B,k} = 0$ \\
+tangential vector:                      &  \\
 Unit magnitude:                         & $\left| \mathbf{e}_{B,k} \right| = 1$         \\
-Angle $\phi_{k}$ to the vertical plane: & $\mathbf{e}_{B,k} \cdot \frac{\mathbf{e}_{T,k} \times \mathbf{k}}{\left|\mathbf{e}_{T,k} \times \mathbf{k}\right|} = \sin(\phi_{k})$ \\ \\
+Angle $\phi_{k}$ to the                 &  \\
+vertical plane:                         & $\mathbf{e}_{B,k} \cdot \frac{\mathbf{e}_{T,k} \times \mathbf{k}}{\left|\mathbf{e}_{T,k} \times \mathbf{k}\right|} = \sin(\phi_{k})$ \\ \\
 \end{tabular}
 
 where $\mathbf{k}$ is the $z$ axis unit vector. Solving these, it may be shown that if $\mathbf{e}_{T,k} = [e_{T1,k}, e_{T2,k}, e_{T3,k}]^T$, then the binormal unit vector is given by,
@@ -260,31 +262,49 @@ Finally, the normal unit vector is given by,
  \mathbf{e}_{N,k} = \mathbf{e}_{B,k} \times \mathbf{e}_{T,k}
 \end{IEEEeqnarray}
 
-The entire motion occurs within the plane spanned by $\mathbf{e}_{T,k}$ and $\mathbf{e}_{N,k}$. It is possible to define a transformation which maps this plane onto the $x-y$ plane, reducing it to the 2D scenario for which the state equations have already been solved. The transformation which achieves this is,
+It will also be useful to define the speed as the magnitude of the velocity,
 %
 \begin{IEEEeqnarray}{rCl}
-\mathbf{r}_k' & = & \mathbf{0} \nonumber \\
-\mathbf{v}_k' & = & \mathbf{R}^{-1} \mathbf{v}_k
+\dot{s}(t)      & = & |\mathbf{v}(t)|     .
 \end{IEEEeqnarray}
 
-Crucially, $\dot{z}'_k=0$. Equations (\ref{eq:2D_ICmodel_start}--\ref{eq:2D_ICmodel_stop}) are then used to find $\mathbf{x}'(t)$ for $\tau_k < t < \tau_{k+1}$. Finally, the inverse transformation is applied,
+The system differential equations may now be written in terms of the speed and the unit vectors,
 %
 \begin{IEEEeqnarray}{rCl}
-\mathbf{r}(t) & = & \mathbf{R} \mathbf{r}'(t) + \mathbf{r}_{k} \nonumber \\
-\mathbf{v}(t) & = & \mathbf{R} \mathbf{v}'(t)
+\ddot{s}(t)           & = & a_{T,K(t)} \\
+\dot{\mathbf{e}}_T(t) & = & \frac{a_{N,K(t)}}{\dot{s}(t)} \mathbf{e}_N(t) \\
+\dot{\mathbf{e}}_N(t) & = & - \frac{a_{N,K(t)}}{\dot{s}(t)} \mathbf{e}_T(t) \\
+\dot{\mathbf{e}}_B(t) & = & \mathbf{0}
 \end{IEEEeqnarray}
 
-Thus we have an analytical intrinsic coordinate dynamic model for 3D.
+Writing these as a matrix differential equation and solving using the integrating factor method yields the following solution,
+%
+\begin{IEEEeqnarray}{rCl}
+\dot{s}(t) &=& \dot{s}_{K(t)} + a_{T,K(t)} \Delta t \\
+\begin{bmatrix}\mathbf{e}_T(t)^T \\ \mathbf{e}_N(t)^T \\ \mathbf{e}_B(t)^T \end{bmatrix} &=& \begin{bmatrix}\cos(\Delta \psi) & \sin(\Delta \psi) & 0 \\ -\sin(\Delta \psi) & \cos(\Delta \psi) & 0 \\ 0 & 0 & 1 \end{bmatrix} \begin{bmatrix}\mathbf{e}_{T,K(t)}^T \\ \mathbf{e}_{N,K(t)}^T \\ \mathbf{e}_{B,K(t)}^T \end{bmatrix} \\
+\Delta \psi &=& \frac{a_{N,K(t)}}{a_{T,K(t)}} \log \left( \frac{\dot{s}(t)}{\dot{s}_{K(t)}} \right)     .
+\end{IEEEeqnarray}
+
+The position and velocity may now be recovered from this solution using the following,
+%
+\begin{IEEEeqnarray}{rCl}
+\mathbf{v}(t) & = & \dot{s}(t) \mathbf{e}_T(t) \\
+\mathbf{r}(t) & = & \int \mathbf{v}(t) dt \nonumber \\
+              & = & \mathbf{r}_{K(t)} + \Xi(t) \nonumber \times \\
+\IEEEeqnarraymulticol{3}{l}{ \left[ \left( 2 a_{T,K(t)} \cos(\Delta \psi) + a_{N,K(t)} \sin(\Delta \psi) \right) \mathbf{e}_T(t) \right. } \nonumber \\
+\IEEEeqnarraymulticol{3}{r}{ \quad + \: \left. \left( -a_{N,K(t)} \cos(\Delta \psi) + 2 a_{T,K(t)} \sin(\Delta \psi) \right) \mathbf{e}_N(t) \right] } \\
+\Xi(t) & = & \frac{\dot{s}(t)^2}{a_{N,K(t)}^2 + 4 a_{T,K(t)}^2}     .
+\end{IEEEeqnarray}
+
+This completes the model. These equations allow the calculation of any state $\mathbf{x}(t)$ given the state at the past changepoint, $\mathbf{x}_{K(t)}$ and the vector of parameters,
+
+\begin{IEEEeqnarray}{rCl}
+\mathbf{u}_{K(t)}  & = & [ a_{T,K(t)}, a_{N,K(t)}, \phi_{K(t)} ]^T     .
+\end{IEEEeqnarray}
 
 It is possible to add linear drift velocities to the parameter vector in exactly the same manner as the 2D model.
 
-Because of the assumption of piecewise-planar motion, the model devised here does not allow for targets with continually varying angle of normal acceleration. On an aeroplane, this corresponds to the roll angle. This system is thus unlikely to cope well with a highly manoeuvrable aeroplane executing a barrel-roll.
-
-
-
-\section{3D Model for Highly Manoeuvrable Targets}
-
-If space and time, put the complicated model here.
+Because of the assumption of piecewise-planar motion, the model devised here does not allow for targets with continually varying angle of normal acceleration. On an aeroplane, this corresponds to the roll angle. This system is thus unlikely to cope well with a highly manoeuvrable aeroplane executing a barrel-roll. It is possible to accommodate a linear variation in roll angle by adding an extra orientation variable to the state vector and a roll-rate to the parameter vector. The resulting system of equations do not have an analytic solution. However, it is possible to devise a switching-type model which allows either roll or pitch manoeuvres.
 
 
 

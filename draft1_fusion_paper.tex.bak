@@ -44,7 +44,9 @@ Email: \{pb404, sjg30\}@eng.cam.ac.uk}
 
 
 \begin{abstract}
-The abstract goes here.
+
+
+
 \end{abstract}
 
 
@@ -205,11 +207,11 @@ Any value of $\mathbf{x}(t)$ can now be achieved by an appropriate choice of $\m
 
 \section{3D Intrinsic Coordinate Model}
 
-The intrinsic coordinate dynamic model is a good description of some targets, but so far it has only been described in 2D. In this section, we extend it to 3D.
+The intrinsic coordinate dynamic model is a good reflection of some targets, but so far it has only been described in 2D. In this section, we extend it to 3D.
 
-It is always possible to specify the direction of a tangential acceleration as parallel to the velocity vector. In 2D, the normal acceleration occurs perpendicular to this direction, which is also a unique specification. In 3D, there is a whole plane perpendicular to the tangential direction, so the description becomes more complex. Furthermore, it might seem natural to extend the speed-bearing description of velocity to 3D by adding an elevation angle. In fact, this becomes messy and the resulting equations are not solvable. A new approach is required.
+It is always possible to specify the direction of a tangential acceleration as parallel to the velocity vector. In 2D, the normal acceleration occurs in the direction perpendicular to this, which is also unique. In 3D, there is a whole plane perpendicular to the velocity, so an additional parameter is required to specify the direction of the normal acceleration. Furthermore, it might seem natural to extend the speed-bearing description of velocity to 3D by adding an elevation angle. In fact, this becomes messy and the resulting equations are not solvable. A new approach is required.
 
-We devise a 3D intrinsic coordinate variable rate model by assuming that motion between changepoints occurs within a plane. Thus, the path followed by the target is a piecewise-planar trajectory.
+We first devise a 3D intrinsic coordinate variable rate model by assuming that motion between changepoints occurs within a plane. Thus, the path followed by the target is a piecewise-planar trajectory.
 
 The state vector is redefined using Cartesian coordinates,
 %
@@ -218,21 +220,21 @@ The state vector is redefined using Cartesian coordinates,
               & = & [ \mathbf{r}(t)^T, \mathbf{v}(t)^T ]^T    .
 \end{IEEEeqnarray}
 
-An orthogonal unit vector basis is defined using tangential, $\mathbf{e}_T(t)$, normal, $\mathbf{e}_N(t)$, and binormal, $\mathbf{e}_B(t)$, directions. The values of these unit vectors at the changepoint times are denoted $\mathbf{e}_{T,k} = \mathbf{e}_T(\tau_k)$, and similarly for the normal and binormal cases.
+We proceed by defining a set of orthogonal unit vectors in the tangential (parallel to the velocity), normal (parallel to the component of the acceleration perpendicular to the velocity), and binormal (perpendicular to the the previous two) directions. These are written as $\mathbf{e}_T(t)$, $\mathbf{e}_N(t)$, and $\mathbf{e}_B(t)$ respectively. The values at the changepoint times are denoted $\mathbf{e}_{T,k} = \mathbf{e}_T(\tau_k)$, and similarly for the normal and binormal cases.
 
-The tangential unit vector is parallel to the velocity,
+The tangential unit vector is defined first as,
 %
 \begin{IEEEeqnarray}{rCl}
-\mathbf{e}_T(t) & = & \frac{ \mathbf{v}(t) }{ |\mathbf{v}(t)| }     .
+\mathbf{e}_T(t) & \propto & \mathbf{v}(t)     .
 \end{IEEEeqnarray}
 
-The binormal unit vector specifies the plane in which motion occurs, and is thus assumed to be fixed between changepoints,
+The binormal unit vector specifies the plane in which motion occurs. It is this which is assumed to be fixed between changepoints,
 
 \begin{IEEEeqnarray}{rCl}
 \mathbf{e}_B(t) & = & \mathbf{e}_{B,K(t)}     .
 \end{IEEEeqnarray}
 
-We introduce a new parameter, $\phi_k$, which is the angle between $\mathbf{e}_{B,k}$ and the vertical plane containing $\mathbf{e}_{T,k}$. Thus, $\mathbf{e}_{B,k}$ is determined by the following three equations,
+As noted above, there is an ambiguity in the directions of the normal and binormal vectors. We introduce a new parameter, $\phi_k$, which is the angle between $\mathbf{e}_{B,k}$ and the vertical plane containing $\mathbf{e}_{T,k}$. Thus, $\mathbf{e}_{B,k}$ is determined by the following three equations,
 
 \begin{tabular}{m{3cm}m{4cm}}
 \renewcommand{\arraystretch}{1.5}
@@ -258,7 +260,47 @@ Finally, the normal unit vector is given by,
  \mathbf{e}_{N,k} = \mathbf{e}_{B,k} \times \mathbf{e}_{T,k}
 \end{IEEEeqnarray}
 
-The entire motion occurs within the plane spanned by $\mathbf{e}_{T,k}$ and $\mathbf{e}_{N,k}$. It is possible to define a transformation which maps this plane onto the $x-y$ plane, reducing it to the 2D scenario for which the state equations have already been solved. The transformation which achieves this is,
+It will also be useful to define the speed as the magnitude of the velocity,
+%
+\begin{IEEEeqnarray}{rCl}
+\dot{s}(t)      & = & |\mathbf{v}(t)| \\
+\mathbf{v}(t)   & = & \frac{ \mathbf{e}_T(t) }{ \dot{s}(t) }     .
+\end{IEEEeqnarray}
+
+The system differential equations may now be written in terms of the speed and the unit vectors,
+%
+\begin{IEEEeqnarray}{rCl}
+\ddot{s}(t)           & = & a_{T,K(t)} \\
+\dot{\mathbf{e}}_T(t) & = & \frac{a_{N,K(t)}}{\dot{s}(t)} \mathbf{e}_N(t) \\
+\dot{\mathbf{e}}_N(t) & = & - \frac{a_{N,K(t)}}{\dot{s}(t)} \mathbf{e}_T(t) \\
+\dot{\mathbf{e}}_B(t) & = & \mathbf{0}
+\end{IEEEeqnarray}
+
+Writing these as a matrix differential equation and solving using the integrating factor method yields the following solution,
+
+\begin{IEEEeqnarray}{rCl}
+\dot{s}(t) &=& \dot{s}_{K(t)} + a_{T,K(t)} \\
+\begin{bmatrix}\mathbf{e}_T(t)^T \\ \mathbf{e}_N(t)^T \\ \mathbf{e}_B(t)^T \end{bmatrix} &=& \exp \begin{bmatrix}0 & -\Delta \psi & 0 \\ \Delta \psi & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix} \begin{bmatrix}\mathbf{e}_{T,K(t)}^T \\ \mathbf{e}_{N,K(t)}^T \\ \mathbf{e}_{B,K(t)}^T \end{bmatrix} \\
+\Delta \psi &=& \frac{a_{N,K(t)}}{a_{T,K(t)}} \log(\frac{\dot{s}(t)}{\dot{s}_{K(t)}})     ,
+\end{IEEEeqnarray}
+
+
+
+
+
+
+
+
+
+
+
+
+
+The entire motion occurs within the plane spanned by $\mathbf{e}_{T,k}$ and $\mathbf{e}_{N,k}$. 
+ 
+ 
+ 
+It is possible to define a transformation which maps this plane onto the $x-y$ plane, reducing it to the 2D scenario for which the state equations have already been solved. The transformation which achieves this is,
 %
 \begin{IEEEeqnarray}{rCl}
 \mathbf{r}_k' & = & \mathbf{0} \nonumber \\
@@ -334,19 +376,20 @@ The basic and augmented models were tested on 100 realisations of the problem, w
 \centering
 \begin{tabular}{|c|c|c|c|c|c|}
 \hline
-Model & Observed  & \multicolumn{2}{c|}{Filter RMSEs}  & \multicolumn{2}{c|}{Smoother RMSEs}  \\
-      & Velocity? & Position & Velocity & Position   & Velocity   \\
+      & Observed  & \multicolumn{2}{c|}{Filter RMSEs}  & \multicolumn{2}{c|}{Smoother RMSEs}  \\
+Model & Velocity? & Position & Velocity                & Position & Velocity                  \\
+      &           & ($m$)    & ($m/s$)                 & ($m$)    & ($m/s$)                   \\
 \hline
-Basic     & no  &  &  &  &  \\
-Basic     & yes &  &  &  &  \\
+Basic     & no  & 884  & 188 & 476  & 65 \\
+Basic     & yes & 1715 & 174 & 1156 & 105 \\
 \hline
-Augmented & no  &  &  &  &  \\
-Augmented & yes &  &  &  &  \\
+Augmented & no  & 773  & 191 & 314  & 52 \\
+Augmented & yes & 1392 & 170 & 734  & 76  \\
 \hline
 \end{tabular}
 \end{table}
 
-The augmented model results in a significant reduction in estimation errors whether or not the velocity is observed. Note that if the precision of the range rate measurements is increased then track loss becomes more common, and begins to affect the augmented model as well.
+The augmented model results in a significant reduction in estimation errors, especially when the velocity is observed. Note that if the precision of the range rate measurements is increased then track loss becomes more common, and begins to affect the augmented model as well.
 
 
 
@@ -368,7 +411,7 @@ The results of applying the basic 3D intrinsic coordinate and Cartesian models t
 \subfloat[Cartesian]{\includegraphics[width=0.95\columnwidth]{images/3DCartesian.pdf}}
 \\
 \subfloat[Intrinsic]{\includegraphics[width=0.95\columnwidth]{images/3DIntrinsic.pdf}}
-\caption{Variable rate particle filter results using Cartesian and intrinsic coordinate dynamic models. Dotted line shows ground truth. Solid lines shown particle estimates. Stars show particle changepoints.}
+\caption{Variable rate particle filter results using Cartesian and intrinsic coordinate dynamic models. Dotted line shows ground truth. Solid lines shown particle estimates. Stars show particle changepoints. Note the different scale in the $z$ axis leading to greatly exaggerated errors in altitude.}
 \label{fig:3D_CartesianIntrinsic}
 \end{figure}
 
@@ -381,8 +424,9 @@ Testing on 100 realisations, the average error performance is shown in table~\re
 \centering
 \begin{tabular}{|c|c|c|c|c|c|}
 \hline
-Model & Observed  & \multicolumn{2}{c|}{Filter RMSEs}  & \multicolumn{2}{c|}{Smoother RMSEs}  \\
-      & Velocity? & Position & Velocity & Position   & Velocity   \\
+      & Observed  & \multicolumn{2}{c|}{Filter RMSEs}  & \multicolumn{2}{c|}{Smoother RMSEs}  \\
+Model & Velocity? & Position & Velocity                & Position & Velocity                  \\
+      &           & ($m$)    & ($m/s$)                 & ($m$)    & ($m/s$)                   \\
 \hline
 Intrinsic & no  &  &  &  &  \\
 \hline
@@ -393,127 +437,17 @@ Cartesian & no  &  &  &  &  \\
 
 The intrinsic coordinate model consistently outperforms the Cartesian version.
 
-
-
-% An example of a floating figure using the graphicx package.
-% Note that \label must occur AFTER (or within) \caption.
-% For figures, \caption should occur after the \includegraphics.
-% Note that IEEEtran v1.7 and later has special internal code that
-% is designed to preserve the operation of \label within \caption
-% even when the captionsoff option is in effect. However, because
-% of issues like this, it may be the safest practice to put all your
-% \label just after \caption rather than within \caption{}.
-%
-% Reminder: the "draftcls" or "draftclsnofoot", not "draft", class
-% option should be used if it is desired that the figures are to be
-% displayed while in draft mode.
-%
-%\begin{figure}[!t]
-%\centering
-%\includegraphics[width=2.5in]{myfigure}
-% where an .eps filename suffix will be assumed under latex,
-% and a .pdf suffix will be assumed for pdflatex; or what has been declared
-% via \DeclareGraphicsExtensions.
-%\caption{Simulation Results}
-%\label{fig_sim}
-%\end{figure}
-
-% Note that IEEE typically puts floats only at the top, even when this
-% results in a large percentage of a column being occupied by floats.
-
-
-% An example of a double column floating figure using two subfigures.
-% (The subfig.sty package must be loaded for this to work.)
-% The subfigure \label commands are set within each subfloat command, the
-% \label for the overall figure must come after \caption.
-% \hfil must be used as a separator to get equal spacing.
-% The subfigure.sty package works much the same way, except \subfigure is
-% used instead of \subfloat.
-%
-%\begin{figure*}[!t]
-%\centerline{\subfloat[Case I]\includegraphics[width=2.5in]{subfigcase1}%
-%\label{fig_first_case}}
-%\hfil
-%\subfloat[Case II]{\includegraphics[width=2.5in]{subfigcase2}%
-%\label{fig_second_case}}}
-%\caption{Simulation results}
-%\label{fig_sim}
-%\end{figure*}
-%
-% Note that often IEEE papers with subfigures do not employ subfigure
-% captions (using the optional argument to \subfloat), but instead will
-% reference/describe all of them (a), (b), etc., within the main caption.
-
-
-% An example of a floating table. Note that, for IEEE style tables, the
-% \caption command should come BEFORE the table. Table text will default to
-% \footnotesize as IEEE normally uses this smaller font for tables.
-% The \label must come after \caption as always.
-%
-%\begin{table}[!t]
-%% increase table row spacing, adjust to taste
-%\renewcommand{\arraystretch}{1.3}
-% if using array.sty, it might be a good idea to tweak the value of
-% \extrarowheight as needed to properly center the text within the cells
-%\caption{An Example of a Table}
-%\label{table_example}
-%\centering
-%% Some packages, such as MDW tools, offer better commands for making tables
-%% than the plain LaTeX2e tabular which is used here.
-%\begin{tabular}{|c||c|}
-%\hline
-%One & Two\\
-%\hline
-%Three & Four\\
-%\hline
-%\end{tabular}
-%\end{table}
-
-
-% Note that IEEE does not put floats in the very first column - or typically
-% anywhere on the first page for that matter. Also, in-text middle ("here")
-% positioning is not used. Most IEEE journals/conferences use top floats
-% exclusively. Note that, LaTeX2e, unlike IEEE journals/conferences, places
-% footnotes above bottom floats. This can be corrected via the \fnbelowfloat
-% command of the stfloats package.
+These is plenty of scope for improving these models. Clearly, there is more prior information about aircraft in flight which could be incorporated. For example, a predilection for level flight could be quantified through the choice of the distribution of $\phi_k$, the angle of the plane of motion, which is currently uniform.
 
 
 
 \section{Conclusion}
-The conclusion goes here.
+
+Dynamic tracking models for use with variable rate particle filters have been developed. Variable rate models treat the state as a deterministic continuous-time process conditional on a sequence of changepoints and motion parameters. Previously, a system has been developed which models targets as particles moving under the influence of tangential and normal accelerations. These have been developed in two ways. First, additional parameters have been introduced to improve the filter performance when the velocity is observed, for example through the use of Doppler measurements. Second, the model has been extended for use in 3D, where it achieves better state estimation performance than a Cartesian model.
 
 
-
-
-% conference papers do not normally have an appendix
-
-
-% use section* for acknowledgement
-%\section*{Acknowledgment}
-%The authors would like to thank...
-
-
-
-
-
-% trigger a \newpage just before the given reference
-% number - used to balance the columns on the last page
-% adjust value as needed - may need to be readjusted if
-% the document is modified later
-%\IEEEtriggeratref{8}
-% The "triggered" command can be changed if desired:
-%\IEEEtriggercmd{\enlargethispage{-5in}}
-
-% references section
 
 \bibliographystyle{IEEEtran}
 \bibliography{D:/pb404/Dropbox/PhD/OTBib}
 
-
-
-
-
-% that's all folks
 \end{document}
-
-
