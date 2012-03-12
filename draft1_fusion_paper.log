@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2012.1.9)  9 MAR 2012 19:30
+This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2012.1.9)  12 MAR 2012 14:48
 entering extended mode
 **draft1_fusion_paper.tex
 (D:\pb404\VariableRateAlgorithms\FUSION_paper\draft1_fusion_paper.tex
@@ -360,14 +360,14 @@ File: images/M2withoutVel.pdf Graphic file (type pdf)
 <images/M2withVel.pdf, id=30, 289.08pt x 216.81pt>
 File: images/M2withVel.pdf Graphic file (type pdf)
  <use images/M2withVel.pdf>
-
-LaTeX Warning: Reference `' on page 4 undefined on input line 350.
-
 [4 <D:/pb404/VariableRateAlgorithms/FUSION_paper/images/benchmark_problem.pdf>]
 <images/3Dbenchmark_problem.pdf, id=39, 289.08pt x 216.81pt>
 File: images/3Dbenchmark_problem.pdf Graphic file (type pdf)
 
 <use images/3Dbenchmark_problem.pdf>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 <images/3DCartesian.pdf, id=40, 289.08pt x 216.81pt>
 File: images/3DCartesian.pdf Graphic file (type pdf)
 
@@ -375,15 +375,14 @@ File: images/3DCartesian.pdf Graphic file (type pdf)
 <images/3DIntrinsic.pdf, id=41, 289.08pt x 216.81pt>
 File: images/3DIntrinsic.pdf Graphic file (type pdf)
 
-<use images/3DIntrinsic.pdf>
-
-LaTeX Warning: Reference `' on page 5 undefined on input line 398.
-
-[5 <D:/pb404/VariableRateAlgorithms/FUSION_paper/images/M1withoutVel.pdf> <D:/p
-b404/VariableRateAlgorithms/FUSION_paper/images/M1withVel.pdf> <D:/pb404/Variab
-leRateAlgorithms/FUSION_paper/images/M2withoutVel.pdf> <D:/pb404/VariableRateAl
-gorithms/FUSION_paper/images/M2withVel.pdf>]
-(D:\pb404\VariableRateAlgorithms\FUSION_paper\draft1_fusion_paper.bbl
+<use images/3DIntrinsic.pdf> [5 <D:/pb404/VariableRateAlgorithms/FUSION_paper/i
+mages/M1withoutVel.pdf> <D:/pb404/VariableRateAlgorithms/FUSION_paper/images/M1
+withVel.pdf> <D:/pb404/VariableRateAlgorithms/FUSION_paper/images/M2withoutVel.
+pdf> <D:/pb404/VariableRateAlgorithms/FUSION_paper/images/M2withVel.pdf>]
+(D:\pb404\VariableRateAlgorithms\FUSION_paper\draft1_fusion_paper.bbl [6 <D:/pb
+404/VariableRateAlgorithms/FUSION_paper/images/3Dbenchmark_problem.pdf> <D:/pb4
+04/VariableRateAlgorithms/FUSION_paper/images/3DCartesian.pdf> <D:/pb404/Variab
+leRateAlgorithms/FUSION_paper/images/3DIntrinsic.pdf>]
 ** WARNING: IEEEtran.bst: No hyphenation pattern has been
 ** loaded for the language `English'. Using the pattern for
 ** the default language instead.
@@ -402,42 +401,38 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[6 <D:/pb404/VariableRateAlgorithms/FUSION_paper/images/3Dbenchmark_problem.pdf
-> <D:/pb404/VariableRateAlgorithms/FUSION_paper/images/3DCartesian.pdf> <D:/pb4
-04/VariableRateAlgorithms/FUSION_paper/images/3DIntrinsic.pdf>]
-(D:\pb404\VariableRateAlgorithms\FUSION_paper\draft1_fusion_paper.aux)
+[7
 
-LaTeX Warning: There were undefined references.
-
- ) 
+] (D:\pb404\VariableRateAlgorithms\FUSION_paper\draft1_fusion_paper.aux) ) 
 Here is how much of TeX's memory you used:
- 3792 strings out of 494019
- 56757 string characters out of 3143883
- 131212 words of memory out of 3000000
- 7027 multiletter control sequences out of 15000+200000
- 43321 words of font info for 91 fonts, out of 3000000 for 9000
+ 3790 strings out of 494019
+ 56749 string characters out of 3143883
+ 130212 words of memory out of 3000000
+ 7026 multiletter control sequences out of 15000+200000
+ 42214 words of font info for 90 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 36i,15n,45p,836b,321s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Progra
-m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program 
-Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Program Fil
-es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files
- (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files (
-x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files (x86
-)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files (x86)/M
-iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files (x86)/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (x86)/MiKTeX 
-2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files (x86)/MiKTeX 2.9/
-fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
-s/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
-type1/public/amsfonts/cm/cmsy5.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/
-urw/times/utmb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/u
-tmbi8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb>
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on draft1_fusion_paper.pdf (6 pages, 300124 bytes).
+ 36i,15n,45p,966b,325s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/P
+rogram Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program Files
+ (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files (
+x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Program Files (x86
+)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files (x86)/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files (x86)/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files (x86)/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files (x86)/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files (x86)/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1
+/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/p
+ublic/amsfonts/cm/cmsy5.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/tim
+es/utmb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.
+pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Pro
+gram Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on draft1_fusion_paper.pdf (7 pages, 314146 bytes).
 PDF statistics:
- 130 PDF objects out of 1000 (max. 8388607)
+ 135 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  41 words of extra memory for PDF output out of 10000 (max. 10000000)
 
