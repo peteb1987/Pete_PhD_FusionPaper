@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2012.1.9)  13 MAR 2012 13:13
+This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2012.1.9)  13 MAR 2012 13:14
 entering extended mode
-**draft1_fusion_paper.tex
-(D:\pb404\VariableRateAlgorithms\FUSION_paper\draft1_fusion_paper.tex
+**finaldraft_fusion_paper.tex
+(D:\pb404\VariableRateAlgorithms\FUSION_paper\finaldraft_fusion_paper.tex
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -283,7 +283,7 @@ File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: pdftex.def on input line 130.
 )
-(D:\pb404\VariableRateAlgorithms\FUSION_paper\draft1_fusion_paper.aux)
+(D:\pb404\VariableRateAlgorithms\FUSION_paper\finaldraft_fusion_paper.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
 LaTeX Font Info:    ... okay on input line 29.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
@@ -371,10 +371,10 @@ File: images/3DCartesian.pdf Graphic file (type pdf)
 File: images/3DIntrinsic.pdf Graphic file (type pdf)
 
 <use images/3DIntrinsic.pdf>
-(D:\pb404\VariableRateAlgorithms\FUSION_paper\draft1_fusion_paper.bbl [6 <D:/pb
-404/VariableRateAlgorithms/FUSION_paper/images/3Dbenchmark_problem.pdf> <D:/pb4
-04/VariableRateAlgorithms/FUSION_paper/images/3DCartesian.pdf> <D:/pb404/Variab
-leRateAlgorithms/FUSION_paper/images/3DIntrinsic.pdf>])
+(D:\pb404\VariableRateAlgorithms\FUSION_paper\finaldraft_fusion_paper.bbl
+[6 <D:/pb404/VariableRateAlgorithms/FUSION_paper/images/3Dbenchmark_problem.pdf
+> <D:/pb404/VariableRateAlgorithms/FUSION_paper/images/3DCartesian.pdf> <D:/pb4
+04/VariableRateAlgorithms/FUSION_paper/images/3DIntrinsic.pdf>])
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -388,34 +388,34 @@ Before submitting the final camera ready copy, remember to:
 
 [7
 
-] (D:\pb404\VariableRateAlgorithms\FUSION_paper\draft1_fusion_paper.aux) ) 
+] (D:\pb404\VariableRateAlgorithms\FUSION_paper\finaldraft_fusion_paper.aux) ) 
 Here is how much of TeX's memory you used:
  3789 strings out of 494019
- 56740 string characters out of 3143883
+ 56788 string characters out of 3143883
  130212 words of memory out of 3000000
  7025 multiletter control sequences out of 15000+200000
  42214 words of font info for 90 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 36i,15n,45p,964b,325s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/P
-rogram Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program Files
- (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files (
-x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Program Files (x86
-)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files (x86)/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files (x86)/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files (x86)/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files (x86)/MiKTeX 2
-.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files (x86)/MiKTeX 2.9/
-fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fon
-ts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1
-/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/p
-ublic/amsfonts/cm/cmsy5.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publ
-ic/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/tim
-es/utmb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.
-pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Pro
-gram Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on draft1_fusion_paper.pdf (7 pages, 313253 bytes).
+ 36i,15n,45p,968b,325s stack positions out of 5000i,500n,10000p,200000b,50000s
+{
+C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program F
+iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Fil
+es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Program Files 
+(x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files (x
+86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files (x86
+)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files (x86)/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files (x86)/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files (x86)/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (x86)/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files (x86)/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/cm/cmsy5.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw
+/times/utmb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmb
+i8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:
+/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on finaldraft_fusion_paper.pdf (7 pages, 313253 bytes).
 PDF statistics:
  135 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

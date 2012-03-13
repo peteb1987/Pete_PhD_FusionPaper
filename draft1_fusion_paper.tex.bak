@@ -310,10 +310,10 @@ Because of the assumption of piecewise-planar motion, the model devised here doe
 
 \section{Simulations}
 
-The new intrinsic coordinate models were tested with a VRPF implemented in MATLAB on a benchmark fighter aeroplane trajectory taken from \cite{Blair1998}, discarding the altitude components for the 2D model. For these tests, the parameters (perpendicular accelerations and drift velocities) are assumed to be independent and to follow a Gaussian distribution. However, any distribution could be used. The standard deviations are $\sigma_T = 10 m/s^2$ and $\sigma_N = 50 m/s^2$ for the tangential and normal accelerations respectively. For the augmented model, the drift velocities use standard deviation $\sigma_X = \sigma_Y = 10 m/s$. The changepoint intervals are assumed to be gamma distributed with shape and scale parameters 7 and 5 respectively.
+The new intrinsic coordinate models were tested with a VRPF implemented in MATLAB on a benchmark fighter aeroplane trajectory taken from \cite{Blair1998}, discarding the altitude components for the 2D model. For these tests, the parameters (perpendicular accelerations and drift velocities) are assumed to be independent and to follow a Gaussian distribution. However, any distribution could be used. The standard deviations are $\sigma_T = 10 m/s^2$ and $\sigma_N = 50 m/s^2$ for the tangential and normal accelerations respectively. For the augmented model, the drift velocities use standard deviation $\sigma_X = \sigma_Y = 10 m/s$. The changepoint intervals are assumed to be gamma distributed with shape and scale parameters 6 and 4 respectively.
 
 A radar observation model is used, measuring bearing and range in the 2D case and also elevation in the 3D case, each subject to Gaussian noise. The standard deviation of the bearing measurement errors is $\sigma_B = 0.5^{\circ}$ and that for the range, $\sigma_R = 100m$. For the 3D tests, the elevation standard deviation is $\sigma_E = 0.125^{\circ}$. In addition, we consider cases in which the range rate (velocity component in the direction towards the sensor) is measured, also with Gaussian errors with standard deviation $\sigma_{RR} = 10m/s$. Measurements are taken every second. An example realisation of the problem is shown in Fig.~\ref{fig:2D_ground_truth}.
-
+%
 \begin{figure}
 \centering
 \includegraphics[width=0.95\columnwidth]{images/benchmark_problem.pdf}
@@ -328,8 +328,8 @@ All tests were conducted using resample-move steps. 50 filter particles were use
 \subsection{2D Model with Observed Velocity}
 
 The combination of the basic 2D model and a VRPF has been demonstrated in \cite{Godsill2007} and has been proven effective. However, when the velocity is observed as well as the position (for example using Doppler radar), this can cause the VRPF to produce worse estimates or even to lose track, despite the fact that there is now more information available. This phenomenon is shown in Fig.~\ref{fig:2D_Model1}. By introducing additional drift velocity parameters, the problem is alleviated. The result of applying the augmented 2D model to the same problem is shown in Fig.~\ref{fig:2D_Model2}.
-
-\begin{figure}
+%
+\begin{figure}[!t]
 \centering
 \subfloat[Without velocity observations]{\includegraphics[width=0.95\columnwidth]{images/M1withoutVel.pdf}}
 \\
@@ -337,8 +337,8 @@ The combination of the basic 2D model and a VRPF has been demonstrated in \cite{
 \caption{Variable rate particle filter results using basic 2D model, with and without range rate observations. Dotted line shows ground truth. Solid lines shown particle estimates. Stars show particle changepoints.}
 \label{fig:2D_Model1}
 \end{figure}
-
-\begin{figure}
+%
+\begin{figure}[!t]
 \centering
 \subfloat[Without velocity observations]{\includegraphics[width=0.95\columnwidth]{images/M2withoutVel.pdf}}
 \\
@@ -348,10 +348,10 @@ The combination of the basic 2D model and a VRPF has been demonstrated in \cite{
 \end{figure}
 
 The basic and augmented models were tested on 100 realisations of the problem, with and without velocity observations (i.e. using different seeds for the pseudo-random number generator for producing the observations and running the algorithms). The mean error performance in position and velocity is shown in table~\ref{tab:2D_performance}. Two measures of error are compared: one using the filter state estimate and the other a basic smoothing state estimate --- the entire state trajectory is calculated from the final filter estimate, in the similar manner to the filter-smoother of \cite{Kitagawa1996}.
-
+%
 \begin{table}
 \renewcommand{\arraystretch}{1.3}
-\caption{2D VRPF tracking performance of basic and augmented intrinsic coordinate models with and without velocity observations}
+\caption{2D VRPF tracking performance with basic and augmented intrinsic coordinate models with and without velocity observations}
 \label{tab:2D_performance}
 \centering
 \begin{tabular}{|c|c|c|c|c|c|}
@@ -360,11 +360,11 @@ The basic and augmented models were tested on 100 realisations of the problem, w
 Model & Velocity? & Position & Velocity                & Position & Velocity                  \\
       &           & ($m$)    & ($m/s$)                 & ($m$)    & ($m/s$)                   \\
 \hline
-Basic     & no  & 884  & 188 & 476  & 65 \\
-Basic     & yes & 1715 & 174 & 1156 & 105 \\
+Basic     & no  & 416 &  & 309 &  \\
+Basic     & yes & 819 &  & 695 &  \\
 \hline
-Augmented & no  & 773  & 191 & 314  & 52 \\
-Augmented & yes & 1392 & 170 & 734  & 76  \\
+Augmented & no  & 402 &  & 220 &  \\
+Augmented & yes & 705 &  & 432 &   \\
 \hline
 \end{tabular}
 \end{table}
@@ -376,7 +376,7 @@ The augmented model results in a significant reduction in estimation errors, esp
 \subsection{3D Intrinsic Coordinate Model}
 
 Here we demonstrate the 3D intrinsic coordinate model, and compare it to the Cartesian equivalent used in \cite{Whiteley2007a,Whiteley2011}. The same trajectory is used as before, but this time the altitude components are not discarded. An example realisation is shown in Fig.~\ref{fig:3D_ground_truth}.
-
+%
 \begin{figure}
 \centering
 \includegraphics[width=0.95\columnwidth]{images/3Dbenchmark_problem.pdf}
@@ -384,22 +384,22 @@ Here we demonstrate the 3D intrinsic coordinate model, and compare it to the Car
 \label{fig:3D_ground_truth}
 \end{figure}
 
-The results of applying the basic 3D intrinsic coordinate and Cartesian models to this data set are show in Fig.~\ref{fig:3D_CartesianIntrinsic}.
-
+The results of applying the basic 3D intrinsic coordinate and Cartesian models to this data set are show in Fig.~\ref{fig:3D_CartesianIntrinsic}. The intrinsic coordinate model results in better fitting around the corners. Furthermore, the Cartesian model uses more changepoints on average, as the motion is approximated by a larger number of shorter manoeuvres. These improvements can be attributed to the fact that the variance of tangential and normal accelerations can be set independently, accommodating the fact that normal accelerations tend to be much larger.
+%
 \begin{figure}
 \centering
 \subfloat[Cartesian]{\includegraphics[width=0.95\columnwidth]{images/3DCartesian.pdf}}
 \\
 \subfloat[Intrinsic]{\includegraphics[width=0.95\columnwidth]{images/3DIntrinsic.pdf}}
-\caption{Variable rate particle filter results using Cartesian and intrinsic coordinate dynamic models. Dotted line shows ground truth. Solid lines shown particle estimates. Stars show particle changepoints. Note the different scale in the $z$ axis leading to greatly exaggerated errors in altitude.}
+\caption{Variable rate particle filter results using Cartesian and intrinsic coordinate dynamic models. Dotted line shows ground truth. Solid lines shown particle estimates. Stars show particle changepoints.}
 \label{fig:3D_CartesianIntrinsic}
 \end{figure}
 
 Testing on 100 realisations, the average error performance is shown in table~\ref{tab:3D_performance}.
-
+%
 \begin{table}
 \renewcommand{\arraystretch}{1.3}
-\caption{3D VRPF tracking performance of basic intrinsic coordinate and Cartesian models}
+\caption{3D VRPF tracking performance with basic intrinsic coordinate and Cartesian models}
 \label{tab:3D_performance}
 \centering
 \begin{tabular}{|c|c|c|c|c|c|}
