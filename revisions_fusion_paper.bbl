@@ -43,7 +43,7 @@ A.~Doucet and A.~M. Johansen, ``A tutorial on particle filtering and smoothing:
 
 \bibitem{Godsill2007a}
 S.~Godsill, ``Particle filters for continuous-time jump models in tracking
-  applications,'' \emph{Proc. ESAIM}, vol.~19, pp. 39--52, 2007.
+  applications,'' \emph{ESAIM: Proc.}, vol.~19, pp. 39--52, 2007.
 
 \bibitem{Godsill2007}
 S.~Godsill, J.~Vermaak, W.~Ng, and J.~Li, ``Models and algorithms for tracking
@@ -68,22 +68,22 @@ W.~R. Gilks and C.~Berzuini, ``Following a moving target -- {Monte Carlo}
 
 \bibitem{Best1997}
 R.~Best and J.~Norton, ``A new model and efficient tracker for a target with
-  curvilinear motion,'' \emph{Aerospace and Electronic Systems, IEEE
-  Transactions on}, vol.~33, pp. 1030 --1037, 1997.
+  curvilinear motion,'' \emph{IEEE Transactions on Aerospace and Electronic
+  Systems}, vol.~33, pp. 1030 --1037, 1997.
 
 \bibitem{Berg1983}
 R.~Berg, ``Estimation and prediction for maneuvering target trajectories,''
-  \emph{Automatic Control, IEEE Transactions on}, vol.~28, pp. 294--304, 1983.
+  \emph{IEEE Transactions on Automatic Control}, vol.~28, pp. 294--304, 1983.
 
 \bibitem{Nabaa2000}
 N.~Nabaa and R.~Bishop, ``Validation and comparison of coordinated turn
-  aircraft maneuver models,'' \emph{Aerospace and Electronic Systems, IEEE
-  Transactions on}, vol.~36, pp. 250--259, 2000.
+  aircraft maneuver models,'' \emph{IEEE Transactions on Aerospace and
+  Electronic Systems}, vol.~36, pp. 250--259, 2000.
 
 \bibitem{Blair1998}
 W.~Blair, G.~Watson, T.~Kirubarajan, and Y.~Bar-Shalom, ``Benchmark for radar
-  allocation and tracking in {ECM},'' \emph{Aerospace and Electronic Systems,
-  IEEE Transactions on}, vol.~34, pp. 1097--1114, 1998.
+  allocation and tracking in {ECM},'' \emph{IEEE Transactions on Aerospace and
+  Electronic Systems}, vol.~34, pp. 1097--1114, 1998.
 
 \bibitem{Julier2004}
 S.~Julier and J.~Uhlmann, ``Unscented filtering and nonlinear estimation,''
@@ -96,8 +96,7 @@ G.~Kitagawa, ``{Monte Carlo} filter and smoother for non-{Gaussian} nonlinear
 
 \bibitem{Whiteley2007a}
 N.~Whiteley, A.~M. Johansen, and S.~Godsill, ``Efficient {M}onte {C}arlo
-  filtering for discretely observed jumping processes,'' in \emph{Statistical
-  Signal Processing, 2007. SSP '07. IEEE/SP 14th Workshop on}, 2007, pp.
-  89--93.
+  filtering for discretely observed jumping processes,'' in \emph{IEEE/SP 14th
+  Workshop on Statistical Signal Processing, 2007}, 2007, pp. 89--93.
 
 \end{thebibliography}

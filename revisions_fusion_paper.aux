@@ -12,18 +12,19 @@
 \citation{Jacobsen2006,Whiteley2011}
 \citation{Gilks2001}
 \citation{Whiteley2011}
-\citation{Best1997}
-\citation{Godsill2007}
 \newlabel{eq:cp_model}{{3}{2}}
 \newlabel{eq:state_differential_eq}{{4}{2}}
 \newlabel{eq:disc_time_state_trans_func}{{5}{2}}
 \newlabel{eq:vrpf_target}{{6}{2}}
-\newlabel{eq:vrpf_weights}{{8}{2}}
+\newlabel{eq:vrpf}{{7}{2}}
+\newlabel{eq:vrpf_weights}{{9}{2}}
 \@writefile{toc}{\contentsline {section}{\numberline {III}2D Intrinsic Coordinate Model}{2}}
-\newlabel{eq:aT_ode}{{11}{2}}
-\newlabel{eq:2D_ICmodel_start}{{15}{2}}
-\newlabel{eq:2D_ICmodel_stop}{{18}{2}}
+\newlabel{eq:aT_ode}{{12}{2}}
+\newlabel{eq:2D_ICmodel_start}{{16}{2}}
+\citation{Best1997}
+\citation{Godsill2007}
 \citation{Li2003}
+\newlabel{eq:2D_ICmodel_stop}{{19}{3}}
 \@writefile{toc}{\contentsline {section}{\numberline {IV}The Augmented 2D Model}{3}}
 \@writefile{toc}{\contentsline {section}{\numberline {V}3D Intrinsic Coordinate Model}{3}}
 \citation{Li2003}
@@ -31,29 +32,28 @@
 \citation{Blair1998}
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces 2D benchmark trajectory (dashed) and observations (crosses). Sensor is at (0,0).}}{4}}
 \newlabel{fig:2D_ground_truth}{{1}{4}}
-\@writefile{toc}{\contentsline {section}{\numberline {VI}Simulations}{4}}
 \citation{Julier2004}
-\citation{Godsill2007}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Variable rate particle filter results using basic 2D model, with and without range rate observations. Dotted line shows ground truth. Solid lines shown particle estimates. Stars show particle changepoints.}}{5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Variable rate particle filter results using basic 2D model, with and without range rate observations. Dotted line shows ground truth. Solid lines show particle estimates. Stars show particle changepoints.}}{5}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Without velocity observations}}}{5}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {With velocity observations}}}{5}}
 \newlabel{fig:2D_Model1}{{2}{5}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Variable rate particle filter results using augmented 2D model, with and without range rate observations. Dotted line shows ground truth. Solid lines shown particle estimates. Stars show particle changepoints.}}{5}}
+\@writefile{toc}{\contentsline {section}{\numberline {VI}Simulations}{5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Variable rate particle filter results using augmented 2D model, with and without range rate observations. Dotted line shows ground truth. Solid lines show particle estimates. Stars show particle changepoints.}}{5}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Without velocity observations}}}{5}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {With velocity observations}}}{5}}
 \newlabel{fig:2D_Model2}{{3}{5}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {VI-A}}2D Model with Observed Velocity}{5}}
+\citation{Godsill2007}
 \citation{Kitagawa1996}
 \citation{Whiteley2007a,Whiteley2011}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {VI-A}}2D Model with Observed Velocity}{6}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {VI-B}}3D Intrinsic Coordinate Model}{6}}
-\@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces 2D VRPF tracking performance with basic and augmented intrinsic coordinate models with and without velocity observations}}{6}}
+\@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces 2D VRPF tracking performance with basic and augmented intrinsic coordinate models with and without velocity observations. Numbers given are means (and standard deviations) of RMSEs.}}{6}}
 \newlabel{tab:2D_performance}{{I}{6}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces 3D benchmark trajectory (dashed) and observations (crosses). Sensor is at (0,0).}}{6}}
 \newlabel{fig:3D_ground_truth}{{4}{6}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Variable rate particle filter results using Cartesian and intrinsic coordinate dynamic models. Dotted line shows ground truth. Solid lines shown particle estimates. Stars show particle changepoints.}}{6}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Cartesian}}}{6}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Intrinsic}}}{6}}
-\newlabel{fig:3D_CartesianIntrinsic}{{5}{6}}
+\@writefile{lot}{\contentsline {table}{\numberline {II}{\ignorespaces 3D VRPF tracking performance with basic intrinsic coordinate and Cartesian models. Numbers given are means (and standard deviations) of RMSEs.}}{6}}
+\newlabel{tab:3D_performance}{{II}{6}}
+\@writefile{toc}{\contentsline {section}{\numberline {VII}Conclusion}{6}}
 \bibstyle{IEEEtran}
 \bibdata{D:/pb404/Dropbox/PhD/Cleanbib}
 \bibcite{Li2003}{1}
@@ -72,7 +72,8 @@
 \bibcite{Julier2004}{14}
 \bibcite{Kitagawa1996}{15}
 \bibcite{Whiteley2007a}{16}
-\@writefile{lot}{\contentsline {table}{\numberline {II}{\ignorespaces 3D VRPF tracking performance with basic intrinsic coordinate and Cartesian models}}{7}}
-\newlabel{tab:3D_performance}{{II}{7}}
-\@writefile{toc}{\contentsline {section}{\numberline {VII}Conclusion}{7}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Variable rate particle filter results using Cartesian and intrinsic coordinate dynamic models. Dotted line shows ground truth. Solid lines show particle estimates. Stars show particle changepoints.}}{7}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Cartesian}}}{7}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Intrinsic}}}{7}}
+\newlabel{fig:3D_CartesianIntrinsic}{{5}{7}}
 \@writefile{toc}{\contentsline {section}{References}{7}}

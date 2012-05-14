@@ -1,21 +1,18 @@
-
 \documentclass[conference]{IEEEtran}
-
 
 \usepackage{cite}
 \usepackage[pdftex]{graphicx}
 \usepackage[cmex10]{amsmath}
-\usepackage{amsfonts}
+%\usepackage{amsfonts}
 \usepackage{algorithmic}
 \usepackage{array}
 \usepackage{mdwmath}
 \usepackage{mdwtab}
 %\usepackage{eqparbox}
 \usepackage[caption=false,font=footnotesize]{subfig}
-\usepackage{fixltx2e}
+%\usepackage{fixltx2e}
 \usepackage{url}
 \usepackage{color}
-
 
 \interdisplaylinepenalty=1000
 
@@ -46,7 +43,7 @@ Email: \{pb404, sjg30\}@eng.cam.ac.uk}
 
 \begin{abstract}
 
-The problem of tracking moving targets is often handled by modelling using hidden Markov models. This approach is attractive because it allows standard algorithms to be used, including the Kalman filter and particle filter. However, it often ignores a significant amount of temporal structure in the path of a manoeuvring target. Variable rate models treat the target motion as deterministic when conditioned upon a sequence of changepoint times and manoeuvre parameters. In this paper, new variable rate models for tracking are presented. Previously, a 2-dimensional model has been developed which parameterises the motion with tangential and normal accelerations. This model is improved by introducing additional variables to improve resilience to model error. It is then modified for use in 3 dimensions by assuming manoeuvres are planar. Simulation tests demonstrate improved tracking performance on a benchmark aeroplane trajectory.
+The problem of tracking moving targets is often handled by modelling using hidden Markov models. This approach is attractive because it allows standard algorithms to be used, including the Kalman filter and particle filter. However, it often ignores a significant amount of temporal structure in the path of a manoeuvring target. Variable rate models treat the target motion as deterministic when conditioned upon a sequence of changepoint times and manoeuvre parameters. In this paper, new variable rate models for tracking are presented. Previously, a 2-dimensional model has been developed which parameterises the motion with tangential and normal accelerations. This model is extended by introducing additional variables to improve resilience to model error. It is then modified for use in 3 dimensions by assuming manoeuvres are planar. Simulation tests demonstrate improved tracking performance on a benchmark aeroplane trajectory.
 
 \end{abstract}
 
@@ -87,7 +84,7 @@ The changepoint sequence is assumed to be a Markov process,
  \{\tau_k, u_k\} & \sim & p(u_k|\tau_k, \tau_{k-1}, u_{k-1}) p(\tau_k|\tau_{k-1}, u_{k-1}) \label{eq:cp_model}     .
 \end{IEEEeqnarray}
 
-From this, a prior density for the changepoint sequence, $p(\theta_n)$ and the sequence extension $p(\theta_{n \setminus n-1})$ may be written down. See \cite{Jacobsen2006,Whiteley2011} for details.
+From this, a prior density for the changepoint sequence, $p(\theta_n)$ and the sequence extension $p(\theta_{n \setminus n-1}|\theta_{n-1})$ may be written down. See \cite{Jacobsen2006,Whiteley2011} for details.
 
 The state dynamics will be governed by a differential equation depending upon the most recent changepoint.
 %
@@ -101,13 +98,21 @@ By introducing a new sequence, $\{ x_0, x_1 \dots x_K \}$, which denotes the val
  x(t) & = & f(x_{K_n}, v_{K_n}, \tau_{K_n}, t) &, \tau_{K_n} \leq t \leq \tau_{K_{n}+1} \label{eq:disc_time_state_trans_func}     .
 \end{IEEEeqnarray}
 
-By choosing $t = \tau_{K_{n}+1}$, this equation specifies the state at the next changepoint time. Similarly, by choosing $t=t_n$, the state at the observation times may be calculated. These points will be denoted $\hat{x}_n$. To complete the model, a probabilistic measurement model must be chosen for the observation process, $p(y_n|\hat{x}_n)$.
+By choosing $t = \tau_{K_{n}+1}$, this equation specifies the state at the next changepoint time. Similarly, by choosing $t=t_n$, the state at the observation times may be calculated. These points will be denoted $\hat{x}_n$. To complete the framework, a probabilistic measurement model must be chosen for the observation process, $p(y_n|\hat{x}_n)$.
 
-The variable rate particle filter (VRPF) sequentially estimates the following changepoint posterior distribution,
+The changepoint posterior distribution may be expanded using Bayes' rule,
 %
 \begin{IEEEeqnarray}{rCl}
 \IEEEeqnarraymulticol{3}{l}{p(\theta_{n}|y_{1:n})} \nonumber \\
  & \propto & p(y_n|\theta_{n}, y_{1:n-1}) p(\theta_{n \setminus n-1}|\theta_{n-1}) p(\theta_{n-1}|y_{1:n-1}) \label{eq:vrpf_target}     .
+\end{IEEEeqnarray}
+
+Because the trajectory is deterministic given the changepoint sequence, the likelihood term is simply $p(y_n|\theta_{n}, y_{1:n-1}) = p(y_n|\hat{x}_n)$.
+
+The variable rate particle filter (VRPF) sequentially estimates this changepoint posterior distribution using a set of weighted particles,
+%
+\begin{IEEEeqnarray}{rCl}
+ p(\theta_{n}|y_{1:n}) &\approx& \sum_j w_n^{(j)} \delta_{\theta_{n}^{(j)}}(\theta_{n}) \label{eq:vrpf}      .
 \end{IEEEeqnarray}
 
 Each particle in the approximation is a sequence of changepoints between $0$ and $t_n$. A particle is generated by proposing from the importance distribution,
@@ -122,7 +127,7 @@ The particle is then weighted according to the ratio of target and proposal dens
 %
 \begin{IEEEeqnarray}{rCl}
 w_n^{(i)} & = & \frac{ p(\theta_{n}^{(i)}|y_{1:n}) }{ q(\theta_{n}^{(i)}) } \nonumber \\
-    & \propto & \frac{w_{n-1}^{(i)}}{v_{n-1}^{(i)}} \times \frac{ p(y_n|\hat{x}_n^{(i)}) p(\theta_{n \setminus n-1}^{(i)}|\theta_{n-1}^{(i)}) }{ q(\theta_{n \setminus n-1}^{(i)}|\theta_{n-1}^{(i)}, y_n) } \label{eq:vrpf_weights}
+    & \propto & \frac{w_{n-1}^{(i)}}{v_{n-1}^{(i)}} \times \frac{ p(y_n|\hat{x}_n^{(i)}) p(\theta_{n \setminus n-1}^{(i)}|\theta_{n-1}^{(i)}) }{ q(\theta_{n \setminus n-1}^{(i)}|\theta_{n-1}^{(i)}, y_n) } \label{eq:vrpf_weights}     .
 \end{IEEEeqnarray}
 
 The normalisation may be enforced by scaling the weights so that they sum to $1$.
@@ -137,7 +142,7 @@ The rest of the paper is concerned with suitable choices for the state different
 
 \section{2D Intrinsic Coordinate Model}
 
-For the simplest 2D intrinsic coordinate model, the target is treated as a particle subject to two accelerations, one tangential, $a_{T,k}$, and one normal, $a_{N,k}$, to the current velocity. The accelerations are fixed for the duration of a manoeuvre. The continuous-time kinematic state of the target is described by the heading, $\psi(t)$ (anticlockwise relative to the $x$ axis), and speed $\dot{s}(t)$, as well as the Cartesian coordinates, $x(t)$ and $y(t)$.
+For the simplest 2D intrinsic coordinate model, the target is treated as a particle subject to two accelerations, one tangential, $a_{T,k}$, and one normal, $a_{N,k}$, to the current velocity. The accelerations are fixed for the duration of a manoeuvre, i.e. from $\tau_k$ to $\tau_{k+1}$. The continuous-time kinematic state of the target is described by the heading, $\psi(t)$ (anticlockwise relative to the $x$ axis), and speed $\dot{s}(t)$, as well as the Cartesian coordinates, $x(t)$ and $y(t)$.
 
 Thus, the state and parameter vectors are,
 %
@@ -172,7 +177,7 @@ Particular care must be taken when $a_{T,k} \rightarrow 0$ or $a_{N,k} \rightarr
 
 A similar dynamic model was presented in \cite{Best1997}. In \cite{Godsill2007}, an additional drag term is included in (\ref{eq:aT_ode}) proportional to the current velocity. This renders the equations unsolvable, and it is necessary to use numerical integration to calculate $x(t)$ and $y(t)$. Although this works acceptably well for a bootstrap implementation, it is computationally expensive. It also causes severe difficulties for resample-move and smoothing algorithms, because it is not possible to calculate the particular accelerations which result in a known state.
 
-The weakness of this model is its under-parametrisation. Two fixed accelerations govern the evolution of four state variables. In one manoeuvre, not all values of $\mathbf{x}(t)$ are achievable (the achievable points form a 2D subspace of the 4D state space). As a result, a VRPF based on this model is not at all resilient to model error. It becomes necessary to include changepoints very regularly in order to match the estimated trajectories to the observations. The problem is particularly pronounced if the state is fully observed, for example by using Doppler measurements of velocity as well as radar for position, because it is not possible to fit the state to all the observations.
+The weakness of this model is its under-parametrisation. Two fixed accelerations govern the evolution of four state variables. In one manoeuvre, not all values of $\mathbf{x}(t)$ are achievable (the achievable points form a 2D subspace of the 4D state space). As a result, a VRPF based on this model is not resilient to model error. It becomes necessary to include changepoints very regularly in order to match the estimated trajectories to the observations. The problem is particularly pronounced if the state is fully observed, for example by using Doppler measurements of velocity as well as radar for position, because it is not possible to fit the state to all the observations. In addition, under-parametrisation renders the model unsuitable for use with smoothing algorithms.
 
 
 
@@ -208,11 +213,11 @@ Any value of $\mathbf{x}(t)$ can now be achieved by an appropriate choice of $\m
 
 \section{3D Intrinsic Coordinate Model}
 
-The intrinsic coordinate-based dynamics are a good model of some targets, but so far they have only been used in 2D. In this section, we extend the model to 3D.
+The intrinsic coordinate-based dynamics are a good model of some targets, but so far they have only been used in 2D in conjunction with the variable rate particle filter. In this section, we extend the model to 3D.
 
-It is always possible to specify the direction of a tangential acceleration as parallel to the velocity vector. In 2D, the normal acceleration occurs in the direction perpendicular to this, which is also unique. In 3D, there is a whole plane perpendicular to the velocity, so an additional parameter is required to specify the direction of the normal acceleration. Furthermore, it might seem natural to extend the speed-heading description of velocity to 3D by adding an elevation angle. In fact, this becomes messy and the resulting equations are not solvable. A new approach is required.
+It is always possible to specify the direction of a tangential acceleration as parallel to the velocity vector. In 2D, the normal acceleration occurs in the direction perpendicular to this, which is also unique. In 3D, there is a whole plane perpendicular to the velocity, so an additional parameter is required to specify the direction of the normal acceleration. Furthermore, it might seem natural to extend the speed-heading description of velocity to 3D by adding a pitch angle. In fact, this becomes messy and the resulting equations are not solvable. Here, a different approach is developed, which resembles the ``coordinated turn'' models of \cite{Li2003}.
 
-We first devise a 3D intrinsic coordinate variable rate model by assuming that motion between changepoints occurs within a plane. Thus, the path followed by the target is a piecewise-planar trajectory.
+The new 3D model is based upon the additional assumption that motion between changepoints occurs within a plane. Thus, the path followed by the target is a piecewise-planar trajectory.
 
 The state vector is redefined using Cartesian coordinates,
 %
@@ -221,7 +226,7 @@ The state vector is redefined using Cartesian coordinates,
               & = & [ \mathbf{r}(t)^T, \mathbf{v}(t)^T ]^T    .
 \end{IEEEeqnarray}
 
-We proceed by defining a set of orthogonal unit vectors in the tangential (parallel to the velocity), normal (parallel to the component of the acceleration perpendicular to the velocity), and binormal (perpendicular to the the previous two) directions. These are written as $\mathbf{e}_T(t)$, $\mathbf{e}_N(t)$, and $\mathbf{e}_B(t)$ respectively. The values at the changepoint times are denoted $\mathbf{e}_{T,k} = \mathbf{e}_T(\tau_k)$, and similarly for the normal and binormal cases.
+The dynamical model is formulated in terms of a set of orthogonal unit vectors in the tangential (parallel to the velocity), normal (parallel to the component of the acceleration perpendicular to the velocity), and binormal (perpendicular to the the previous two) directions. These are written as $\mathbf{e}_T(t)$, $\mathbf{e}_N(t)$, and $\mathbf{e}_B(t)$ respectively. The values at the changepoint times are denoted $\mathbf{e}_{T,k} = \mathbf{e}_T(\tau_k)$, and similarly for the normal and binormal cases.
 
 The tangential unit vector is defined first as,
 %
@@ -278,7 +283,7 @@ The system differential equations may now be written in terms of the speed and t
 \dot{\mathbf{e}}_B(t) & = & \mathbf{0}     .
 \end{IEEEeqnarray}
 
-These equations describe a coordinated turn model \cite{Li2003} formulated in intrinsic coordinates with three constraints: constant tangential and normal accelerations and constant-plane motion. Writing these as a matrix differential equation and solving yields the following solution,
+These differential equations describe a coordinated turn model \cite{Li2003} formulated in intrinsic coordinates with three constraints: constant tangential and normal accelerations and constant-plane motion. They are closely related to the models devised in \cite{Berg1983,Nabaa2000}. However, in this previous work, randomness was incorporated by adding a Brownian motion terms to the differential equations (and then using, for example, a Kalman filter for inference). In contrast, when using the variable rate framework the dynamics are assumed to be conditionally deterministic. The random element is the choice of the motion parameters between each changepoint, i.e. the accelerations and the angle of the plane. Thus, we proceed by solving the deterministic differential equations analytically. This is achieved by writing as a matrix differential equation and yields following solution,
 %
 \begin{IEEEeqnarray}{rCl}
 \dot{s}(t) &=& \dot{s}_{K(t)} + a_{T,K(t)} \Delta t \\
@@ -317,23 +322,13 @@ Because of the assumption of piecewise-planar motion, the model devised here doe
 \caption{2D benchmark trajectory (dashed) and observations (crosses). Sensor is at (0,0).}
 \label{fig:2D_ground_truth}
 \end{figure}
-%
-The new intrinsic coordinate models were tested with a VRPF implemented in MATLAB on a benchmark fighter aeroplane trajectory taken from \cite{Blair1998}, discarding the altitude components for the 2D model. For these tests, the manoeuvre parameters (perpendicular accelerations and drift velocities) are assumed to be independent and to follow a Gaussian distribution. However, any distribution could be used. The standard deviations are $\sigma_T = 10 m/s^2$ and $\sigma_N = 50 m/s^2$ for the tangential and normal accelerations respectively. For the augmented model, the drift velocities use standard deviation $\sigma_X = \sigma_Y = 10 m/s$. The changepoint intervals are assumed to be gamma distributed with shape and scale parameters 6 and 4 respectively.
-
-A radar observation model is used, measuring bearing and range in the 2D case and also elevation in the 3D case, each subject to Gaussian noise. The standard deviation of the bearing measurement errors is $\sigma_B = 0.5^{\circ}$ and that for the range, $\sigma_R = 100m$. For the 3D tests, the elevation standard deviation is $\sigma_E = 0.125^{\circ}$. In addition, we consider cases in which the range rate (velocity component in the direction towards the sensor) is measured, also with Gaussian errors with standard deviation $\sigma_{RR} = 10m/s$. Measurements are taken every second. An example realisation of the problem is shown in Fig.~\ref{fig:2D_ground_truth}.
-
-The 2D tests used 50 filter particles and the 3D tests used 200 filter particles. All tests were conducted using resample-move steps to adjust the values of the last changepoint time and motion parameters, i.e. $\tau_{K_n}$ and $u_{K_n}$. These were conducted by first proposing a new value for $\tau_{K_n}$ from a Gaussian kernel centred on the old value, after which a new value of $u_{K_n}$ is proposed. The motion parameter proposal density is a Gaussian constructed using an unscented Kalman filter \cite{Julier2004}.
-
-
-
-\subsection{2D Model with Observed Velocity}
-%
+%%
 \begin{figure}[!t]
 \centering
 \subfloat[Without velocity observations]{\includegraphics[width=0.95\columnwidth]{images/M1withoutVel.pdf}}
 \\
 \subfloat[With velocity observations]{\includegraphics[width=0.95\columnwidth]{images/M1withVel.pdf}}
-\caption{Variable rate particle filter results using basic 2D model, with and without range rate observations. Dotted line shows ground truth. Solid lines shown particle estimates. Stars show particle changepoints.}
+\caption{Variable rate particle filter results using basic 2D model, with and without range rate observations. Dotted line shows ground truth. Solid lines show particle estimates. Stars show particle changepoints.}
 \label{fig:2D_Model1}
 \end{figure}
 %
@@ -342,17 +337,27 @@ The 2D tests used 50 filter particles and the 3D tests used 200 filter particles
 \subfloat[Without velocity observations]{\includegraphics[width=0.95\columnwidth]{images/M2withoutVel.pdf}}
 \\
 \subfloat[With velocity observations]{\includegraphics[width=0.95\columnwidth]{images/M2withVel.pdf}}
-\caption{Variable rate particle filter results using augmented 2D model, with and without range rate observations. Dotted line shows ground truth. Solid lines shown particle estimates. Stars show particle changepoints.}
+\caption{Variable rate particle filter results using augmented 2D model, with and without range rate observations. Dotted line shows ground truth. Solid lines show particle estimates. Stars show particle changepoints.}
 \label{fig:2D_Model2}
 \end{figure}
 %
-The combination of the basic 2D model and a VRPF has been demonstrated in \cite{Godsill2007} and has been proven effective. However, when the velocity is observed as well as the position (for example using Doppler radar), this can cause the VRPF to produce worse estimates or even to lose track, despite the fact that there is now more information available. This phenomenon is shown in Fig.~\ref{fig:2D_Model1}. By introducing additional drift velocity parameters, the errors are reduced. The result of applying the augmented 2D model to the same problem is shown in Fig.~\ref{fig:2D_Model2}.
+The new intrinsic coordinate models were tested with a VRPF implemented in MATLAB on a benchmark fighter aeroplane trajectory taken from \cite{Blair1998}, discarding the altitude components for the 2D model. For these tests, the manoeuvre parameters (perpendicular accelerations and drift velocities) are assumed to be independent and to follow a Gaussian distribution. However, any distribution could be used. The standard deviations are $\sigma_T = 5 m/s^2$ and $\sigma_N = 50 m/s^2$ for the tangential and normal accelerations respectively. For the augmented model, the drift velocities use standard deviation $\sigma_X = \sigma_Y = 50 m/s$. The changepoint intervals are assumed to be gamma distributed with shape and scale parameters 4 and 6 respectively.
 
-The basic and augmented models were tested on 100 realisations of the problem, with and without velocity observations (i.e. using different seeds for the pseudo-random number generator for producing the observations and running the algorithms). The mean error performance in position and velocity is shown in table~\ref{tab:2D_performance}. Two measures of error are compared: one using the filter state estimate (a weighted average of the particle states) and the other a basic smoothing state estimate --- the entire state trajectory is estimated from the final filter approximation, in the similar manner to the filter-smoother of \cite{Kitagawa1996}.
+A radar observation model is used, measuring bearing and range in the 2D case and also elevation in the 3D case, each subject to Gaussian noise. The standard deviation of the bearing measurement errors is $\sigma_B = 1^{\circ}$ and that for the range, $\sigma_R = 200m$. For the 3D tests, the elevation standard deviation is $\sigma_E = 0.125^{\circ}$. In addition, we consider cases in which the range rate (velocity component in the direction towards the sensor) is measured, also with Gaussian errors with standard deviation $\sigma_{RR} = 10m/s$. Measurements are taken every second.
+
+A bootstrap implementation of the VRPF was used, with 50 filter particles. All tests were conducted using resample-move steps to adjust the values of the last changepoint time and motion parameters, i.e. $\tau_{K_n}$ and $u_{K_n}$. These were conducted by first proposing a new value for $\tau_{K_n}$ from a Gaussian kernel centred on the old value, after which a new value of $u_{K_n}$ is proposed. The motion parameter proposal density is a Gaussian constructed using an unscented Kalman filter \cite{Julier2004}.
+
+
+
+\subsection{2D Model with Observed Velocity}
+
+An example realisation of the 2D problem is shown in Fig.~\ref{fig:2D_ground_truth}. The combination of the basic 2D model and a VRPF has been demonstrated in \cite{Godsill2007} and has been proven effective. However, when the velocity is observed as well as the position (for example using Doppler radar), this can cause the VRPF to produce worse estimates or even to lose track, despite the fact that there is now more information available. This phenomenon is shown in Fig.~\ref{fig:2D_Model1}. By introducing additional drift velocity parameters, the errors are reduced. The result of applying the augmented 2D model to the same problem is shown in Fig.~\ref{fig:2D_Model2}.
+
+The basic and augmented models were tested on 100 realisations of the problem, with and without velocity observations (i.e. using different seeds for the pseudo-random number generator for producing the observations and running the algorithms). The error performance in position and velocity is shown in table~\ref{tab:2D_performance}. Two measures of error are compared: one using the filter state estimate (a weighted average of the particle states) and the other a basic smoothing state estimate --- the entire state trajectory is estimated from the final filter approximation, in the similar manner to the filter-smoother of \cite{Kitagawa1996}.
 %
 \begin{table}[!b]
 \renewcommand{\arraystretch}{1.3}
-\caption{2D VRPF tracking performance with basic and augmented intrinsic coordinate models with and without velocity observations}
+\caption{2D VRPF tracking performance with basic and augmented intrinsic coordinate models with and without velocity observations. Numbers given are means (and standard deviations) of RMSEs.}
 \label{tab:2D_performance}
 \centering
 \begin{tabular}{|c|c|c|c|c|c|}
@@ -361,16 +366,22 @@ The basic and augmented models were tested on 100 realisations of the problem, w
 Model & Velocity? & Position & Velocity                & Position & Velocity                  \\
       &           & ($m$)    & ($m/s$)                 & ($m$)    & ($m/s$)                   \\
 \hline
-Basic     & no  & 416 & 129 & 309 & 49 \\
-Basic     & yes & 819 & 115 & 695 & 74 \\
+Basic     & no  & 619  & 146 & 353  & 50  \\
+          &     &(86)  &(22) &(100) &(14) \\
+                 \cline{2-6}
+          & yes & 1706 & 163 & 1507 & 116 \\
+          &     &(1504)&(92) &(1516)&(97) \\
 \hline
-Augmented & no  & 402 & 125 & 220 & 39 \\
-Augmented & yes & 705 & 101 & 432 & 43 \\
+Augmented & no  & 614 & 152 & 388 & 63 \\
+          &     &(72) &(18) &(57) &(7) \\
+                 \cline{2-6}
+          & yes & 931 & 142 & 485 & 65 \\
+          &     &(498)&(57) &(190)&(26)\\
 \hline
 \end{tabular}
 \end{table}
 %
-The augmented model results in a significant reduction in estimation errors, especially when the velocity is observed. However, it does not fully solve the problem of velocity measurements making the estimates less accurate. A solution will probably require changes to the filtering algorithm. %Note that if the precision of the range rate measurements is increased then track loss becomes more common, and begins to affect the augmented model as well.
+The results for the basic model with observed velocities are dominated by a number of cases when the filter entirely loses track, leading to very large position errors. The augmented model avoids this track loss, although it does not fully eliminate the problem of velocity measurements making the estimates less accurate. A solution will probably require changes to the filtering algorithm.
 
 
 
@@ -385,22 +396,22 @@ Here we demonstrate the 3D intrinsic coordinate model, and compare it to the Car
 \label{fig:3D_ground_truth}
 \end{figure}
 %
-The results of applying the basic 3D intrinsic coordinate and Cartesian models to this data set are shown in Fig.~\ref{fig:3D_CartesianIntrinsic}. The intrinsic coordinate model results in better fitting around the corners. Furthermore, the Cartesian model uses more changepoints on average, as the motion is approximated by a larger number of shorter manoeuvres. These improvements can be attributed to the fact that the variance of tangential and normal accelerations can be set independently, accommodating the fact that normal accelerations tend to be much larger.
+The results of applying the basic 3D intrinsic coordinate and Cartesian models to this data set are shown in Fig.~\ref{fig:3D_CartesianIntrinsic}. The intrinsic coordinate model results in better fitting around the corners. Furthermore, the Cartesian model uses more changepoints on average, as the motion is approximated by a larger number of shorter manoeuvres. These improvements can be attributed to the fact that the variance of tangential and normal accelerations can be set independently, accommodating the fact that normal accelerations tend to be much larger during turning.
 %
 \begin{figure}
 \centering
 \subfloat[Cartesian]{\includegraphics[width=0.95\columnwidth]{images/3DCartesian.pdf}}
 \\
 \subfloat[Intrinsic]{\includegraphics[width=0.95\columnwidth]{images/3DIntrinsic.pdf}}
-\caption{Variable rate particle filter results using Cartesian and intrinsic coordinate dynamic models. Dotted line shows ground truth. Solid lines shown particle estimates. Stars show particle changepoints.}
+\caption{Variable rate particle filter results using Cartesian and intrinsic coordinate dynamic models. Dotted line shows ground truth. Solid lines show particle estimates. Stars show particle changepoints.}
 \label{fig:3D_CartesianIntrinsic}
 \end{figure}
 %
-Testing on 100 realisations, the average error performance is shown in table~\ref{tab:3D_performance}. The intrinsic coordinate model consistently outperforms the Cartesian version.
+Testing on 100 realisations, the average error performance is shown in table~\ref{tab:3D_performance}. The intrinsic coordinate model outperforms the Cartesian version, producing slightly better position estimates and significantly better velocity estimates.
 %
 \begin{table}
 \renewcommand{\arraystretch}{1.3}
-\caption{3D VRPF tracking performance with basic intrinsic coordinate and Cartesian models}
+\caption{3D VRPF tracking performance with basic intrinsic coordinate and Cartesian models. Numbers given are means (and standard deviations) of RMSEs.}
 \label{tab:3D_performance}
 \centering
 \begin{tabular}{|c|c|c|c|c|c|}
@@ -409,9 +420,13 @@ Testing on 100 realisations, the average error performance is shown in table~\re
 Model & Velocity? & Position & Velocity                & Position & Velocity                  \\
       &           & ($m$)    & ($m/s$)                 & ($m$)    & ($m/s$)                   \\
 \hline
-Intrinsic & no  & 401 & 131 & 259 & 43 \\
+Intrinsic & no  & 674 & 166 & 386 & 59 \\
+          &     &(70) &(15) &(68) &(9) \\
+                 \cline{2-6}
 \hline
-Cartesian & no  & 422 & 148 & 291 & 58 \\
+Cartesian & no  & 777 & 236 & 429 & 78 \\
+          &     &(92) &(21) &(93) &(16) \\
+                 \cline{2-6}
 \hline
 \end{tabular}
 \end{table}

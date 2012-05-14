@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2012.1.9)  9 MAY 2012 16:51
+This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2012.1.9)  14 MAY 2012 19:10
 entering extended mode
 **revisions_fusion_paper.tex
 
@@ -187,13 +187,6 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
 LaTeX Info: Redefining \[ on input line 2666.
 LaTeX Info: Redefining \] on input line 2667.
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
-Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
-\symAMSa=\mathgroup4
-\symAMSb=\mathgroup5
-LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
-(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
-)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\algorithms\algorithmic.sty"
 Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
 
@@ -267,12 +260,6 @@ Package caption Info: Unknown document class (or package),
 \sf@top=\skip56
 \sf@bottom=\skip57
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\fixltx2e.sty"
-Package: fixltx2e 2006/09/13 v1.1m fixes to LaTeX
-LaTeX Info: Redefining \em on input line 420.
-LaTeX Info: The control sequence `\[' is already robust on input line 471.
-LaTeX Info: The control sequence `\]' is already robust on input line 472.
-)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ltxmisc\url.sty"
 \Urlmuskip=\muskip11
 Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
@@ -287,18 +274,18 @@ Package color Info: Driver file: pdftex.def on input line 130.
 )
 (D:\pb404\Research\VariableRateAlgorithms\FUSION_paper\revisions_fusion_paper.a
 ux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count118
@@ -314,93 +301,89 @@ LaTeX Font Info:    ... okay on input line 29.
 )
 Package caption Info: Begin \AtBeginDocument code.
 Package caption3 Info: subfig package 1.2 or 1.3 is loaded.
-LaTeX Info: Redefining \subref on input line 29.
+LaTeX Info: Redefining \subref on input line 26.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 43.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 40.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\omsptm.fd"
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 43.
-LaTeX Font Info:    Try loading font information for U+msa on input line 73.
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
-File: umsa.fd 2009/06/22 v3.00 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 73.
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
-File: umsb.fd 2009/06/22 v3.00 AMS symbols B
-) [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 40.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 70.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 70.
+ [1{C:/Users/pb404/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 
 ] [2]
-Underfull \hbox (badness 3302) in paragraph at lines 238--249
+Underfull \hbox (badness 3302) in paragraph at lines 243--254
 []\OT1/ptm/m/n/10 As noted above, there is an am-bi-gu-ity in the di-
  []
 
 
-Underfull \hbox (badness 3039) in paragraph at lines 238--249
+Underfull \hbox (badness 3039) in paragraph at lines 243--254
 \OT1/ptm/m/n/10 rec-tions of the nor-mal and bi-nor-mal vec-tors. We in-
  []
 
 
-Underfull \hbox (badness 1960) in paragraph at lines 238--249
+Underfull \hbox (badness 1960) in paragraph at lines 243--254
 \OT1/ptm/m/n/10 tro-duce a new pa-ram-e-ter, $\OML/cmm/m/it/10 []$\OT1/ptm/m/n
 /10 , which is the an-gle be-
  []
 
 
-Underfull \hbox (badness 3769) in paragraph at lines 238--249
+Underfull \hbox (badness 3769) in paragraph at lines 243--254
 \OT1/cmr/bx/n/10 e[]$ \OT1/ptm/m/n/10 is de-ter-mined by the fol-low-ing three 
 equa-tions,
  []
 
-[3] <images/benchmark_problem.pdf, id=26, 289.08pt x 216.81pt>
+[3] <images/benchmark_problem.pdf, id=25, 360.34625pt x 307.1475pt>
 File: images/benchmark_problem.pdf Graphic file (type pdf)
 
 <use images/benchmark_problem.pdf>
-<images/M1withoutVel.pdf, id=27, 289.08pt x 216.81pt>
+<images/M1withoutVel.pdf, id=26, 360.34625pt x 307.1475pt>
 File: images/M1withoutVel.pdf Graphic file (type pdf)
 
 <use images/M1withoutVel.pdf>
-<images/M1withVel.pdf, id=28, 289.08pt x 216.81pt>
+<images/M1withVel.pdf, id=27, 360.34625pt x 307.1475pt>
 File: images/M1withVel.pdf Graphic file (type pdf)
- <use images/M1withVel.pdf>
-<images/M2withoutVel.pdf, id=29, 289.08pt x 216.81pt>
+
+<use images/M1withVel.pdf>
+<images/M2withoutVel.pdf, id=28, 360.34625pt x 307.1475pt>
 File: images/M2withoutVel.pdf Graphic file (type pdf)
 
 <use images/M2withoutVel.pdf>
-<images/M2withVel.pdf, id=30, 289.08pt x 216.81pt>
+<images/M2withVel.pdf, id=29, 360.34625pt x 307.1475pt>
 File: images/M2withVel.pdf Graphic file (type pdf)
- <use images/M2withVel.pdf>
-[4 <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/images/benchmark_prob
-lem.pdf>]
-Underfull \vbox (badness 2245) has occurred while \output is active []
+
+<use images/M2withVel.pdf> [4 <D:/pb404/Research/VariableRateAlgorithms/FUSION_
+paper/images/benchmark_problem.pdf>]
+Underfull \vbox (badness 1590) has occurred while \output is active []
 
  [5 <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/images/M1withoutVel.
 pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/images/M1withVel.pd
 f> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/images/M2withoutVel.p
 df> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/images/M2withVel.pdf
 >]
-<images/3Dbenchmark_problem.pdf, id=58, 289.08pt x 216.81pt>
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 363.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 363.
+
+<images/3Dbenchmark_problem.pdf, id=67, 401.5pt x 282.05376pt>
 File: images/3Dbenchmark_problem.pdf Graphic file (type pdf)
 
 <use images/3Dbenchmark_problem.pdf>
-<images/3DCartesian.pdf, id=59, 289.08pt x 216.81pt>
+<images/3DCartesian.pdf, id=68, 401.5pt x 282.05376pt>
 File: images/3DCartesian.pdf Graphic file (type pdf)
 
 <use images/3DCartesian.pdf>
-<images/3DIntrinsic.pdf, id=60, 289.08pt x 216.81pt>
+<images/3DIntrinsic.pdf, id=69, 401.5pt x 282.05376pt>
 File: images/3DIntrinsic.pdf Graphic file (type pdf)
 
-<use images/3DIntrinsic.pdf>
-Underfull \vbox (badness 1122) has occurred while \output is active []
-
- [6 <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/images/3Dbenchmark_p
-roblem.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/images/3DCar
-tesian.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/images/3DInt
-rinsic.pdf>]
+<use images/3DIntrinsic.pdf> [6 <D:/pb404/Research/VariableRateAlgorithms/FUSIO
+N_paper/images/3Dbenchmark_problem.pdf>]
 (D:\pb404\Research\VariableRateAlgorithms\FUSION_paper\revisions_fusion_paper.b
 bl)
 
@@ -414,41 +397,39 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[7]
+[7 <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/images/3DCartesian.pd
+f> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/images/3DIntrinsic.pd
+f>]
 (D:\pb404\Research\VariableRateAlgorithms\FUSION_paper\revisions_fusion_paper.a
-ux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+ux) ) 
 Here is how much of TeX's memory you used:
- 3792 strings out of 494019
- 56908 string characters out of 3143883
- 132224 words of memory out of 3000000
- 7028 multiletter control sequences out of 15000+200000
- 42214 words of font info for 90 fonts, out of 3000000 for 9000
+ 3690 strings out of 494019
+ 55423 string characters out of 3143883
+ 130316 words of memory out of 3000000
+ 6947 multiletter control sequences out of 15000+200000
+ 39238 words of font info for 76 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
  36i,15n,45p,967b,325s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Progra
-m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program 
-Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Program Fil
-es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files
- (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files (
-x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files (x86
-)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files (x86)/M
-iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files (x86)/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (x86)/MiKTeX 
-2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files (x86)/MiKTeX 2.9/
-fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
-s/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
-type1/public/amsfonts/cm/cmsy5.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/
-urw/times/utmb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/u
-tmbi8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb>
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on revisions_fusion_paper.pdf (7 pages, 313999 bytes).
+{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Pro
+gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Progr
+am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Program 
+Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Fi
+les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program File
+s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files (
+x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files (x86
+)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files (x86)/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (x86)/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files (x86)/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86)/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/typ
+e1/urw/times/utmb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/time
+s/utmbi8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.p
+fb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on revisions_fusion_paper.pdf (7 pages, 293909 bytes).
 PDF statistics:
- 135 PDF objects out of 1000 (max. 8388607)
+ 151 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  41 words of extra memory for PDF output out of 10000 (max. 10000000)
 
