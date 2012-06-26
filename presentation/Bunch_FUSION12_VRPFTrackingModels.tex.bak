@@ -1,0 +1,89 @@
+\documentclass{beamer}
+\usetheme{Boadilla}
+
+\usepackage{amsmath}
+\usepackage{IEEEtrantools}
+
+
+\title[Variable Rate Tracking]{Dynamical Models for Tracking with the Variable Rate Particle Filter}
+\author[P. Bunch \& S. Godsill]{Pete Bunch and Simon Godsill}
+\institute[CUED SigProC]{Cambridge University Engineering Department\\ Signal Processing \& Communications Lab}
+\date{11th July, 2012}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}{Conventional Hidden Markov Models for Tracking}
+\begin{figure}\centering\includegraphics[scale=0.5]{HMM_model.pdf}\end{figure}
+\begin{itemize}
+  \item Discrete-time
+  \item Stochastic Markovian dynamics
+  \item Simple
+  \item Hard to handle manoeuvres
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Variable Rate Models for Tracking}
+\begin{figure}\centering\includegraphics[scale=0.5]{variable_rate_model.pdf}\end{figure}
+\begin{itemize}
+  \item Continuous-time
+  \item Conditionally-deterministic dynamics
+  \item Always nonlinear
+  \item Handles manoeuvres
+\end{itemize}
+\end{frame}
+
+\begin{frame}{The Variable Rate Particle Filter}
+PRETTY PIC OF LOTS OF PARTICLES.
+
+Bootstrap particle filter
+\begin{itemize}
+  \item Proposal: Add a new changepoint or just extend trajectory
+  \item Weight update: $w_n \propto w_{n-1} p(y_n|x(t_n))$
+\end{itemize}
+Improvements
+\begin{itemize}
+  \item Resample-move
+  \item SMC sampler
+  \item RJ-MCMC
+\end{itemize}
+\end{frame}
+
+\begin{frame}{VR Tracking Models I: Cartesian Coordinates}
+\begin{IEEEeqnarray*}{rCl}
+ \begin{bmatrix} \dot{x}_1(t) \\ \dot{x}_2(t) \\ \ddot{x}_1(t) \\ \ddot{x}_2(t) \end{bmatrix} & = & \begin{bmatrix} 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \end{bmatrix} \begin{bmatrix} x_1(t) \\ x_2(t) \\ \dot{x}_1(t) \\ \dot{x}_2(t) \end{bmatrix} + \begin{bmatrix} 0 & 0 \\ 0 & 0 \\ 1 & 0 \\ 0 & 1 \end{bmatrix} \begin{bmatrix} a_{1,k} \\ a_{2,k} \end{bmatrix} \\
+ & & \\
+ & & \tau_k \leq t < \tau_{k+1}
+\end{IEEEeqnarray*}
+\end{frame}
+
+\begin{frame}{VR Tracking Models II: Intrinsic Coordinates}
+\begin{IEEEeqnarray*}{rCl}
+ \dot{s}(t) & = & a_{T,k} \\ 
+ s(t) \dot{\psi}(t) & = & a_{N,k} \\
+ \dot{x}_1(t) & = & s(t) \cos(\psi(t)) \\
+ \dot{x}_2(t) & = & s(t) \sin(\psi(t)) \\
+ & & \\
+ & & \tau_k \leq t < \tau_{k+1}
+\end{IEEEeqnarray*}
+\end{frame}
+
+\begin{frame}{A Problem: Model Deficiency}
+\end{frame}
+
+\begin{frame}{The Solution: Add More Parameters}
+\end{frame}
+
+\begin{frame}{3D Intrinsic Coordinate Tracking}
+\end{frame}
+
+\begin{frame}{Summary}
+\end{frame}
+
+\begin{frame}
+\end{frame}
+
+\end{document} 
