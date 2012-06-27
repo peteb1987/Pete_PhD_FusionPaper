@@ -48,15 +48,15 @@ export_pdf(f1, 'variable_rate_model.pdf', 16, 12)
 %% Plot - HMM
 f2 = figure; hold on
 xlim([-1,21]), ylim([-1,8]);
-% plot(x(1,:), x(2,:), 'linewidth', 2);
+plot(x(1,:), x(2,:), '-.k');
 plot(disc_x(1,:), disc_x(2,:), 'xr', 'markersize', 10);
 h_arrows = arrow(disc_x, disc_x+disc_v, 'length', 10, 'BaseAngle', 30);
 set(h_arrows, 'EdgeColor', 'r', 'FaceColor', 'r')
 % plot(x(1,1), x(2,1), 'g*', 'markersize', 15)
 % plot(x(1,floor(cp*K)), x(2,floor(cp*K)), 'g*', 'markersize', 15)
-plot(pred_disc_x(1,:), pred_disc_x(2,:), 'xm', 'markersize', 10);
+plot(pred_disc_x(1,:), pred_disc_x(2,:), 'xb', 'markersize', 10);
 h_arrows = arrow(pred_disc_x, pred_disc_x+pred_disc_v, 'length', 10, 'BaseAngle', 30);
-set(h_arrows, 'EdgeColor', 'm', 'FaceColor', 'm')
+set(h_arrows, 'EdgeColor', 'b', 'FaceColor', 'b')
 for kk = 1:size(pred_disc_x, 2)
     plot_gaussian_ellipsoid(pred_disc_x(:,kk), eye(2));
 end

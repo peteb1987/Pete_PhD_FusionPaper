@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2012.1.9)  26 JUN 2012 17:47
+This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2012.1.9)  27 JUN 2012 16:11
 entering extended mode
 **Bunch_FUSION12_VRPFTrackingModels.tex
 
@@ -772,6 +772,9 @@ Package: IEEEtrantools 2007/01/11 V1.2 by Michael Shell
 ) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\subfig\subfig.sty"
 Package: subfig 2005/06/28 ver: 1.3 subfig package
 
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\caption.sty"
+Package: caption 2010/01/09 v3.1m Customizing captions (AR)
+
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\caption3.sty"
 Package: caption3 2010/01/14 v3.1m caption3 kernel (AR)
 \captionmargin=\dimen194
@@ -781,35 +784,110 @@ Package: caption3 2010/01/14 v3.1m caption3 kernel (AR)
 \caption@parindent=\dimen198
 \caption@hangindent=\dimen199
 )
-\c@KVtest=\count158
+\c@ContinuedFloat=\count158
+Package caption Info: beamer document class.
+Package caption Info: hyperref package is loaded.
+
+
+Package caption Warning: Hyperref support is turned off
+(caption)                because hyperref has stopped early.
+See the caption package documentation for explanation.
+
+)
+\c@KVtest=\count159
 \sf@farskip=\skip58
 \sf@captopadj=\dimen200
 \sf@capskip=\skip59
 \sf@nearskip=\skip60
-\c@subfigure=\count159
-\c@subfigure@save=\count160
-\c@depth=\count161
-\c@subtable=\count162
-\c@subtable@save=\count163
+\c@subfigure=\count160
+\c@subfigure@save=\count161
+\c@depth=\count162
+\c@subtable=\count163
+\c@subtable@save=\count164
 \sf@top=\skip61
 \sf@bottom=\skip62
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\animate\animate.sty"
+Package: animate 2010/09/28 PDF animations from files and inline graphics
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\ifdraft.sty"
+Package: ifdraft 2008/08/11 v1.3 Switch for option draft (HO)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\calc.sty"
+Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count165
+\calc@Bcount=\count166
+\calc@Adimen=\dimen201
+\calc@Bdimen=\dimen202
+\calc@Askip=\skip63
+\calc@Bskip=\skip64
+LaTeX Info: Redefining \setlength on input line 76.
+LaTeX Info: Redefining \addtolength on input line 77.
+\calc@Ccount=\count167
+\calc@Cskip=\skip65
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\animate\animfp.sty"
+Package: animfp 2009/07/23 fixed point addition for animate.sty
+\afp@xs=\count168
+\afp@xia=\count169
+\afp@xib=\count170
+\afp@xfa=\count171
+\afp@xfb=\count172
+\afp@rega=\count173
+\afp@regb=\count174
+\afp@regs=\count175
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count176
+\scratchdimen=\dimen203
+\scratchbox=\box53
+\nofMPsegments=\count177
+\nofMParguments=\count178
+\everyMPshowfont=\toks41
+\MPscratchCnt=\count179
+\MPscratchDim=\dimen204
+\MPnumerator=\count180
+\everyMPtoPDFconversion=\toks42
+)
+\@anim@@fields=\count181
+\@anim@@ocgs=\count182
+\@anim@@posterocgs=\count183
+\@anim@box=\box54
+\@anim@tmpdima=\dimen205
+\@anim@tmpdimb=\dimen206
+\@anim@num=\count184
+\@anim@curframe=\count185
+\@anim@curframe@zb=\count186
+\@anim@resize=\count187
+\@anim@skipfram=\count188
+\@anim@mulframecnt=\count189
+\@anim@@tmlnfile=\read2
+\@anim@tmpcnt=\count190
+\c@@anim@tmpcnt=\count191
+\@anim@curlayer=\count192
+\@anim@lineno=\count193
+\@anim@begin=\toks43
+\@anim@end=\toks44
 )
 (D:\pb404\Research\VariableRateAlgorithms\FUSION_paper\presentation\Bunch_FUSIO
 N12_VRPFTrackingModels.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -847,19 +925,19 @@ LaTeX Font Info:    ... okay on input line 14.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count164
-\scratchdimen=\dimen201
-\scratchbox=\box53
-\nofMPsegments=\count165
-\nofMParguments=\count166
-\everyMPshowfont=\toks41
-\MPscratchCnt=\count167
-\MPscratchDim=\dimen202
-\MPnumerator=\count168
-\everyMPtoPDFconversion=\toks42
+\scratchcounter=\count194
+\scratchdimen=\dimen207
+\scratchbox=\box55
+\nofMPsegments=\count195
+\nofMParguments=\count196
+\everyMPshowfont=\toks45
+\MPscratchCnt=\count197
+\MPscratchDim=\dimen208
+\MPnumerator=\count198
+\everyMPtoPDFconversion=\toks46
 ) ABD: EveryShipout initializing macros
-\AtBeginShipoutBox=\box54
-Package hyperref Info: Link coloring OFF on input line 14.
+\AtBeginShipoutBox=\box56
+Package hyperref Info: Link coloring OFF on input line 18.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
@@ -870,11 +948,11 @@ Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
 Package: gettitlestring 2009/12/18 v1.3 Cleanup title references (HO)
 )
-\c@section@level=\count169
+\c@section@level=\count199
 )
-LaTeX Info: Redefining \ref on input line 14.
-LaTeX Info: Redefining \pageref on input line 14.
-LaTeX Info: Redefining \nameref on input line 14.
+LaTeX Info: Redefining \ref on input line 18.
+LaTeX Info: Redefining \pageref on input line 18.
+LaTeX Info: Redefining \nameref on input line 18.
 
 (D:\pb404\Research\VariableRateAlgorithms\FUSION_paper\presentation\Bunch_FUSIO
 N12_VRPFTrackingModels.out)
@@ -882,47 +960,47 @@ N12_VRPFTrackingModels.out)
 N12_VRPFTrackingModels.out)
 \@outlinefile=\write5
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 14.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 18.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 14.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 18.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 14.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 14.
+(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 18.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 18.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 14.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 18.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 14.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 14.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 18.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 18.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 14.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 18.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 14.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 14.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 18.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 18.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 14.
+(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 18.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 14.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 14.
+(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 18.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 18.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 14.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 18.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 14.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 18.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 14.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 18.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 14.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 18.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmr/bx/n on input line 14.
+(Font)                  OT1/cmss/bx/n --> OT1/cmr/bx/n on input line 18.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/bx/n on input line 14.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/bx/n on input line 18.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 14.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 18.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 14.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 18.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/bx/n on input line 14.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/bx/n on input line 18.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\beamer\base\translator\dicts\tran
 slator-basic-dictionary\translator-basic-dictionary-English.dict"
@@ -950,88 +1028,705 @@ Dictionary: translator-theorem-dictionary, Language: English
 )
 Package caption Info: Begin \AtBeginDocument code.
 Package caption3 Info: subfig package 1.2 or 1.3 is loaded.
-LaTeX Info: Redefining \subref on input line 14.
+LaTeX Info: Redefining \subref on input line 18.
 Package caption Info: End \AtBeginDocument code.
 
 (D:\pb404\Research\VariableRateAlgorithms\FUSION_paper\presentation\Bunch_FUSIO
 N12_VRPFTrackingModels.nav)
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
-(Font)              size <5> substituted on input line 18.
+(Font)              size <5> substituted on input line 22.
 
 [1
 
-{C:/Users/pb404/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-<HMM_model.pdf, id=43, 345.29pt x 279.0425pt>
+{C:/Users/pb404/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2
+
+]
+[3
+
+] <HMM_model.pdf, id=100, 345.29pt x 279.0425pt>
 File: HMM_model.pdf Graphic file (type pdf)
- <use HMM_model.pdf> [2
+ <use HMM_model.pdf> [4
 
  <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/HMM_model.
 pdf>]
-<variable_rate_model.pdf, id=78, 345.29pt x 279.0425pt>
+<variable_rate_model.pdf, id=133, 345.29pt x 279.0425pt>
 File: variable_rate_model.pdf Graphic file (type pdf)
 
-<use variable_rate_model.pdf> [3
+<use variable_rate_model.pdf> [5
 
  <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/variable_r
-ate_model.pdf>]
-LaTeX Font Info:    Try loading font information for U+msa on input line 54.
+ate_model.pdf>] [6
+
+]
+LaTeX Font Info:    Try loading font information for U+msa on input line 75.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 54.
+LaTeX Font Info:    Try loading font information for U+msb on input line 75.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
-) [4
+) [7
 
-] [5
-
-]
-[6
-
-] [7
-
-] <full_rank.pdf, id=224, 367.3725pt x 295.1025pt>
-File: full_rank.pdf Graphic file (type pdf)
- <use full_rank.pdf>
-<deficient.pdf, id=225, 367.3725pt x 295.1025pt>
-File: deficient.pdf Graphic file (type pdf)
- <use deficient.pdf>
-Overfull \vbox (24.36658pt too high) detected at line 115
- []
-
-[8
-
- <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/full_rank.
-pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/defici
-ent.pdf>] [9
-
-] [10
+] [8
 
 ]
-Overfull \vbox (29.00848pt too high) detected at line 153
- []
+[9
 
-[11
+] <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation
+/vrpf_2.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentatio
+n/animation/vrpf_3.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/
+presentation/animation/vrpf_4.pdf> <D:/pb404/Research/VariableRateAlgorithms/FU
+SION_paper/presentation/animation/vrpf_5.pdf> <D:/pb404/Research/VariableRateAl
+gorithms/FUSION_paper/presentation/animation/vrpf_6.pdf> <D:/pb404/Research/Var
+iableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_7.pdf> <D:/pb404/R
+esearch/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_8.pdf> 
+<D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/v
+rpf_9.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/
+animation/vrpf_10.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/p
+resentation/animation/vrpf_11.pdf> <D:/pb404/Research/VariableRateAlgorithms/FU
+SION_paper/presentation/animation/vrpf_12.pdf> <D:/pb404/Research/VariableRateA
+lgorithms/FUSION_paper/presentation/animation/vrpf_13.pdf> <D:/pb404/Research/V
+ariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_14.pdf> <D:/pb40
+4/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_15.p
+df> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animati
+on/vrpf_16.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presenta
+tion/animation/vrpf_17.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_pa
+per/presentation/animation/vrpf_18.pdf> <D:/pb404/Research/VariableRateAlgorith
+ms/FUSION_paper/presentation/animation/vrpf_19.pdf> <D:/pb404/Research/Variable
+RateAlgorithms/FUSION_paper/presentation/animation/vrpf_20.pdf> <D:/pb404/Resea
+rch/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_21.pdf> <D:
+/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf
+_22.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/an
+imation/vrpf_23.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/pre
+sentation/animation/vrpf_24.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSI
+ON_paper/presentation/animation/vrpf_25.pdf> <D:/pb404/Research/VariableRateAlg
+orithms/FUSION_paper/presentation/animation/vrpf_26.pdf> <D:/pb404/Research/Var
+iableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_27.pdf> <D:/pb404/
+Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_28.pdf
+> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation
+/vrpf_29.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentati
+on/animation/vrpf_30.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_pape
+r/presentation/animation/vrpf_31.pdf> <D:/pb404/Research/VariableRateAlgorithms
+/FUSION_paper/presentation/animation/vrpf_32.pdf> <D:/pb404/Research/VariableRa
+teAlgorithms/FUSION_paper/presentation/animation/vrpf_33.pdf> <D:/pb404/Researc
+h/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_34.pdf> <D:/p
+b404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_3
+5.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/anim
+ation/vrpf_36.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/prese
+ntation/animation/vrpf_37.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION
+_paper/presentation/animation/vrpf_38.pdf> <D:/pb404/Research/VariableRateAlgor
+ithms/FUSION_paper/presentation/animation/vrpf_39.pdf> <D:/pb404/Research/Varia
+bleRateAlgorithms/FUSION_paper/presentation/animation/vrpf_40.pdf> <D:/pb404/Re
+search/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_41.pdf> 
+<D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/v
+rpf_42.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation
+/animation/vrpf_43.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/
+presentation/animation/vrpf_44.pdf> <D:/pb404/Research/VariableRateAlgorithms/F
+USION_paper/presentation/animation/vrpf_45.pdf> <D:/pb404/Research/VariableRate
+Algorithms/FUSION_paper/presentation/animation/vrpf_46.pdf> <D:/pb404/Research/
+VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_47.pdf> <D:/pb4
+04/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_48.
+pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animat
+ion/vrpf_49.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/present
+ation/animation/vrpf_50.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_p
+aper/presentation/animation/vrpf_51.pdf> <D:/pb404/Research/VariableRateAlgorit
+hms/FUSION_paper/presentation/animation/vrpf_52.pdf> <D:/pb404/Research/Variabl
+eRateAlgorithms/FUSION_paper/presentation/animation/vrpf_53.pdf> <D:/pb404/Rese
+arch/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_54.pdf> <D
+:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrp
+f_55.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/a
+nimation/vrpf_56.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/pr
+esentation/animation/vrpf_57.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUS
+ION_paper/presentation/animation/vrpf_58.pdf> <D:/pb404/Research/VariableRateAl
+gorithms/FUSION_paper/presentation/animation/vrpf_59.pdf> <D:/pb404/Research/Va
+riableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_60.pdf> <D:/pb404
+/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_61.pd
+f> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animatio
+n/vrpf_62.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentat
+ion/animation/vrpf_63.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_pap
+er/presentation/animation/vrpf_64.pdf> <D:/pb404/Research/VariableRateAlgorithm
+s/FUSION_paper/presentation/animation/vrpf_65.pdf> <D:/pb404/Research/VariableR
+ateAlgorithms/FUSION_paper/presentation/animation/vrpf_66.pdf> <D:/pb404/Resear
+ch/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_67.pdf> <D:/
+pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_
+68.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/ani
+mation/vrpf_69.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/pres
+entation/animation/vrpf_70.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSIO
+N_paper/presentation/animation/vrpf_71.pdf> <D:/pb404/Research/VariableRateAlgo
+rithms/FUSION_paper/presentation/animation/vrpf_72.pdf> <D:/pb404/Research/Vari
+ableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_73.pdf> <D:/pb404/R
+esearch/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_74.pdf>
+ <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/
+vrpf_75.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentatio
+n/animation/vrpf_76.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper
+/presentation/animation/vrpf_77.pdf> <D:/pb404/Research/VariableRateAlgorithms/
+FUSION_paper/presentation/animation/vrpf_78.pdf> <D:/pb404/Research/VariableRat
+eAlgorithms/FUSION_paper/presentation/animation/vrpf_79.pdf> <D:/pb404/Research
+/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_80.pdf> <D:/pb
+404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_81
+.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/anima
+tion/vrpf_82.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presen
+tation/animation/vrpf_83.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_
+paper/presentation/animation/vrpf_84.pdf> <D:/pb404/Research/VariableRateAlgori
+thms/FUSION_paper/presentation/animation/vrpf_85.pdf> <D:/pb404/Research/Variab
+leRateAlgorithms/FUSION_paper/presentation/animation/vrpf_86.pdf> <D:/pb404/Res
+earch/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_87.pdf> <
+D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/vr
+pf_88.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/
+animation/vrpf_89.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/p
+resentation/animation/vrpf_90.pdf> <D:/pb404/Research/VariableRateAlgorithms/FU
+SION_paper/presentation/animation/vrpf_91.pdf> <D:/pb404/Research/VariableRateA
+lgorithms/FUSION_paper/presentation/animation/vrpf_92.pdf> <D:/pb404/Research/V
+ariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_93.pdf> <D:/pb40
+4/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_94.p
+df> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animati
+on/vrpf_95.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presenta
+tion/animation/vrpf_96.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_pa
+per/presentation/animation/vrpf_97.pdf> <D:/pb404/Research/VariableRateAlgorith
+ms/FUSION_paper/presentation/animation/vrpf_98.pdf> <D:/pb404/Research/Variable
+RateAlgorithms/FUSION_paper/presentation/animation/vrpf_99.pdf> <D:/pb404/Resea
+rch/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_100.pdf> <D
+:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrp
+f_101.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/
+animation/vrpf_102.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/
+presentation/animation/vrpf_103.pdf> <D:/pb404/Research/VariableRateAlgorithms/
+FUSION_paper/presentation/animation/vrpf_104.pdf> <D:/pb404/Research/VariableRa
+teAlgorithms/FUSION_paper/presentation/animation/vrpf_105.pdf> <D:/pb404/Resear
+ch/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_106.pdf> <D:
+/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf
+_107.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/a
+nimation/vrpf_108.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/p
+resentation/animation/vrpf_109.pdf> <D:/pb404/Research/VariableRateAlgorithms/F
+USION_paper/presentation/animation/vrpf_110.pdf> <D:/pb404/Research/VariableRat
+eAlgorithms/FUSION_paper/presentation/animation/vrpf_111.pdf> <D:/pb404/Researc
+h/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_112.pdf> <D:/
+pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_
+113.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/an
+imation/vrpf_114.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/pr
+esentation/animation/vrpf_115.pdf> <D:/pb404/Research/VariableRateAlgorithms/FU
+SION_paper/presentation/animation/vrpf_116.pdf> <D:/pb404/Research/VariableRate
+Algorithms/FUSION_paper/presentation/animation/vrpf_117.pdf> <D:/pb404/Research
+/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_118.pdf> <D:/p
+b404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_1
+19.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/ani
+mation/vrpf_120.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/pre
+sentation/animation/vrpf_121.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUS
+ION_paper/presentation/animation/vrpf_122.pdf> <D:/pb404/Research/VariableRateA
+lgorithms/FUSION_paper/presentation/animation/vrpf_123.pdf> <D:/pb404/Research/
+VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_124.pdf> <D:/pb
+404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_12
+5.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/anim
+ation/vrpf_126.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/pres
+entation/animation/vrpf_127.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSI
+ON_paper/presentation/animation/vrpf_128.pdf> <D:/pb404/Research/VariableRateAl
+gorithms/FUSION_paper/presentation/animation/vrpf_129.pdf> <D:/pb404/Research/V
+ariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_130.pdf> <D:/pb4
+04/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_131
+.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/anima
+tion/vrpf_132.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/prese
+ntation/animation/vrpf_133.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSIO
+N_paper/presentation/animation/vrpf_134.pdf> <D:/pb404/Research/VariableRateAlg
+orithms/FUSION_paper/presentation/animation/vrpf_135.pdf> <D:/pb404/Research/Va
+riableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_136.pdf> <D:/pb40
+4/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_137.
+pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animat
+ion/vrpf_138.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presen
+tation/animation/vrpf_139.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION
+_paper/presentation/animation/vrpf_140.pdf> <D:/pb404/Research/VariableRateAlgo
+rithms/FUSION_paper/presentation/animation/vrpf_141.pdf> <D:/pb404/Research/Var
+iableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_142.pdf> <D:/pb404
+/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_143.p
+df> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animati
+on/vrpf_144.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/present
+ation/animation/vrpf_145.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_
+paper/presentation/animation/vrpf_146.pdf> <D:/pb404/Research/VariableRateAlgor
+ithms/FUSION_paper/presentation/animation/vrpf_147.pdf> <D:/pb404/Research/Vari
+ableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_148.pdf> <D:/pb404/
+Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_149.pd
+f> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animatio
+n/vrpf_150.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presenta
+tion/animation/vrpf_151.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_p
+aper/presentation/animation/vrpf_152.pdf> <D:/pb404/Research/VariableRateAlgori
+thms/FUSION_paper/presentation/animation/vrpf_153.pdf> <D:/pb404/Research/Varia
+bleRateAlgorithms/FUSION_paper/presentation/animation/vrpf_154.pdf> <D:/pb404/R
+esearch/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_155.pdf
+> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation
+/vrpf_156.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentat
+ion/animation/vrpf_157.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_pa
+per/presentation/animation/vrpf_158.pdf> <D:/pb404/Research/VariableRateAlgorit
+hms/FUSION_paper/presentation/animation/vrpf_159.pdf> <D:/pb404/Research/Variab
+leRateAlgorithms/FUSION_paper/presentation/animation/vrpf_160.pdf> <D:/pb404/Re
+search/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_161.pdf>
+ <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/
+vrpf_162.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentati
+on/animation/vrpf_163.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_pap
+er/presentation/animation/vrpf_164.pdf> <D:/pb404/Research/VariableRateAlgorith
+ms/FUSION_paper/presentation/animation/vrpf_165.pdf> <D:/pb404/Research/Variabl
+eRateAlgorithms/FUSION_paper/presentation/animation/vrpf_166.pdf> <D:/pb404/Res
+earch/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_167.pdf> 
+<D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/v
+rpf_168.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentatio
+n/animation/vrpf_169.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_pape
+r/presentation/animation/vrpf_170.pdf> <D:/pb404/Research/VariableRateAlgorithm
+s/FUSION_paper/presentation/animation/vrpf_171.pdf> <D:/pb404/Research/Variable
+RateAlgorithms/FUSION_paper/presentation/animation/vrpf_172.pdf> <D:/pb404/Rese
+arch/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_173.pdf> <
+D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/vr
+pf_174.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation
+/animation/vrpf_175.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper
+/presentation/animation/vrpf_176.pdf> <D:/pb404/Research/VariableRateAlgorithms
+/FUSION_paper/presentation/animation/vrpf_177.pdf> <D:/pb404/Research/VariableR
+ateAlgorithms/FUSION_paper/presentation/animation/vrpf_178.pdf> <D:/pb404/Resea
+rch/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_179.pdf> <D
+:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrp
+f_180.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/
+animation/vrpf_181.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/
+presentation/animation/vrpf_182.pdf> <D:/pb404/Research/VariableRateAlgorithms/
+FUSION_paper/presentation/animation/vrpf_183.pdf> <D:/pb404/Research/VariableRa
+teAlgorithms/FUSION_paper/presentation/animation/vrpf_184.pdf> <D:/pb404/Resear
+ch/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_185.pdf> <D:
+/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf
+_186.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/a
+nimation/vrpf_187.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/p
+resentation/animation/vrpf_188.pdf> <D:/pb404/Research/VariableRateAlgorithms/F
+USION_paper/presentation/animation/vrpf_189.pdf> <D:/pb404/Research/VariableRat
+eAlgorithms/FUSION_paper/presentation/animation/vrpf_190.pdf> <D:/pb404/Researc
+h/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_191.pdf> <D:/
+pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_
+192.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/an
+imation/vrpf_193.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/pr
+esentation/animation/vrpf_194.pdf> <D:/pb404/Research/VariableRateAlgorithms/FU
+SION_paper/presentation/animation/vrpf_195.pdf> <D:/pb404/Research/VariableRate
+Algorithms/FUSION_paper/presentation/animation/vrpf_196.pdf> <D:/pb404/Research
+/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_197.pdf> <D:/p
+b404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_1
+98.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/ani
+mation/vrpf_199.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/pre
+sentation/animation/vrpf_200.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUS
+ION_paper/presentation/animation/vrpf_201.pdf> <D:/pb404/Research/VariableRateA
+lgorithms/FUSION_paper/presentation/animation/vrpf_202.pdf> <D:/pb404/Research/
+VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_203.pdf> <D:/pb
+404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_20
+4.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/anim
+ation/vrpf_205.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/pres
+entation/animation/vrpf_206.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSI
+ON_paper/presentation/animation/vrpf_207.pdf> <D:/pb404/Research/VariableRateAl
+gorithms/FUSION_paper/presentation/animation/vrpf_208.pdf> <D:/pb404/Research/V
+ariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_209.pdf> <D:/pb4
+04/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_210
+.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/anima
+tion/vrpf_211.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/prese
+ntation/animation/vrpf_212.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSIO
+N_paper/presentation/animation/vrpf_213.pdf> <D:/pb404/Research/VariableRateAlg
+orithms/FUSION_paper/presentation/animation/vrpf_214.pdf> <D:/pb404/Research/Va
+riableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_215.pdf> <D:/pb40
+4/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_216.
+pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animat
+ion/vrpf_217.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presen
+tation/animation/vrpf_218.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION
+_paper/presentation/animation/vrpf_219.pdf> <D:/pb404/Research/VariableRateAlgo
+rithms/FUSION_paper/presentation/animation/vrpf_220.pdf> <D:/pb404/Research/Var
+iableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_221.pdf> <D:/pb404
+/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_222.p
+df> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animati
+on/vrpf_223.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/present
+ation/animation/vrpf_224.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_
+paper/presentation/animation/vrpf_225.pdf> <D:/pb404/Research/VariableRateAlgor
+ithms/FUSION_paper/presentation/animation/vrpf_226.pdf> <D:/pb404/Research/Vari
+ableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_227.pdf> <D:/pb404/
+Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_228.pd
+f> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animatio
+n/vrpf_229.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presenta
+tion/animation/vrpf_230.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_p
+aper/presentation/animation/vrpf_231.pdf> <D:/pb404/Research/VariableRateAlgori
+thms/FUSION_paper/presentation/animation/vrpf_232.pdf> <D:/pb404/Research/Varia
+bleRateAlgorithms/FUSION_paper/presentation/animation/vrpf_233.pdf> <D:/pb404/R
+esearch/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_234.pdf
+> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation
+/vrpf_235.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentat
+ion/animation/vrpf_236.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_pa
+per/presentation/animation/vrpf_237.pdf> <D:/pb404/Research/VariableRateAlgorit
+hms/FUSION_paper/presentation/animation/vrpf_238.pdf> <D:/pb404/Research/Variab
+leRateAlgorithms/FUSION_paper/presentation/animation/vrpf_239.pdf> <D:/pb404/Re
+search/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_240.pdf>
+ <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/
+vrpf_241.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentati
+on/animation/vrpf_242.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_pap
+er/presentation/animation/vrpf_243.pdf> <D:/pb404/Research/VariableRateAlgorith
+ms/FUSION_paper/presentation/animation/vrpf_244.pdf> <D:/pb404/Research/Variabl
+eRateAlgorithms/FUSION_paper/presentation/animation/vrpf_245.pdf> <D:/pb404/Res
+earch/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_246.pdf> 
+<D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/v
+rpf_247.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentatio
+n/animation/vrpf_248.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_pape
+r/presentation/animation/vrpf_249.pdf> <D:/pb404/Research/VariableRateAlgorithm
+s/FUSION_paper/presentation/animation/vrpf_250.pdf> <D:/pb404/Research/Variable
+RateAlgorithms/FUSION_paper/presentation/animation/vrpf_251.pdf> <D:/pb404/Rese
+arch/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_252.pdf> <
+D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/vr
+pf_253.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation
+/animation/vrpf_254.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper
+/presentation/animation/vrpf_255.pdf> <D:/pb404/Research/VariableRateAlgorithms
+/FUSION_paper/presentation/animation/vrpf_256.pdf> <D:/pb404/Research/VariableR
+ateAlgorithms/FUSION_paper/presentation/animation/vrpf_257.pdf> <D:/pb404/Resea
+rch/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_258.pdf> <D
+:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrp
+f_259.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/
+animation/vrpf_260.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/
+presentation/animation/vrpf_261.pdf> <D:/pb404/Research/VariableRateAlgorithms/
+FUSION_paper/presentation/animation/vrpf_262.pdf> <D:/pb404/Research/VariableRa
+teAlgorithms/FUSION_paper/presentation/animation/vrpf_263.pdf> <D:/pb404/Resear
+ch/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_264.pdf> <D:
+/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf
+_265.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/a
+nimation/vrpf_266.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/p
+resentation/animation/vrpf_267.pdf> <D:/pb404/Research/VariableRateAlgorithms/F
+USION_paper/presentation/animation/vrpf_268.pdf> <D:/pb404/Research/VariableRat
+eAlgorithms/FUSION_paper/presentation/animation/vrpf_269.pdf> <D:/pb404/Researc
+h/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_270.pdf> <D:/
+pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_
+271.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/an
+imation/vrpf_272.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/pr
+esentation/animation/vrpf_273.pdf> <D:/pb404/Research/VariableRateAlgorithms/FU
+SION_paper/presentation/animation/vrpf_274.pdf> <D:/pb404/Research/VariableRate
+Algorithms/FUSION_paper/presentation/animation/vrpf_275.pdf> <D:/pb404/Research
+/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_276.pdf> <D:/p
+b404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_2
+77.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/ani
+mation/vrpf_278.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/pre
+sentation/animation/vrpf_279.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUS
+ION_paper/presentation/animation/vrpf_280.pdf> <D:/pb404/Research/VariableRateA
+lgorithms/FUSION_paper/presentation/animation/vrpf_281.pdf> <D:/pb404/Research/
+VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_282.pdf> <D:/pb
+404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_28
+3.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/anim
+ation/vrpf_284.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/pres
+entation/animation/vrpf_285.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSI
+ON_paper/presentation/animation/vrpf_286.pdf> <D:/pb404/Research/VariableRateAl
+gorithms/FUSION_paper/presentation/animation/vrpf_287.pdf> <D:/pb404/Research/V
+ariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_288.pdf> <D:/pb4
+04/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_289
+.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/anima
+tion/vrpf_290.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/prese
+ntation/animation/vrpf_291.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSIO
+N_paper/presentation/animation/vrpf_292.pdf> <D:/pb404/Research/VariableRateAlg
+orithms/FUSION_paper/presentation/animation/vrpf_293.pdf> <D:/pb404/Research/Va
+riableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_294.pdf> <D:/pb40
+4/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_295.
+pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animat
+ion/vrpf_296.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presen
+tation/animation/vrpf_297.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION
+_paper/presentation/animation/vrpf_298.pdf> <D:/pb404/Research/VariableRateAlgo
+rithms/FUSION_paper/presentation/animation/vrpf_299.pdf> <D:/pb404/Research/Var
+iableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_300.pdf> <D:/pb404
+/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_301.p
+df> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animati
+on/vrpf_302.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/present
+ation/animation/vrpf_303.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_
+paper/presentation/animation/vrpf_304.pdf> <D:/pb404/Research/VariableRateAlgor
+ithms/FUSION_paper/presentation/animation/vrpf_305.pdf> <D:/pb404/Research/Vari
+ableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_306.pdf> <D:/pb404/
+Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_307.pd
+f> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animatio
+n/vrpf_308.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presenta
+tion/animation/vrpf_309.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_p
+aper/presentation/animation/vrpf_310.pdf> <D:/pb404/Research/VariableRateAlgori
+thms/FUSION_paper/presentation/animation/vrpf_311.pdf> <D:/pb404/Research/Varia
+bleRateAlgorithms/FUSION_paper/presentation/animation/vrpf_312.pdf> <D:/pb404/R
+esearch/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_313.pdf
+> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation
+/vrpf_314.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentat
+ion/animation/vrpf_315.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_pa
+per/presentation/animation/vrpf_316.pdf> <D:/pb404/Research/VariableRateAlgorit
+hms/FUSION_paper/presentation/animation/vrpf_317.pdf> <D:/pb404/Research/Variab
+leRateAlgorithms/FUSION_paper/presentation/animation/vrpf_318.pdf> <D:/pb404/Re
+search/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_319.pdf>
+ <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/
+vrpf_320.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentati
+on/animation/vrpf_321.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_pap
+er/presentation/animation/vrpf_322.pdf> <D:/pb404/Research/VariableRateAlgorith
+ms/FUSION_paper/presentation/animation/vrpf_323.pdf> <D:/pb404/Research/Variabl
+eRateAlgorithms/FUSION_paper/presentation/animation/vrpf_324.pdf> <D:/pb404/Res
+earch/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_325.pdf> 
+<D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/v
+rpf_326.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentatio
+n/animation/vrpf_327.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_pape
+r/presentation/animation/vrpf_328.pdf> <D:/pb404/Research/VariableRateAlgorithm
+s/FUSION_paper/presentation/animation/vrpf_329.pdf> <D:/pb404/Research/Variable
+RateAlgorithms/FUSION_paper/presentation/animation/vrpf_330.pdf> <D:/pb404/Rese
+arch/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_331.pdf> <
+D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/vr
+pf_332.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation
+/animation/vrpf_333.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper
+/presentation/animation/vrpf_334.pdf> <D:/pb404/Research/VariableRateAlgorithms
+/FUSION_paper/presentation/animation/vrpf_335.pdf> <D:/pb404/Research/VariableR
+ateAlgorithms/FUSION_paper/presentation/animation/vrpf_336.pdf> <D:/pb404/Resea
+rch/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_337.pdf> <D
+:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrp
+f_338.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/
+animation/vrpf_339.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/
+presentation/animation/vrpf_340.pdf> <D:/pb404/Research/VariableRateAlgorithms/
+FUSION_paper/presentation/animation/vrpf_341.pdf> <D:/pb404/Research/VariableRa
+teAlgorithms/FUSION_paper/presentation/animation/vrpf_342.pdf> <D:/pb404/Resear
+ch/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_343.pdf> <D:
+/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf
+_344.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/a
+nimation/vrpf_345.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/p
+resentation/animation/vrpf_346.pdf> <D:/pb404/Research/VariableRateAlgorithms/F
+USION_paper/presentation/animation/vrpf_347.pdf> <D:/pb404/Research/VariableRat
+eAlgorithms/FUSION_paper/presentation/animation/vrpf_348.pdf> <D:/pb404/Researc
+h/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_349.pdf> <D:/
+pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_
+350.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/an
+imation/vrpf_351.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/pr
+esentation/animation/vrpf_352.pdf> <D:/pb404/Research/VariableRateAlgorithms/FU
+SION_paper/presentation/animation/vrpf_353.pdf> <D:/pb404/Research/VariableRate
+Algorithms/FUSION_paper/presentation/animation/vrpf_354.pdf> <D:/pb404/Research
+/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_355.pdf> <D:/p
+b404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_3
+56.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/ani
+mation/vrpf_357.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/pre
+sentation/animation/vrpf_358.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUS
+ION_paper/presentation/animation/vrpf_359.pdf> <D:/pb404/Research/VariableRateA
+lgorithms/FUSION_paper/presentation/animation/vrpf_360.pdf> <D:/pb404/Research/
+VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_361.pdf> <D:/pb
+404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_36
+2.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/anim
+ation/vrpf_363.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/pres
+entation/animation/vrpf_364.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSI
+ON_paper/presentation/animation/vrpf_365.pdf> <D:/pb404/Research/VariableRateAl
+gorithms/FUSION_paper/presentation/animation/vrpf_366.pdf> <D:/pb404/Research/V
+ariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_367.pdf> <D:/pb4
+04/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_368
+.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/anima
+tion/vrpf_369.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/prese
+ntation/animation/vrpf_370.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSIO
+N_paper/presentation/animation/vrpf_371.pdf> <D:/pb404/Research/VariableRateAlg
+orithms/FUSION_paper/presentation/animation/vrpf_372.pdf> <D:/pb404/Research/Va
+riableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_373.pdf> <D:/pb40
+4/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_374.
+pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animat
+ion/vrpf_375.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presen
+tation/animation/vrpf_376.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION
+_paper/presentation/animation/vrpf_377.pdf> <D:/pb404/Research/VariableRateAlgo
+rithms/FUSION_paper/presentation/animation/vrpf_378.pdf> <D:/pb404/Research/Var
+iableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_379.pdf> <D:/pb404
+/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_380.p
+df> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animati
+on/vrpf_381.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/present
+ation/animation/vrpf_382.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_
+paper/presentation/animation/vrpf_383.pdf> <D:/pb404/Research/VariableRateAlgor
+ithms/FUSION_paper/presentation/animation/vrpf_384.pdf> <D:/pb404/Research/Vari
+ableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_385.pdf> <D:/pb404/
+Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_386.pd
+f> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animatio
+n/vrpf_387.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presenta
+tion/animation/vrpf_388.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_p
+aper/presentation/animation/vrpf_389.pdf> <D:/pb404/Research/VariableRateAlgori
+thms/FUSION_paper/presentation/animation/vrpf_390.pdf> <D:/pb404/Research/Varia
+bleRateAlgorithms/FUSION_paper/presentation/animation/vrpf_391.pdf> <D:/pb404/R
+esearch/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_392.pdf
+> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation
+/vrpf_393.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentat
+ion/animation/vrpf_394.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_pa
+per/presentation/animation/vrpf_395.pdf> <D:/pb404/Research/VariableRateAlgorit
+hms/FUSION_paper/presentation/animation/vrpf_396.pdf> <D:/pb404/Research/Variab
+leRateAlgorithms/FUSION_paper/presentation/animation/vrpf_397.pdf> <D:/pb404/Re
+search/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_398.pdf>
+ <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/
+vrpf_399.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentati
+on/animation/vrpf_400.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_pap
+er/presentation/animation/vrpf_401.pdf> <D:/pb404/Research/VariableRateAlgorith
+ms/FUSION_paper/presentation/animation/vrpf_402.pdf> <D:/pb404/Research/Variabl
+eRateAlgorithms/FUSION_paper/presentation/animation/vrpf_403.pdf> <D:/pb404/Res
+earch/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_404.pdf> 
+<D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/v
+rpf_405.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentatio
+n/animation/vrpf_406.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_pape
+r/presentation/animation/vrpf_407.pdf> <D:/pb404/Research/VariableRateAlgorithm
+s/FUSION_paper/presentation/animation/vrpf_408.pdf> <D:/pb404/Research/Variable
+RateAlgorithms/FUSION_paper/presentation/animation/vrpf_409.pdf> <D:/pb404/Rese
+arch/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_410.pdf> <
+D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/vr
+pf_411.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation
+/animation/vrpf_412.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper
+/presentation/animation/vrpf_413.pdf> <D:/pb404/Research/VariableRateAlgorithms
+/FUSION_paper/presentation/animation/vrpf_414.pdf> <D:/pb404/Research/VariableR
+ateAlgorithms/FUSION_paper/presentation/animation/vrpf_415.pdf> <D:/pb404/Resea
+rch/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_416.pdf> <D
+:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrp
+f_417.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/
+animation/vrpf_418.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/
+presentation/animation/vrpf_419.pdf> <D:/pb404/Research/VariableRateAlgorithms/
+FUSION_paper/presentation/animation/vrpf_420.pdf> <D:/pb404/Research/VariableRa
+teAlgorithms/FUSION_paper/presentation/animation/vrpf_421.pdf> <D:/pb404/Resear
+ch/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_422.pdf> <D:
+/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf
+_423.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/a
+nimation/vrpf_424.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/p
+resentation/animation/vrpf_425.pdf> <D:/pb404/Research/VariableRateAlgorithms/F
+USION_paper/presentation/animation/vrpf_426.pdf> <D:/pb404/Research/VariableRat
+eAlgorithms/FUSION_paper/presentation/animation/vrpf_427.pdf> <D:/pb404/Researc
+h/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_428.pdf> <D:/
+pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_
+429.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/an
+imation/vrpf_430.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/pr
+esentation/animation/vrpf_431.pdf> <D:/pb404/Research/VariableRateAlgorithms/FU
+SION_paper/presentation/animation/vrpf_432.pdf> <D:/pb404/Research/VariableRate
+Algorithms/FUSION_paper/presentation/animation/vrpf_433.pdf> <D:/pb404/Research
+/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_434.pdf> <D:/p
+b404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_4
+35.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/ani
+mation/vrpf_436.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/pre
+sentation/animation/vrpf_437.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUS
+ION_paper/presentation/animation/vrpf_438.pdf> <D:/pb404/Research/VariableRateA
+lgorithms/FUSION_paper/presentation/animation/vrpf_439.pdf> <D:/pb404/Research/
+VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_440.pdf> <D:/pb
+404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_44
+1.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/anim
+ation/vrpf_442.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/pres
+entation/animation/vrpf_443.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSI
+ON_paper/presentation/animation/vrpf_444.pdf> <D:/pb404/Research/VariableRateAl
+gorithms/FUSION_paper/presentation/animation/vrpf_445.pdf> <D:/pb404/Research/V
+ariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_446.pdf> <D:/pb4
+04/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_447
+.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/anima
+tion/vrpf_448.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/prese
+ntation/animation/vrpf_449.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSIO
+N_paper/presentation/animation/vrpf_450.pdf> <D:/pb404/Research/VariableRateAlg
+orithms/FUSION_paper/presentation/animation/vrpf_451.pdf> <D:/pb404/Research/Va
+riableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_452.pdf> <D:/pb40
+4/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_453.
+pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animat
+ion/vrpf_454.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presen
+tation/animation/vrpf_455.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION
+_paper/presentation/animation/vrpf_456.pdf> <D:/pb404/Research/VariableRateAlgo
+rithms/FUSION_paper/presentation/animation/vrpf_457.pdf> <D:/pb404/Research/Var
+iableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_458.pdf> <D:/pb404
+/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_459.p
+df> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animati
+on/vrpf_460.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/present
+ation/animation/vrpf_461.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_
+paper/presentation/animation/vrpf_462.pdf> <D:/pb404/Research/VariableRateAlgor
+ithms/FUSION_paper/presentation/animation/vrpf_463.pdf> <D:/pb404/Research/Vari
+ableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_464.pdf> <D:/pb404/
+Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_465.pd
+f> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animatio
+n/vrpf_466.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presenta
+tion/animation/vrpf_467.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_p
+aper/presentation/animation/vrpf_468.pdf> <D:/pb404/Research/VariableRateAlgori
+thms/FUSION_paper/presentation/animation/vrpf_469.pdf> <D:/pb404/Research/Varia
+bleRateAlgorithms/FUSION_paper/presentation/animation/vrpf_470.pdf> <D:/pb404/R
+esearch/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_471.pdf
+> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation
+/vrpf_472.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentat
+ion/animation/vrpf_473.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_pa
+per/presentation/animation/vrpf_474.pdf> <D:/pb404/Research/VariableRateAlgorit
+hms/FUSION_paper/presentation/animation/vrpf_475.pdf> <D:/pb404/Research/Variab
+leRateAlgorithms/FUSION_paper/presentation/animation/vrpf_476.pdf> <D:/pb404/Re
+search/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_477.pdf>
+ <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/
+vrpf_478.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentati
+on/animation/vrpf_479.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_pap
+er/presentation/animation/vrpf_480.pdf> <D:/pb404/Research/VariableRateAlgorith
+ms/FUSION_paper/presentation/animation/vrpf_481.pdf> <D:/pb404/Research/Variabl
+eRateAlgorithms/FUSION_paper/presentation/animation/vrpf_482.pdf> <D:/pb404/Res
+earch/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_483.pdf> 
+<D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/v
+rpf_484.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentatio
+n/animation/vrpf_485.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_pape
+r/presentation/animation/vrpf_486.pdf> <D:/pb404/Research/VariableRateAlgorithm
+s/FUSION_paper/presentation/animation/vrpf_487.pdf> <D:/pb404/Research/Variable
+RateAlgorithms/FUSION_paper/presentation/animation/vrpf_488.pdf> <D:/pb404/Rese
+arch/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_489.pdf> <
+D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/vr
+pf_490.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation
+/animation/vrpf_491.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper
+/presentation/animation/vrpf_492.pdf> <D:/pb404/Research/VariableRateAlgorithms
+/FUSION_paper/presentation/animation/vrpf_493.pdf> <D:/pb404/Research/VariableR
+ateAlgorithms/FUSION_paper/presentation/animation/vrpf_494.pdf> <D:/pb404/Resea
+rch/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrpf_495.pdf> <D
+:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/animation/vrp
+f_496.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/
+animation/vrpf_497.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/
+presentation/animation/vrpf_498.pdf> <D:/pb404/Research/VariableRateAlgorithms/
+FUSION_paper/presentation/animation/vrpf_499.pdf> <D:/pb404/Research/VariableRa
+teAlgorithms/FUSION_paper/presentation/animation/vrpf_500.pdf> [10
 
-] [12
+] [11
+
+]
+[12
 
 ] [13
 
 ] [14
 
+] [15
+
+] [16
+
+] [17
+
+]
+<full_rank.pdf, id=6478, 367.3725pt x 295.1025pt>
+File: full_rank.pdf Graphic file (type pdf)
+ <use full_rank.pdf>
+<deficient.pdf, id=6479, 367.3725pt x 295.1025pt>
+File: deficient.pdf Graphic file (type pdf)
+ <use deficient.pdf> [18
+
+ <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/full_rank.
+pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/defici
+ent.pdf>] [19
+
+] [20
+
+] <2Dfilter_big.pdf, id=6570, 368.37625pt x 287.0725pt>
+File: 2Dfilter_big.pdf Graphic file (type pdf)
+
+<use 2Dfilter_big.pdf> <2Dsmoother_big.pdf, id=6571, 368.37625pt x 287.0725pt>
+File: 2Dsmoother_big.pdf Graphic file (type pdf)
+
+<use 2Dsmoother_big.pdf> [21
+
+ <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/2Dfilter_b
+ig.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/2Ds
+moother_big.pdf>] [22
+
+] [23
+
+] [24
+
+]
+<3DCartesian_big.pdf, id=6706, 402.50375pt x 283.0575pt>
+File: 3DCartesian_big.pdf Graphic file (type pdf)
+
+<use 3DCartesian_big.pdf>
+<3DIntrinsic_big.pdf, id=6707, 402.50375pt x 283.0575pt>
+File: 3DIntrinsic_big.pdf Graphic file (type pdf)
+
+<use 3DIntrinsic_big.pdf> [25
+
+ <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/3DCartesia
+n_big.pdf> <D:/pb404/Research/VariableRateAlgorithms/FUSION_paper/presentation/
+3DIntrinsic_big.pdf>] [26
+
+] [27
+
 ]
 \tf@nav=\write6
 \tf@toc=\write7
 \tf@snm=\write8
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 171.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 171.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 226.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 226.
 
 (D:\pb404\Research\VariableRateAlgorithms\FUSION_paper\presentation\Bunch_FUSIO
 N12_VRPFTrackingModels.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 171.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 226.
 Package rerunfilecheck Info: File `Bunch_FUSION12_VRPFTrackingModels.out' has n
 ot changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
@@ -1042,29 +1737,35 @@ LaTeX Font Warning: Size substitutions with differences
 
  ) 
 Here is how much of TeX's memory you used:
- 16270 strings out of 494019
- 309484 string characters out of 3143883
- 399030 words of memory out of 3000000
- 19104 multiletter control sequences out of 15000+200000
- 14350 words of font info for 53 fonts, out of 3000000 for 9000
+ 19783 strings out of 494019
+ 366564 string characters out of 3143883
+ 481281 words of memory out of 3000000
+ 22065 multiletter control sequences out of 15000+200000
+ 14644 words of font info for 54 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 49i,16n,57p,505b,551s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 49i,16n,57p,505b,562s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb>
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C
-:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/P
-rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Pro
-gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Progr
-am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Program 
-Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Program 
-Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssi10.pfb><C:/Program F
-iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssi8.pfb><C:/Program Fil
-es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssi9.pfb><C:/Program Files
- (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (
-x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on Bunch_FUSION12_VRPFTrackingModels.pdf (14 pages, 223858 bytes
-).
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cmex7.pf
+b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:
+/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Pr
+ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Progr
+am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program F
+iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Program Fil
+es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Program Files
+ (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Program Files (x
+86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss9.pfb><C:/Program Files (x86)
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Program Files (x86)
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssi10.pfb><C:/Program Files (x86)/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssi8.pfb><C:/Program Files (x86)/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmssi9.pfb><C:/Program Files (x86)/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files (x86)/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on Bunch_FUSION12_VRPFTrackingModels.pdf (27 pages, 16495634 byt
+es).
 PDF statistics:
- 464 PDF objects out of 1000 (max. 8388607)
- 30 named destinations out of 1000 (max. 500000)
- 59 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 6864 PDF objects out of 7423 (max. 8388607)
+ 56 named destinations out of 1000 (max. 500000)
+ 8578 words of extra memory for PDF output out of 10000 (max. 10000000)
 

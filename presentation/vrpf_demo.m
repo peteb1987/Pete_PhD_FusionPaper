@@ -1,3 +1,13 @@
+clup;
+dbstop if error
+
+% DEFINE RANDOM SEED
+rand_seed = 1;
+
+% Set random seed
+s = RandStream('mt19937ar', 'seed', rand_seed);
+RandStream.setDefaultStream(s);
+
 %% Generate a trajectory
 dt = 0.01;
 t = 0:dt:10;
@@ -26,8 +36,97 @@ disc_t = 1:disc_dt:9;
 disc_x = x(:,disc_idx);
 disc_v = v(:,disc_idx);
 
-% Proposse some initial particles
-pts_a2 = normrnd(0, 1, [5,1]);
+%% Ok. Now treat disc_t, disc_x and disc_v as observations, and mock-pf it
+t = disc_t;
+y = [disc_x; disc_v];
 
-pts_v2 = 
+% Propose some initial particles
+Np = 10;
+pts_a1 = normrnd(0, 0.1, [Np,1]);
+pts_a2 = normrnd(-0.5, 0.5, [Np,1]);
 
+%% t=1
+
+% Project them forward
+tt = 0:dt:1; Kt = length(tt);
+pts_x2 = zeros(Np,Kt);
+for ii = 1:Np
+    pts_x2(ii,:) = project(tt, [0 2]', pts_a2(ii));
+end
+
+% x1 coords
+pts_x1 = zeros(Np,Kt);
+for ii = 1:Np
+    pts_x1(ii,:) = project(tt, [0 2]', pts_a1(ii));
+end
+% pts_x1 = repmat(project(tt, [0 2]', 0), Np, 1);
+
+% Plot it
+figure, hold on,
+xlim([-1,21]), ylim([-1,8]);
+plot(y(1,:), y(2,:), 'rx', 'markersize', 10);
+plot(pts_x1', pts_x2', 'b')
+
+%% t=2
+
+% Project them forward
+tt = 0:dt:3; Kt = length(tt);
+pts_x2 = zeros(Np,Kt);
+for ii = 1:Np
+    pts_x2(ii,:) = project(tt, [0 2]', pts_a2(ii));
+end
+
+% x1 coords
+pts_x1 = zeros(Np,Kt);
+for ii = 1:Np
+    pts_x1(ii,:) = project(tt, [0 2]', pts_a1(ii));
+end
+% pts_x1 = repmat(project(tt, [0 2]', 0), Np, 1);
+
+% Plot it
+figure, hold on,
+xlim([-1,21]), ylim([-1,8]);
+plot(y(1,:), y(2,:), 'rx', 'markersize', 10);
+plot(pts_x1', pts_x2', 'b')
+
+best = [5,6]; rest = [1:4, 7:10];
+
+% Plot resampled
+figure, hold on,
+xlim([-1,21]), ylim([-1,8]);
+plot(y(1,:), y(2,:), 'rx', 'markersize', 10);
+plot(pts_x1(best,:)', pts_x2(best,:)', 'b')
+
+% RM
+pts_a2(rest) = normrnd(-0.5, 0.1, [8,1]);
+for ii = rest
+    pts_x2(ii,:) = project(tt, [0 2]', pts_a2(ii));
+end
+
+% Plot again
+figure, hold on,
+xlim([-1,21]), ylim([-1,8]);
+plot(y(1,:), y(2,:), 'rx', 'markersize', 10);
+plot(pts_x1', pts_x2', 'b')
+
+%% t=3
+
+% Project them forward
+tt = 0:dt:5; Kt = length(tt);
+pts_x2 = zeros(Np,Kt);
+for ii = 1:Np
+    pts_x2(ii,:) = project(tt, [0 2]', pts_a2(ii));
+end
+
+% x1 coords
+pts_x1 = zeros(Np,Kt);
+for ii = 1:Np
+    pts_x1(ii,:) = project(tt, [0 2]', pts_a1(ii));
+end
+% pts_x1 = repmat(project(tt, [0 2]', 0), Np, 1);
+
+% Plot it
+figure, hold on,
+xlim([-1,21]), ylim([-1,8]);
+plot(y(1,:), y(2,:), 'rx', 'markersize', 10);
+plot(pts_x1', pts_x2', 'b')
