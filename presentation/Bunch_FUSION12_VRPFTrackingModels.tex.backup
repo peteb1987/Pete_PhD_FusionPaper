@@ -50,15 +50,8 @@ What is a variable rate model?
   \item Discrete-time
   \item Stochastic Markovian dynamics
   \item Simple
-  \item Additional modelling to handle manoeuvres
+  \item Hard to handle manoeuvres
 \end{itemize}
-\end{frame}
-
-\begin{frame}{Variable Rate Models for Tracking}
-\begin{figure}\centering\includegraphics[scale=0.5]{variable_rate_model.pdf}\end{figure}
-\begin{IEEEeqnarray*}{rCl}
- x(t) & = & f(x_k, u_k, \tau_k, t)
-\end{IEEEeqnarray*}
 \end{frame}
 
 \begin{frame}{Variable Rate Models for Tracking}
@@ -76,11 +69,6 @@ What is a variable rate particle filter?
 \end{frame}
 
 \begin{frame}{The Variable Rate Particle Filter}
-\pause Need to infer:
-\begin{itemize}
- \item Changepoint times, $\{\tau_k\}$
- \item Motion parameters, $\{u_k\}$
-\end{itemize}
 \pause Bootstrap particle filter
 \begin{itemize}
   \item Proposal: Add a new changepoint or just extend trajectory
@@ -156,20 +144,20 @@ Problems:
 \end{itemize}
 \end{frame}
 
-%\begin{frame}{A Familiar Example}
-%\begin{IEEEeqnarray*}{rCl}
-% x_{n} & = & A x_{n-1} + w_{n} \\
-% w_n & \sim & \mathcal{N}(.|0, Q)
-%\end{IEEEeqnarray*}
-%\begin{IEEEeqnarray*}{rClrCl}
-% Q_1 & = & \sigma^2 \begin{bmatrix} \frac{1}{3}\Delta t^3 & \frac{1}{2}\Delta t^2 \\ \frac{1}{2}\Delta t^2 & \Delta t \\ \end{bmatrix} \qquad & \qquad Q_2 & = & \sigma^2 \begin{bmatrix} \frac{1}{4}\Delta t^3 & \frac{1}{2}\Delta t^2 \\ \frac{1}{2}\Delta t^2 & \Delta t \end{bmatrix}
-%\end{IEEEeqnarray*}
-%\begin{figure}
-%\centering
-%\subfloat[$Q_1$]{\includegraphics[scale=0.2]{full_rank.pdf}} \qquad \qquad
-%\subfloat[$Q_2$]{\includegraphics[scale=0.2]{deficient.pdf}}
-%\end{figure}
-%\end{frame}
+\begin{frame}{A Familiar Example}
+\begin{IEEEeqnarray*}{rCl}
+ x_{n} & = & A x_{n-1} + w_{n} \\
+ w_n & \sim & \mathcal{N}(.|0, Q)
+\end{IEEEeqnarray*}
+\begin{IEEEeqnarray*}{rClrCl}
+ Q_1 & = & \sigma^2 \begin{bmatrix} \frac{1}{3}\Delta t^3 & \frac{1}{2}\Delta t^2 \\ \frac{1}{2}\Delta t^2 & \Delta t \\ \end{bmatrix} \qquad & \qquad Q_2 & = & \sigma^2 \begin{bmatrix} \frac{1}{4}\Delta t^3 & \frac{1}{2}\Delta t^2 \\ \frac{1}{2}\Delta t^2 & \Delta t \end{bmatrix}
+\end{IEEEeqnarray*}
+\begin{figure}
+\centering
+\subfloat[$Q_1$]{\includegraphics[scale=0.2]{full_rank.pdf}} \qquad \qquad
+\subfloat[$Q_2$]{\includegraphics[scale=0.2]{deficient.pdf}}
+\end{figure}
+\end{frame}
 
 \begin{frame}
 How can make them better?

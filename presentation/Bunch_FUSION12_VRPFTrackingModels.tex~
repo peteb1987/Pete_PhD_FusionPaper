@@ -156,20 +156,20 @@ Problems:
 \end{itemize}
 \end{frame}
 
-%\begin{frame}{A Familiar Example}
-%\begin{IEEEeqnarray*}{rCl}
-% x_{n} & = & A x_{n-1} + w_{n} \\
-% w_n & \sim & \mathcal{N}(.|0, Q)
-%\end{IEEEeqnarray*}
-%\begin{IEEEeqnarray*}{rClrCl}
-% Q_1 & = & \sigma^2 \begin{bmatrix} \frac{1}{3}\Delta t^3 & \frac{1}{2}\Delta t^2 \\ \frac{1}{2}\Delta t^2 & \Delta t \\ \end{bmatrix} \qquad & \qquad Q_2 & = & \sigma^2 \begin{bmatrix} \frac{1}{4}\Delta t^3 & \frac{1}{2}\Delta t^2 \\ \frac{1}{2}\Delta t^2 & \Delta t \end{bmatrix}
-%\end{IEEEeqnarray*}
-%\begin{figure}
-%\centering
-%\subfloat[$Q_1$]{\includegraphics[scale=0.2]{full_rank.pdf}} \qquad \qquad
-%\subfloat[$Q_2$]{\includegraphics[scale=0.2]{deficient.pdf}}
-%\end{figure}
-%\end{frame}
+\begin{frame}{A Familiar Example}
+\begin{IEEEeqnarray*}{rCl}
+ x_{n} & = & A x_{n-1} + w_{n} \\
+ w_n & \sim & \mathcal{N}(.|0, Q)
+\end{IEEEeqnarray*}
+\begin{IEEEeqnarray*}{rClrCl}
+ Q_1 & = & \sigma^2 \begin{bmatrix} \frac{1}{3}\Delta t^3 & \frac{1}{2}\Delta t^2 \\ \frac{1}{2}\Delta t^2 & \Delta t \\ \end{bmatrix} \qquad & \qquad Q_2 & = & \sigma^2 \begin{bmatrix} \frac{1}{4}\Delta t^3 & \frac{1}{2}\Delta t^2 \\ \frac{1}{2}\Delta t^2 & \Delta t \end{bmatrix}
+\end{IEEEeqnarray*}
+\begin{figure}
+\centering
+\subfloat[$Q_1$]{\includegraphics[scale=0.2]{full_rank.pdf}} \qquad \qquad
+\subfloat[$Q_2$]{\includegraphics[scale=0.2]{deficient.pdf}}
+\end{figure}
+\end{frame}
 
 \begin{frame}
 How can make them better?
