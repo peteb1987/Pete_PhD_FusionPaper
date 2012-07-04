@@ -37,9 +37,10 @@ pred_disc_v = disc_v(:,1:end-1);
 f1 = figure; hold on
 xlim([-1,21]), ylim([-1,8]);
 plot(x(1,:), x(2,:), 'linewidth', 2);
-plot(disc_x(1,:), disc_x(2,:), 'xr', 'markersize', 10);
-h_arrows = arrow(disc_x, disc_x+disc_v, 'length', 10, 'BaseAngle', 30);
-set(h_arrows, 'EdgeColor', 'r', 'FaceColor', 'r')
+h_a1 = arrow([6 3], [6 1.5], 'length', 10, 'BaseAngle', 30);
+set(h_a1, 'EdgeColor', 'r', 'FaceColor', 'r')
+h_a2 = arrow([16 4], [16 7], 'length', 10, 'BaseAngle', 30);
+set(h_a2, 'EdgeColor', 'r', 'FaceColor', 'r')
 plot(x(1,1), x(2,1), 'g*', 'markersize', 15)
 plot(x(1,floor(cp*K)), x(2,floor(cp*K)), 'g*', 'markersize', 15)
 
@@ -62,6 +63,13 @@ for kk = 1:size(pred_disc_x, 2)
 end
 
 export_pdf(f2, 'HMM_model.pdf', 16, 12)
+
+%% Plot - Track only
+f2 = figure; hold on
+xlim([-1,21]), ylim([-1,8]);
+plot(x(1,:), x(2,:), '-.k');
+
+export_pdf(f2, 'track.pdf', 16, 12)
 
 %% Particle filter demo
 % h_vrpf = vrpf_demo;

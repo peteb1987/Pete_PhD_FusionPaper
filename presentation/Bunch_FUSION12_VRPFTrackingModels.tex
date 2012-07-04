@@ -24,7 +24,7 @@
 \begin{frame}{What's in store...}
 \begin{itemize}
   \item What is a variable rate model?
-  \item What is a variable rate particle filter?
+  \item How do we do inference in a variable rate model?
   \item What dynamical models can we use for tracking with a VRPF?
   \item What's wrong with them?
   \item How can make them better?
@@ -36,12 +36,15 @@
 What is a variable rate model?
 \end{frame}
 
+\begin{frame}{Tracking}
+\begin{figure}\centering\includegraphics[scale=0.5]{track.pdf}\end{figure}
+\end{frame}
+
 \begin{frame}{Conventional Hidden Markov Models for Tracking}
 \begin{figure}\centering\includegraphics[scale=0.5]{HMM_model.pdf}\end{figure}
 \begin{IEEEeqnarray*}{rCl}
   x_n & = & f(x_{n-1}) + w_n
 \end{IEEEeqnarray*}
-
 \end{frame}
 
 \begin{frame}{Conventional Hidden Markov Models for Tracking}
@@ -49,7 +52,7 @@ What is a variable rate model?
 \begin{itemize}
   \item Discrete-time
   \item Stochastic Markovian dynamics
-  \item Simple
+  \item Simple algorithms
   \item Additional modelling to handle manoeuvres
 \end{itemize}
 \end{frame}
@@ -57,7 +60,7 @@ What is a variable rate model?
 \begin{frame}{Variable Rate Models for Tracking}
 \begin{figure}\centering\includegraphics[scale=0.5]{variable_rate_model.pdf}\end{figure}
 \begin{IEEEeqnarray*}{rCl}
- x(t) & = & f(x_k, u_k, \tau_k, t)
+ x(t) & = & f(\tau_k, x_k, u_k, t)
 \end{IEEEeqnarray*}
 \end{frame}
 
@@ -66,13 +69,12 @@ What is a variable rate model?
 \begin{itemize}
   \item Continuous-time
   \item Conditionally-deterministic dynamics
-  \item Always nonlinear
-  \item Handles manoeuvres
+  \item Handles manoeuvres integrally
 \end{itemize}
 \end{frame}
 
 \begin{frame}
-What is a variable rate particle filter?
+How do we do inference in a variable rate model?
 \end{frame}
 
 \begin{frame}{The Variable Rate Particle Filter}
@@ -95,7 +97,7 @@ What is a variable rate particle filter?
 \end{frame}
 
 \begin{frame}
-%\begin{figure}\animategraphics[poster,width=0.8\textwidth]{100}{animation/vrpf_}{2}{500}\end{figure}
+\begin{figure}\animategraphics[poster,width=0.8\textwidth]{100}{animation/vrpf_}{2}{500}\end{figure}
 \end{frame}
 
 \begin{frame}
